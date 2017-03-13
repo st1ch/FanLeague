@@ -6,34 +6,34 @@ package com.fanleagueent.fanleague.domain.models.games;
 
 public class HistoryBetDetails {
 
-  private HistoryBetEntity historyBetEntity;
-  private GameweekEntity gameweekEntity;
+  private HistoryBet historyBet;
+  private Gameweek gameweek;
 
-  public HistoryBetDetails(HistoryBetEntity historyBetEntity, GameweekEntity gameweekEntity) {
-    this.historyBetEntity = historyBetEntity;
-    this.gameweekEntity = gameweekEntity;
+  public HistoryBetDetails(HistoryBet historyBet, Gameweek gameweek) {
+    this.historyBet = historyBet;
+    this.gameweek = gameweek;
   }
 
-  public HistoryBetEntity getHistoryBetEntity() {
-    return historyBetEntity;
+  public HistoryBet getHistoryBet() {
+    return historyBet;
   }
 
-  public void setHistoryBetEntity(HistoryBetEntity historyBetEntity) {
-    this.historyBetEntity = historyBetEntity;
+  public void setHistoryBet(HistoryBet historyBet) {
+    this.historyBet = historyBet;
   }
 
-  public GameweekEntity getGameweekEntity() {
-    return gameweekEntity;
+  public Gameweek getGameweek() {
+    return gameweek;
   }
 
-  public void setGameweekEntity(GameweekEntity gameweekEntity) {
-    this.gameweekEntity = gameweekEntity;
+  public void setGameweek(Gameweek gameweek) {
+    this.gameweek = gameweek;
   }
 
   @Override public String toString() {
     return "HistoryBetDetails{" +
-        "historyBetEntity=" + historyBetEntity +
-        ", gameweekEntity=" + gameweekEntity +
+        "historyBetEntity=" + historyBet +
+        ", gameweekEntity=" + gameweek +
         '}';
   }
 }

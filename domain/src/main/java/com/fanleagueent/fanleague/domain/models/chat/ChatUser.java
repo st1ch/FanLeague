@@ -1,6 +1,6 @@
 package com.fanleagueent.fanleague.domain.models.chat;
 
-import com.fanleagueent.fanleague.domain.models.friends.FriendshipEntity;
+import com.fanleagueent.fanleague.domain.models.friends.Friendship;
 import com.fanleagueent.fanleague.domain.models.user.Avatar;
 
 /**
@@ -14,7 +14,7 @@ public class ChatUser {
   private String username;
   private String displayName;
   private String fullName;
-  private FriendshipEntity friendshipEntity;
+  private Friendship friendship;
   private Avatar avatarEntity;
   private boolean isFacebookConnected;
   private boolean isGoogleConnected;
@@ -44,8 +44,8 @@ public class ChatUser {
     return fullName;
   }
 
-  public FriendshipEntity getFriendshipEntity() {
-    return friendshipEntity;
+  public Friendship getFriendship() {
+    return friendship;
   }
 
   public Avatar getAvatarEntity() {
@@ -87,7 +87,7 @@ public class ChatUser {
         ", username='" + username + '\'' +
         ", displayName='" + displayName + '\'' +
         ", fullName='" + fullName + '\'' +
-        ", friendshipEntity=" + friendshipEntity +
+        ", friendshipEntity=" + friendship +
         ", avatarEntity=" + avatarEntity +
         ", isFacebookConnected=" + isFacebookConnected +
         ", isGoogleConnected=" + isGoogleConnected +

@@ -9,12 +9,12 @@ import java.util.List;
 public class HistoryGameweeksBetDetails {
 
   private HistoryBetDetails historyBetDetails;
-  private List<GameweekEntity> gameweekEntityList;
+  private List<Gameweek> gameweekList;
 
   public HistoryGameweeksBetDetails(HistoryBetDetails historyBetDetails,
-      List<GameweekEntity> gameweekEntityList) {
+      List<Gameweek> gameweekList) {
     this.historyBetDetails = historyBetDetails;
-    this.gameweekEntityList = gameweekEntityList;
+    this.gameweekList = gameweekList;
   }
 
   public HistoryBetDetails getHistoryBetDetails() {
@@ -25,18 +25,18 @@ public class HistoryGameweeksBetDetails {
     this.historyBetDetails = historyBetDetails;
   }
 
-  public List<GameweekEntity> getGameweekEntityList() {
-    return gameweekEntityList;
+  public List<Gameweek> getGameweekList() {
+    return gameweekList;
   }
 
-  public void setGameweekEntityList(List<GameweekEntity> gameweekEntityList) {
-    this.gameweekEntityList = gameweekEntityList;
+  public void setGameweekList(List<Gameweek> gameweekList) {
+    this.gameweekList = gameweekList;
   }
 
   @Override public String toString() {
     return "HistoryGameweeksBetDetails{" +
         "historyBetDetails=" + historyBetDetails +
-        ", gameweekEntityList=" + gameweekEntityList +
+        ", gameweekEntityList=" + gameweekList +
         '}';
   }
 }

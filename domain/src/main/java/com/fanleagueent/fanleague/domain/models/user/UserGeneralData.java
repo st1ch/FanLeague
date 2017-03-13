@@ -1,6 +1,5 @@
 package com.fanleagueent.fanleague.domain.models.user;
 
-import com.fanleagueent.fanleague.data.entity.entities.DataTitle;
 import java.util.List;
 
 /**
@@ -11,7 +10,7 @@ public class UserGeneralData {
     private User user;
     private List<DataTitle> professionList;
     private List<DataTitle> nationalityList;
-    private List<FavoriteClubEntity> favoriteClubEntityList;
+    private List<FavoriteClub> favoriteClubList;
 
     public User getUser() {
         return user;
@@ -37,11 +36,11 @@ public class UserGeneralData {
         this.nationalityList = nationalityList;
     }
 
-    public List<FavoriteClubEntity> getFavoriteClubEntityList() {
-        return favoriteClubEntityList;
+    public List<FavoriteClub> getFavoriteClubList() {
+        return favoriteClubList;
     }
 
-    public void setFavoriteClubEntityList(List<FavoriteClubEntity> favoriteClubEntityList) {
-        this.favoriteClubEntityList = favoriteClubEntityList;
+    public void setFavoriteClubList(List<FavoriteClub> favoriteClubList) {
+        this.favoriteClubList = favoriteClubList;
     }
 }

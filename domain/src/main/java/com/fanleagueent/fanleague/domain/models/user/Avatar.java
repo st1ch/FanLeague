@@ -1,16 +1,11 @@
 package com.fanleagueent.fanleague.domain.models.user;
 
-import com.google.gson.annotations.SerializedName;
-
 /**
  * Created by alexeyverbitskiy on 11/7/16.
  */
 
 public class Avatar {
-    @SerializedName("original_image")
     private String originalImage;
-
-    @SerializedName("medium_image")
     private String mediumImage;
 
     public Avatar(){}

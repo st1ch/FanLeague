@@ -1,7 +1,6 @@
 package com.fanleagueent.fanleague.domain.models.chat;
 
-import android.support.annotation.NonNull;
-import com.google.gson.annotations.SerializedName;
+import io.reactivex.annotations.NonNull;
 
 /**
  * Created by alexeyverbitskiy on 2/7/17.
@@ -9,31 +8,14 @@ import com.google.gson.annotations.SerializedName;
 
 public class Message implements Comparable<Message> {
 
-  @SerializedName("_id")
   private String id;
-
-  @SerializedName("thread_id")
   private String threadId;
-
-  @SerializedName("user_id")
   private String userId;
-
-  @SerializedName("body")
   private String body;
-
-  @SerializedName("timestamp")
   private long timestamp;
-
-  @SerializedName("updated_at")
   private String updatedAt;
-
-  @SerializedName("created_at")
   private String createdAt;
-
-  @SerializedName("is_my_message")
   private boolean isMyMessage;
-
-  @SerializedName("authorEntity")
   private Author author;
 
   public String getId() {

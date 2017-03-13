@@ -1,91 +1,50 @@
 package com.fanleagueent.fanleague.domain.models.user;
 
-import com.fanleagueent.fanleague.data.entity.entities.friends.FriendshipEntity;
-import com.google.gson.annotations.SerializedName;
+import com.fanleagueent.fanleague.domain.models.friends.Friendship;
 import java.util.Date;
 import java.util.List;
 
 public class User {
 
-  @SerializedName("_id") private String id;
-
-  @SerializedName("first_name") private String firstName;
-
-  @SerializedName("last_name") private String lastName;
-
-  @SerializedName("username") private String username;
-
-  @SerializedName("display_name") private String displayName;
-
-  @SerializedName("full_name") private String fullName;
-
-  @SerializedName("email") private String email;
-
-  @SerializedName("created_at") private String createdAt;
-
-  @SerializedName("updated_at") private String updatedAt;
-
-  @SerializedName("current_team_id") private String currentTeamId;
-
-  @SerializedName("team_id") private List<String> teamIdList;
-
-  @SerializedName("current_league_id") private String currentLeagueId;
-
-  @SerializedName("league_id") private List<String> leagueIdList;
-
-  @SerializedName("friendship") private FriendshipEntity friendship;
-
-  @SerializedName("avatar_sizes") private Avatar avatar;
-
-  @SerializedName("is_google_connected") private boolean isGoogleConnected;
-
-  @SerializedName("is_facebook_connected") private boolean isFacebookConnected;
-
-  @SerializedName("exp_percentage") private float expPercentage;
-
-  @SerializedName("notifications_list") private NotificationListEntity notificationListEntity;
-
-  @SerializedName("display_name_identificator") private DisplayNameIdentEntity
-      displayNameIdentEntity;
-
-  @SerializedName("profile_view_permissions") private ProfileViewPermissionEntity
-      profileViewPermissionEntity;
-
-  @SerializedName("weekly_deposit_limit") private WeeklyDepositLimitEntity weeklyDepositLimitEntity;
-
-  @SerializedName("average_winning_bets") private float averageWinningBets;
-
-  @SerializedName("average_winning_bets_difference") private float averageWinningBetsDifference;
-
-  @SerializedName("total_played_weeks") private int totalPlayedWeeks;
-
-  @SerializedName("recruit_tree_size") private float recruitTreeSize;
-
-  @SerializedName("has_bet_medal") private boolean hasBetMedal;
-
-  @SerializedName("common_rating_position") private int commonRatingPosition;
-
-  @SerializedName("difference_common_rating_position") private int differenceRatingPosition;
-
-  @SerializedName("is_friends") private boolean isFriends;
-
-  @SerializedName("profession") private String profession;
-
-  @SerializedName("nationality") private String nationality;
-
-  @SerializedName("birthday") private Date birthday;
-
-  @SerializedName("sex") private String sex;
-
-  @SerializedName("favourite_football_club_id") private String favouriteFootballClubId;
-
-  @SerializedName("favourite_youth_club") private String favouriteYouthClub;
-
-  @SerializedName("yearly_earnings") private int yearlyEarnings;
-
-  @SerializedName("level") private int level;
-
-  @SerializedName("walletEntity") private WalletEntity walletEntity;
+  private String id;
+  private String firstName;
+  private String lastName;
+  private String username;
+  private String displayName;
+  private String fullName;
+  private String email;
+  private String createdAt;
+  private String updatedAt;
+  private String currentTeamId;
+  private List<String> teamIdList;
+  private String currentLeagueId;
+  private List<String> leagueIdList;
+  private Friendship friendship;
+  private Avatar avatar;
+  private boolean isGoogleConnected;
+  private boolean isFacebookConnected;
+  private float expPercentage;
+  private NotificationList notificationList;
+  private DisplayNameIdent displayNameIdent;
+  private ProfileViewPermission profileViewPermission;
+  private WeeklyDepositLimit weeklyDepositLimit;
+  private float averageWinningBets;
+  private float averageWinningBetsDifference;
+  private int totalPlayedWeeks;
+  private float recruitTreeSize;
+  private boolean hasBetMedal;
+  private int commonRatingPosition;
+  private int differenceRatingPosition;
+  private boolean isFriends;
+  private String profession;
+  private String nationality;
+  private Date birthday;
+  private String sex;
+  private String favouriteFootballClubId;
+  private String favouriteYouthClub;
+  private int yearlyEarnings;
+  private int level;
+  private Wallet wallet;
 
   private User(Builder builder) {
     id = builder.id;
@@ -104,13 +63,13 @@ public class User {
     favouriteFootballClubId = builder.favouriteFootballClubId;
     favouriteYouthClub = builder.favouriteYouthClub;
     yearlyEarnings = builder.yearlyEarnings;
-    weeklyDepositLimitEntity = builder.weeklyDepositLimitEntity;
+    weeklyDepositLimit = builder.weeklyDepositLimit;
     isGoogleConnected = builder.isGoogleConnected;
     isFacebookConnected = builder.isFacebookConnected;
     level = builder.level;
-    displayNameIdentEntity = builder.displayNameIdentEntity;
-    profileViewPermissionEntity = builder.profileViewPermissionEntity;
-    walletEntity = builder.walletEntity;
+    displayNameIdent = builder.displayNameIdent;
+    profileViewPermission = builder.profileViewPermission;
+    wallet = builder.wallet;
   }
 
   public String getId() {
@@ -217,11 +176,11 @@ public class User {
     this.leagueIdList = leagueIdList;
   }
 
-  public FriendshipEntity getFriendship() {
+  public Friendship getFriendship() {
     return friendship;
   }
 
-  public void setFriendship(FriendshipEntity friendship) {
+  public void setFriendship(Friendship friendship) {
     this.friendship = friendship;
   }
 
@@ -257,36 +216,36 @@ public class User {
     this.expPercentage = expPercentage;
   }
 
-  public NotificationListEntity getNotificationListEntity() {
-    return notificationListEntity;
+  public NotificationList getNotificationList() {
+    return notificationList;
   }
 
-  public void setNotificationListEntity(NotificationListEntity notificationListEntity) {
-    this.notificationListEntity = notificationListEntity;
+  public void setNotificationList(NotificationList notificationList) {
+    this.notificationList = notificationList;
   }
 
-  public DisplayNameIdentEntity getDisplayNameIdentEntity() {
-    return displayNameIdentEntity;
+  public DisplayNameIdent getDisplayNameIdent() {
+    return displayNameIdent;
   }
 
-  public void setDisplayNameIdentEntity(DisplayNameIdentEntity displayNameIdentEntity) {
-    this.displayNameIdentEntity = displayNameIdentEntity;
+  public void setDisplayNameIdent(DisplayNameIdent displayNameIdent) {
+    this.displayNameIdent = displayNameIdent;
   }
 
-  public ProfileViewPermissionEntity getProfileViewPermissionEntity() {
-    return profileViewPermissionEntity;
+  public ProfileViewPermission getProfileViewPermission() {
+    return profileViewPermission;
   }
 
-  public void setProfileViewPermissionEntity(ProfileViewPermissionEntity profileViewPermissionEntity) {
-    this.profileViewPermissionEntity = profileViewPermissionEntity;
+  public void setProfileViewPermission(ProfileViewPermission profileViewPermission) {
+    this.profileViewPermission = profileViewPermission;
   }
 
-  public WeeklyDepositLimitEntity getWeeklyDepositLimitEntity() {
-    return weeklyDepositLimitEntity;
+  public WeeklyDepositLimit getWeeklyDepositLimit() {
+    return weeklyDepositLimit;
   }
 
-  public void setWeeklyDepositLimitEntity(WeeklyDepositLimitEntity weeklyDepositLimitEntity) {
-    this.weeklyDepositLimitEntity = weeklyDepositLimitEntity;
+  public void setWeeklyDepositLimit(WeeklyDepositLimit weeklyDepositLimit) {
+    this.weeklyDepositLimit = weeklyDepositLimit;
   }
 
   public float getAverageWinningBets() {
@@ -417,12 +376,12 @@ public class User {
     this.level = level;
   }
 
-  public WalletEntity getWalletEntity() {
-    return walletEntity;
+  public Wallet getWallet() {
+    return wallet;
   }
 
-  public void setWalletEntity(WalletEntity walletEntity) {
-    this.walletEntity = walletEntity;
+  public void setWallet(Wallet wallet) {
+    this.wallet = wallet;
   }
 
   public static class Builder {
@@ -442,14 +401,14 @@ public class User {
     private String favouriteFootballClubId;
     private String favouriteYouthClub;
     private int yearlyEarnings;
-    private WeeklyDepositLimitEntity weeklyDepositLimitEntity;
+    private WeeklyDepositLimit weeklyDepositLimit;
     private boolean isGoogleConnected;
     private boolean isFacebookConnected;
     private int level;
     private int percentAge;
-    private DisplayNameIdentEntity displayNameIdentEntity = DisplayNameIdentEntity.USERNAME;
-    private ProfileViewPermissionEntity profileViewPermissionEntity = ProfileViewPermissionEntity.ANYONE;
-    private WalletEntity walletEntity;
+    private DisplayNameIdent displayNameIdent = DisplayNameIdent.USERNAME;
+    private ProfileViewPermission profileViewPermission = ProfileViewPermission.ANYONE;
+    private Wallet wallet;
 
     public Builder id(String id) {
       this.id = id;
@@ -531,8 +490,8 @@ public class User {
       return this;
     }
 
-    public Builder weaklyDepositLimit(WeeklyDepositLimitEntity weeklyDepositLimitEntity) {
-      this.weeklyDepositLimitEntity = weeklyDepositLimitEntity;
+    public Builder weaklyDepositLimit(WeeklyDepositLimit weeklyDepositLimit) {
+      this.weeklyDepositLimit = weeklyDepositLimit;
       return this;
     }
 
@@ -556,18 +515,18 @@ public class User {
       return this;
     }
 
-    public Builder displayNameIdent(DisplayNameIdentEntity displayNameIdentEntity) {
-      this.displayNameIdentEntity = displayNameIdentEntity;
+    public Builder displayNameIdent(DisplayNameIdent displayNameIdent) {
+      this.displayNameIdent = displayNameIdent;
       return this;
     }
 
-    public Builder profileViewPermission(ProfileViewPermissionEntity profileViewPermissionEntity) {
-      this.profileViewPermissionEntity = profileViewPermissionEntity;
+    public Builder profileViewPermission(ProfileViewPermission profileViewPermission) {
+      this.profileViewPermission = profileViewPermission;
       return this;
     }
 
-    public Builder wallet(WalletEntity walletEntity) {
-      this.walletEntity = walletEntity;
+    public Builder wallet(Wallet wallet) {
+      this.wallet = wallet;
       return this;
     }
 
@@ -596,10 +555,10 @@ public class User {
         ", isGoogleConnected=" + isGoogleConnected +
         ", isFacebookConnected=" + isFacebookConnected +
         ", expPercentage=" + expPercentage +
-        ", notificationListEntity=" + notificationListEntity +
-        ", displayNameIdentEntity=" + displayNameIdentEntity +
-        ", profileViewPermissionEntity=" + profileViewPermissionEntity +
-        ", weeklyDepositLimitEntity=" + weeklyDepositLimitEntity +
+        ", notificationListEntity=" + notificationList +
+        ", displayNameIdentEntity=" + displayNameIdent +
+        ", profileViewPermissionEntity=" + profileViewPermission +
+        ", weeklyDepositLimitEntity=" + weeklyDepositLimit +
         ", averageWinningBets=" + averageWinningBets +
         ", averageWinningBetsDifference=" + averageWinningBetsDifference +
         ", totalPlayedWeeks=" + totalPlayedWeeks +
@@ -616,7 +575,7 @@ public class User {
         ", favouriteYouthClub='" + favouriteYouthClub + '\'' +
         ", yearlyEarnings=" + yearlyEarnings +
         ", level=" + level +
-        ", walletEntity=" + walletEntity +
+        ", walletEntity=" + wallet +
         '}';
   }
 }

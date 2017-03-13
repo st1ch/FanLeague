@@ -1,5 +1,6 @@
 package com.fanleagueent.fanleague.domain.models;
 
+import com.fanleagueent.fanleague.domain.models.user.Avatar;
 
 /**
  * Created by st1ch on 30.11.16.
