@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "952939055792",
+    "firebase_url": "https://fanleague-94f68.firebaseio.com",
+    "project_id": "fanleague-94f68",
+    "storage_bucket": "fanleague-94f68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952939055792:android:5cf8dbdf0239376c",
+        "android_client_info": {
+          "package_name": "com.fanleagueent.fanleague"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772486624535-3lo1cpcd527u2u4iogulbaql4qtprcuq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fanleagueent.fanleague",
+            "certificate_hash": "883739620D1D2DF039CB143B20F9EAACC9ACF37A"
+          }
+        },
+        {
+          "client_id": "772486624535-0tr37h3g8fjir7373tof0gpu3beb234i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaWbNcwZiQgRpyCoJCt537mizqYLZPKm0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
