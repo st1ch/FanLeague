@@ -9,7 +9,7 @@ import com.fanleagueent.fanleague.domain.models.user.Avatar;
 public class ActivityHistoryUser {
   private String id;
 
-  private Avatar avatarEntity;
+  private Avatar avatar;
 
   private boolean hasBetMedal;
 
@@ -19,8 +19,8 @@ public class ActivityHistoryUser {
     return id;
   }
 
-  public Avatar getAvatarEntity() {
-    return avatarEntity;
+  public Avatar getAvatar() {
+    return avatar;
   }
 
   public boolean isHasBetMedal() {
@@ -29,5 +29,21 @@ public class ActivityHistoryUser {
 
   public int getLevel() {
     return level;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public void setAvatar(Avatar avatar) {
+    this.avatar = avatar;
+  }
+
+  public void setHasBetMedal(boolean hasBetMedal) {
+    this.hasBetMedal = hasBetMedal;
+  }
+
+  public void setLevel(int level) {
+    this.level = level;
   }
 }

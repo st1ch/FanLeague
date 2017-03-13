@@ -96,6 +96,58 @@ public class ActivityHistoryAllData {
     return activityHistoryMember;
   }
 
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public void setTeamId(String teamId) {
+    this.teamId = teamId;
+  }
+
+  public void setMemberId(String memberId) {
+    this.memberId = memberId;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public void setCreatedAt(Date createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public void setUpdatedAt(Date updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+  public void setText(String text) {
+    this.text = text;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public void setActivityHistoryUser(ActivityHistoryUser activityHistoryUserEntity) {
+    this.activityHistoryUserEntity = activityHistoryUserEntity;
+  }
+
+  public void setActivityHistoryTeam(ActivityHistoryGroup activityHistoryTeam) {
+    this.activityHistoryTeam = activityHistoryTeam;
+  }
+
+  public void setActivityHistoryLeague(ActivityHistoryGroup activityHistoryLeague) {
+    this.activityHistoryLeague = activityHistoryLeague;
+  }
+
+  public void setActivityHistorySender(ActivityHistoryUser activityHistorySender) {
+    this.activityHistorySender = activityHistorySender;
+  }
+
+  public void setActivityHistoryMember(ActivityHistoryUser activityHistoryMember) {
+    this.activityHistoryMember = activityHistoryMember;
+  }
+
   public enum TYPE {
     BET, FRIEND, TEAM, LEAGUE
   }

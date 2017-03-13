@@ -1,2 +1,6 @@
 <resources>
+  //Exception messages
+  <string name="exception_message_generic">There was an application error</string>
+
+
 </resources>

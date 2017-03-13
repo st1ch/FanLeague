@@ -10,7 +10,7 @@ public class ActivityHistoryGroup {
   private String id;
   private String slug;
   private String name;
-  private Avatar avatarEntity;
+  private Avatar avatar;
 
   public String getId() {
     return id;
@@ -20,11 +20,43 @@ public class ActivityHistoryGroup {
     return slug;
   }
 
-  public Avatar getAvatarEntity() {
-    return avatarEntity;
+  public Avatar getAvatar() {
+    return avatar;
   }
 
   public String getName() {
     return name;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public void setSlug(String slug) {
+    this.slug = slug;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setAvatar(Avatar avatarEntity) {
+    this.avatar = avatarEntity;
+  }
+
+  @Override public String toString() {
+    return "ActivityHistoryGroup{"
+        + "id='"
+        + id
+        + '\''
+        + ", slug='"
+        + slug
+        + '\''
+        + ", name='"
+        + name
+        + '\''
+        + ", avatarEntity="
+        + avatar
+        + '}';
   }
 }

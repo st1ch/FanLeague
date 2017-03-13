@@ -47,21 +47,6 @@ public class ActivityHistoryAllDataEntity {
     return memberId;
   }
 
-  public TYPE getType() {
-    switch (type) {
-      case "bet":
-        return TYPE.BET;
-      case "friend_request":
-        return TYPE.FRIEND;
-      case "team":
-        return TYPE.TEAM;
-      case "league":
-        return TYPE.LEAGUE;
-      default:
-        return null;
-    }
-  }
-
   public Date getCreatedAt() {
     return createdAt;
   }
@@ -76,6 +61,10 @@ public class ActivityHistoryAllDataEntity {
 
   public String getTitle() {
     return title;
+  }
+
+  public String getType() {
+    return type;
   }
 
   @Nullable public ActivityHistoryUserEntity getActivityHistoryUserEntity() {
@@ -98,7 +87,4 @@ public class ActivityHistoryAllDataEntity {
     return activityHistoryMember;
   }
 
-  public enum TYPE {
-    BET, FRIEND, TEAM, LEAGUE
-  }
 }
