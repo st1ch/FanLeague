@@ -1,5 +1,6 @@
 package com.fanleagueent.fanleague.data.net.requests.user;
 
+import com.fanleagueent.fanleague.domain.models.user.ProfileViewPermission;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -8,8 +9,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class ChangePrivacyRequest {
 
-    @SerializedName("profile_view_permission")
-    ProfileViewPermission profileViewPermission;
+    @SerializedName("profile_view_permission") ProfileViewPermission profileViewPermission;
 
     public ChangePrivacyRequest(ProfileViewPermission profileViewPermission) {
         this.profileViewPermission = profileViewPermission;

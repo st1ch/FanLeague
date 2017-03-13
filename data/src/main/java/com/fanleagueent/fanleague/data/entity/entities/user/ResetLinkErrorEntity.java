@@ -1,4 +1,4 @@
-package com.fanleagueent.fanleague.data.entity.responses;
+package com.fanleagueent.fanleague.data.entity.entities.user;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.List;
  * Created by alexeyverbitskiy on 10/24/16.
  */
 
-public class ResetLinkErrorResponse {
+public class ResetLinkErrorEntity {
     @SerializedName("email")
     private List<String> messageEmail;
 

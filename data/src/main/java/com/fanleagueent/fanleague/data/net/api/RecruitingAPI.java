@@ -1,6 +1,11 @@
 package com.fanleagueent.fanleague.data.net.api;
 
 import com.fanleagueent.fanleague.data.constants.ApiConfig;
+import com.fanleagueent.fanleague.data.entity.BaseResponse;
+import com.fanleagueent.fanleague.data.entity.entities.recruiting.InviteLinkEntity;
+import com.fanleagueent.fanleague.data.entity.entities.recruiting.RecruitInvitesDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.recruiting.RecruitOverviewDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.recruiting.RecruitTreeDataEntity;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 import rx.Observable;
@@ -21,14 +26,14 @@ public interface RecruitingAPI {
 
   String OFFSET = "offset";
 
-  @GET(ApiConfig.API_VERSION + RECRUIT + TREE) Observable<BaseResponse<RecruitTreeData>> getTree();
+  @GET(ApiConfig.API_VERSION + RECRUIT + TREE) Observable<BaseResponse<RecruitTreeDataEntity>> getTree();
 
   @GET(ApiConfig.API_VERSION + RECRUIT + OVERVIEW)
-  Observable<BaseResponse<RecruitOverviewData>> getOverview();
+  Observable<BaseResponse<RecruitOverviewDataEntity>> getOverview();
 
   @GET(ApiConfig.API_VERSION + RECRUIT + INVITES)
-  Observable<BaseResponse<RecruitInvitesData>> getInvites(@Query(OFFSET) int offset);
+  Observable<BaseResponse<RecruitInvitesDataEntity>> getInvites(@Query(OFFSET) int offset);
 
   @GET(ApiConfig.API_VERSION + RECRUIT + INVITE_LINK)
-  Observable<BaseResponse<InviteLink>> getInviteLink();
+  Observable<BaseResponse<InviteLinkEntity>> getInviteLink();
 }

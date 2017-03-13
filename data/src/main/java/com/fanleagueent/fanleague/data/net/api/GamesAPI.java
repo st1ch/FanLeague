@@ -1,9 +1,21 @@
 package com.fanleagueent.fanleague.data.net.api;
 
+import com.fanleagueent.fanleague.data.constants.ApiConfig;
 import com.fanleagueent.fanleague.data.entity.BaseResponse;
+import com.fanleagueent.fanleague.data.entity.entities.games.CreateBetDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.games.CurrentBetDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.games.GameweekEntity;
+import com.fanleagueent.fanleague.data.entity.entities.games.GetTeamsDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.games.HistoryBetEntity;
+import com.fanleagueent.fanleague.data.entity.entities.games.LuckyDipBetEntity;
+import com.fanleagueent.fanleague.data.entity.entities.games.PunditSimpleEntity;
+import com.fanleagueent.fanleague.data.entity.entities.games.PunditsDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.games.StandingsDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.user.UserDataEntity;
 import com.fanleagueent.fanleague.data.net.requests.games.CreateBetRequest;
 import com.fanleagueent.fanleague.data.net.requests.games.CreateTeamBetRequest;
 import java.util.List;
+import java.util.Map;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -58,55 +70,55 @@ public interface GamesAPI {
   String PATH_TEAM_ID = "/{" + TEAM_ID + "}";
 
   @GET(ApiConfig.API_VERSION + GAMES + GAMEWEEK_MATCHES)
-  Observable<GameweekResponse> getCurrentGameweekMatches();
+  Observable<BaseResponse<GameweekEntity>> getCurrentGameweekMatches();
 
-  @GET(ApiConfig.API_VERSION + GAMES + STANDINGS) Observable<StandingsResponse> getStandings();
+  @GET(ApiConfig.API_VERSION + GAMES + STANDINGS) Observable<BaseResponse<StandingsDataEntity>> getStandings();
 
-  @GET(ApiConfig.API_VERSION + GAMES + PERSONAL) Observable<CurrentBetResponse> getCurrentBet();
+  @GET(ApiConfig.API_VERSION + GAMES + PERSONAL) Observable<BaseResponse<CurrentBetDataEntity>> getCurrentBet();
 
   @POST(ApiConfig.API_VERSION + GAMES + PERSONAL + CREATE_BET)
-  Observable<CreateBetResponse> createBet(@Body CreateBetRequest createBetRequest);
+  Observable<BaseResponse<CreateBetDataEntity>> createBet(@Body CreateBetRequest createBetRequest);
 
   @DELETE(ApiConfig.API_VERSION + GAMES + PERSONAL + CANCEL_BET)
-  Observable<UserResponse> cancelBet();
+  Observable<BaseResponse<UserDataEntity>> cancelBet();
 
   @GET(ApiConfig.API_VERSION + GAMES + PERSONAL + RANDOM_BET)
-  Observable<RandomBetResponse> getRandomBet();
+  Observable<BaseResponse<Map<String, int[]>>> getRandomBet();
 
   @GET(ApiConfig.API_VERSION + GAMES + PERSONAL + HISTORY)
-  Observable<GameweekHistoryResponse> getPersonalBetsHistory(@Query(OFFSET) int offset);
+  Observable<BaseResponse> getPersonalBetsHistory(@Query(OFFSET) int offset);
 
-  @GET(ApiConfig.API_VERSION + GAMES + TEAM) Observable<CurrentBetResponse> getTeamCurrentBet(
+  @GET(ApiConfig.API_VERSION + GAMES + TEAM) Observable<BaseResponse<CurrentBetDataEntity>> getTeamCurrentBet(
       @Query(TEAM_ID) String teamId);
 
   @POST(ApiConfig.API_VERSION + GAMES + TEAM + CREATE_BET)
-  Observable<CurrentBetResponse> createTeamBet(@Body CreateTeamBetRequest createTeamBetRequest);
+  Observable<BaseResponse<CurrentBetDataEntity>> createTeamBet(@Body CreateTeamBetRequest createTeamBetRequest);
 
   @DELETE(ApiConfig.API_VERSION + GAMES + TEAM + PATH_TEAM_ID + CANCEL_BET)
-  Observable<CurrentBetResponse> cancelTeamBet(@Path(TEAM_ID) String teamId);
+  Observable<BaseResponse<CurrentBetDataEntity>> cancelTeamBet(@Path(TEAM_ID) String teamId);
 
-  @GET(ApiConfig.API_VERSION + GAMES + TEAM + TEAM_LIST) Observable<GetTeamsResponse> getTeamsList(
+  @GET(ApiConfig.API_VERSION + GAMES + TEAM + TEAM_LIST) Observable<BaseResponse<GetTeamsDataEntity>> getTeamsList(
       @Query(OFFSET) int offset);
 
   @GET(ApiConfig.API_VERSION + GAMES + TEAM + HISTORY)
-  Observable<GameweekHistoryResponse> getTeamBetsHistory(@Query(TEAM_ID) String teamId,
+  Observable<BaseResponse> getTeamBetsHistory(@Query(TEAM_ID) String teamId,
       @Query(OFFSET) int offset, @Query(LIMIT) int limit);
 
   @GET(ApiConfig.API_VERSION + GAMES + EXPERT + LIST)
-  Observable<BaseResponse<List<PunditSimple>>> getExpertList();
+  Observable<BaseResponse<List<PunditSimpleEntity>>> getExpertList();
 
   @GET(ApiConfig.API_VERSION + GAMES + GAMEWEEKS)
-  Observable<BaseResponse<List<Gameweek>>> getGameweeksList();
+  Observable<BaseResponse<List<GameweekEntity>>> getGameweeksList();
 
   @GET(ApiConfig.API_VERSION + GAMES + HISTORY)
-  Observable<BaseResponse<List<HistoryBet>>> getGameweekBetsHistory(
+  Observable<BaseResponse<List<HistoryBetEntity>>> getGameweekBetsHistory(
       @Query(GAMEWEEK) int gameweekNumber);
 
   @GET(ApiConfig.API_VERSION + GAMES + STANDINGS_BY_MATCH_ID)
-  Observable<StandingsResponse> getStandingsByMatchId(@Query(MATCH_ID) String matchId);
+  Observable<BaseResponse<StandingsDataEntity>> getStandingsByMatchId(@Query(MATCH_ID) String matchId);
 
-  @GET(ApiConfig.API_VERSION + PUNDITS + POSTS) Observable<PunditsResponse> getPunditsPosts(
+  @GET(ApiConfig.API_VERSION + PUNDITS + POSTS) Observable<BaseResponse<PunditsDataEntity>> getPunditsPosts(
       @Query(DISPLAY) String display);
 
-  @GET(ApiConfig.API_VERSION + GAMES + LUCKY_DIP_SET) Observable<LuckyDipResponse> getLuckyDipSet();
+  @GET(ApiConfig.API_VERSION + GAMES + LUCKY_DIP_SET) Observable<BaseResponse<List<LuckyDipBetEntity>>> getLuckyDipSet();
 }

@@ -1,6 +1,12 @@
 package com.fanleagueent.fanleague.data.net.api;
 
 import com.fanleagueent.fanleague.data.constants.ApiConfig;
+import com.fanleagueent.fanleague.data.entity.BaseResponse;
+import com.fanleagueent.fanleague.data.entity.entities.user.ConnectCountsEntity;
+import com.fanleagueent.fanleague.data.entity.entities.user.FavoriteClubEntity;
+import com.fanleagueent.fanleague.data.entity.entities.user.NationalitiesEntity;
+import com.fanleagueent.fanleague.data.entity.entities.user.ProfessionsEntity;
+import com.fanleagueent.fanleague.data.entity.entities.user.UserDataEntity;
 import com.fanleagueent.fanleague.data.net.requests.auth.TokenCredentials;
 import com.fanleagueent.fanleague.data.net.requests.user.ChangeDisplayNameRequest;
 import com.fanleagueent.fanleague.data.net.requests.user.ChangeEmailRequest;
@@ -44,54 +50,54 @@ public interface UserAPI {
   String NOTIFICATIONS = "/notifications";
   String COUNTS = "/counts";
 
-  @GET(ApiConfig.API_VERSION + SETTINGS + PERSONAL) Observable<UserResponse> getUser();
+  @GET(ApiConfig.API_VERSION + SETTINGS + PERSONAL) Observable<BaseResponse<UserDataEntity>> getUser();
 
   @PATCH(ApiConfig.API_VERSION + SETTINGS + PERSONAL + INFORMATION + GENERAL)
-  Observable<UserResponse> updateUser(@Body UpdateUserRequest updateUserRequest);
+  Observable<BaseResponse<UserDataEntity>> updateUser(@Body UpdateUserRequest updateUserRequest);
 
   @POST(ApiConfig.API_VERSION + SETTINGS + PERSONAL + EMAIL + RESET_LINK)
-  Observable<BaseBooleanResponse> changeEmail(@Body ChangeEmailRequest changeEmailRequest);
+  Observable<BaseResponse<Boolean>> changeEmail(@Body ChangeEmailRequest changeEmailRequest);
 
   @POST(ApiConfig.API_VERSION + SETTINGS + PERSONAL + CHANGE_PASSWORD)
-  Observable<UserResponse> changePassword(@Body ChangePasswordRequest changePasswordRequest);
+  Observable<BaseResponse<UserDataEntity>> changePassword(@Body ChangePasswordRequest changePasswordRequest);
 
   @PATCH(ApiConfig.API_VERSION + SETTINGS + PERSONAL + CONNECT + FACEBOOK)
-  Observable<UserResponse> connectFacebook(@Body TokenCredentials tokenCredentials);
+  Observable<BaseResponse<UserDataEntity>> connectFacebook(@Body TokenCredentials tokenCredentials);
 
   @PATCH(ApiConfig.API_VERSION + SETTINGS + PERSONAL + DISCONNECT + FACEBOOK)
-  Observable<UserResponse> disconnectFacebook();
+  Observable<BaseResponse<UserDataEntity>> disconnectFacebook();
 
   @PATCH(ApiConfig.API_VERSION + SETTINGS + PERSONAL + CONNECT + GOOGLE)
-  Observable<UserResponse> connectGoogle(@Body TokenCredentials tokenCredentials);
+  Observable<BaseResponse<UserDataEntity>> connectGoogle(@Body TokenCredentials tokenCredentials);
 
   @PATCH(ApiConfig.API_VERSION + SETTINGS + PERSONAL + DISCONNECT + GOOGLE)
-  Observable<UserResponse> disconnectGoogle();
+  Observable<BaseResponse<UserDataEntity>> disconnectGoogle();
 
   @Multipart @POST(ApiConfig.API_VERSION + SETTINGS + PERSONAL + INFORMATION + AVATAR)
-  Observable<UserResponse> changeAvatar(@Part MultipartBody.Part file);
+  Observable<BaseResponse<UserDataEntity>> changeAvatar(@Part MultipartBody.Part file);
 
   @DELETE(ApiConfig.API_VERSION + SETTINGS + PERSONAL + INFORMATION + AVATAR)
-  Observable<UserResponse> deleteAvatar();
+  Observable<BaseResponse<UserDataEntity>> deleteAvatar();
 
   @GET(ApiConfig.API_VERSION + SETTINGS + PROFESSIONS)
-  Observable<DataTitleResponse<ProfessionResponse>> getProfessionList();
+  Observable<BaseResponse<ProfessionsEntity>> getProfessionList();
 
   @GET(ApiConfig.API_VERSION + SETTINGS + NATIONALITIES)
-  Observable<DataTitleResponse<NationalityResponse>> getNationalityList();
+  Observable<BaseResponse<NationalitiesEntity>> getNationalityList();
 
   @GET(ApiConfig.API_VERSION + SETTINGS + FOOTBALL_CLUBS)
-  Observable<FavoriteClubsResponse> getFavoriteClubsList();
+  Observable<BaseResponse<FavoriteClubEntity>> getFavoriteClubsList();
 
   @PATCH(ApiConfig.API_VERSION + SETTINGS + PERSONAL + PRIVACY)
-  Observable<UserResponse> changePrivacy(@Body ChangePrivacyRequest changePrivacyRequest);
+  Observable<BaseResponse<UserDataEntity>> changePrivacy(@Body ChangePrivacyRequest changePrivacyRequest);
 
   @PATCH(ApiConfig.API_VERSION + SETTINGS + PERSONAL + PRIVACY + DISPLAY_NAME)
-  Observable<UserResponse> changeDisplayName(
+  Observable<BaseResponse<UserDataEntity>> changeDisplayName(
       @Body ChangeDisplayNameRequest changeDisplayNameRequest);
 
   @PATCH(ApiConfig.API_VERSION + SETTINGS + PERSONAL + NOTIFICATIONS)
-  Observable<UserResponse> changeNotifications(@Body NotificationsRequest notificationsRequest);
+  Observable<BaseResponse<UserDataEntity>> changeNotifications(@Body NotificationsRequest notificationsRequest);
 
   @GET(ApiConfig.API_VERSION + SETTINGS + COUNTS)
-  Observable<ConnectCountsResponse> getConnectCounts();
+  Observable<BaseResponse<ConnectCountsEntity>> getConnectCounts();
 }

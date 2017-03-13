@@ -1,6 +1,8 @@
 package com.fanleagueent.fanleague.data.net.api;
 
 import com.fanleagueent.fanleague.data.constants.ApiConfig;
+import com.fanleagueent.fanleague.data.entity.BaseResponse;
+import com.fanleagueent.fanleague.data.entity.entities.authorization.AuthorizationEntity;
 import com.fanleagueent.fanleague.data.net.requests.auth.AuthStandardRequest;
 import com.fanleagueent.fanleague.data.net.requests.auth.EmailStandardRequest;
 import com.fanleagueent.fanleague.data.net.requests.auth.FBCredentials;
@@ -26,19 +28,19 @@ public interface AuthorizationAPI {
     String RESET_LINK = "/send-reset-link";
 
     @POST(ApiConfig.API_VERSION + AUTH + REGISTRATION + STANDARD)
-    Observable<AuthorizationResponse> registrationStandard(
+    Observable<BaseResponse<AuthorizationEntity>> registrationStandard(
         @Body EmailStandardRequest emailStandardRequest);
 
     @POST(ApiConfig.API_VERSION + AUTH + LOGIN + STANDARD)
-    Observable<AuthorizationResponse> loginStandard(@Body AuthStandardRequest authCredentials);
+    Observable<BaseResponse<AuthorizationEntity>> loginStandard(@Body AuthStandardRequest authCredentials);
 
 
     @POST(ApiConfig.API_VERSION + AUTH + LOGIN + FACEBOOK)
-    Observable<Response<AuthorizationResponse>> loginFacebook(@Body FBCredentials fbCredentials);
+    Observable<Response<BaseResponse<AuthorizationEntity>>> loginFacebook(@Body FBCredentials fbCredentials);
 
     @POST(ApiConfig.API_VERSION + AUTH + LOGIN + GOOGLE)
-    Observable<AuthorizationResponse> loginGoogle(@Body GoogleCredentials googleCredentials);
+    Observable<BaseResponse<AuthorizationEntity>> loginGoogle(@Body GoogleCredentials googleCredentials);
 
     @POST(ApiConfig.API_VERSION + AUTH + PASSWORD + RESET_LINK)
-    Observable<ResetPasswordResponse> resetLink(@Body EmailStandardRequest emailStandardRequest);
+    Observable<BaseResponse> resetLink(@Body EmailStandardRequest emailStandardRequest);
 }

@@ -1,5 +1,6 @@
 package com.fanleagueent.fanleague.data.net.requests.leagues;
 
+import com.fanleagueent.fanleague.domain.models.teams.UserId;
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 

@@ -1,6 +1,12 @@
 package com.fanleagueent.fanleague.data.net.api;
 
 import com.fanleagueent.fanleague.data.constants.ApiConfig;
+import com.fanleagueent.fanleague.data.entity.BaseResponse;
+import com.fanleagueent.fanleague.data.entity.entities.friends.FriendsDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.teams.TeamAdminsDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.teams.TeamDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.teams.TeamMembersDataEntity;
+import com.fanleagueent.fanleague.data.entity.entities.teams.TeamsDataEntity;
 import com.fanleagueent.fanleague.data.net.requests.auth.TokenRequest;
 import com.fanleagueent.fanleague.data.net.requests.teams.AmountRequest;
 import com.fanleagueent.fanleague.data.net.requests.teams.CreateTeamRequest;
@@ -54,82 +60,82 @@ public interface TeamsAPI {
     String OFFSET = "offset";
 
     @GET(ApiConfig.API_VERSION + TEAMS)
-    Observable<TeamsResponse> getTeamsList(@Query(OFFSET) int offset);
+    Observable<BaseResponse<TeamsDataEntity>> getTeamsList(@Query(OFFSET) int offset);
 
     @GET(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_SLUG)
-    Observable<TeamResponse> getTeamInfo(@Path(SLUG) String slug);
+    Observable<BaseResponse<TeamDataEntity>> getTeamInfo(@Path(SLUG) String slug);
 
     @POST(ApiConfig.API_VERSION + TEAMS)
-    Observable<TeamResponse> createTeam(@Body CreateTeamRequest createTeamRequest);
+    Observable<BaseResponse<TeamDataEntity>> createTeam(@Body CreateTeamRequest createTeamRequest);
 
     @PATCH(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID)
-    Observable<TeamResponse> updateTeamInfo(@Path(TEAM_ID) String teamId,
+    Observable<BaseResponse<TeamDataEntity>> updateTeamInfo(@Path(TEAM_ID) String teamId,
         @Body UpdateTeamRequest updateTeamRequest);
 
     @DELETE(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID)
-    Observable<TeamResponse> deleteTeam(@Path(TEAM_ID) String teamId);
+    Observable<BaseResponse<TeamDataEntity>> deleteTeam(@Path(TEAM_ID) String teamId);
 
     @PATCH(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + OWNER)
-    Observable<TeamResponse> changeTeamOwner(@Path(TEAM_ID) String teamId,
+    Observable<BaseResponse<TeamDataEntity>> changeTeamOwner(@Path(TEAM_ID) String teamId,
         @Body UserRequest userRequest);
 
     @Multipart
     @POST(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + IMAGE)
-    Observable<TeamResponse> changeTeamAvatar(@Path(TEAM_ID) String teamId,
+    Observable<BaseResponse<TeamDataEntity>> changeTeamAvatar(@Path(TEAM_ID) String teamId,
         @Part MultipartBody.Part file);
 
     @DELETE(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + IMAGE)
-    Observable<TeamResponse> deleteTeamAvatar(@Path(TEAM_ID) String teamId);
+    Observable<BaseResponse<TeamDataEntity>> deleteTeamAvatar(@Path(TEAM_ID) String teamId);
 
     @PATCH(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + WEEKLY_BETTING_AMOUNT)
-    Observable<TeamResponse> changeWeeklyBettingAmount(@Path(TEAM_ID) String teamId,
+    Observable<BaseResponse<TeamDataEntity>> changeWeeklyBettingAmount(@Path(TEAM_ID) String teamId,
         @Body AmountRequest amountRequest);
 
     @PUT(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + WEEKLY_BETTING_AMOUNT + ACCEPT)
-    Observable<TeamResponse> acceptWeeklyBettingAmount(@Path(TEAM_ID) String teamId);
+    Observable<BaseResponse<TeamDataEntity>> acceptWeeklyBettingAmount(@Path(TEAM_ID) String teamId);
 
     @GET(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + MEMBERS)
-    Observable<TeamMembersResponse> getTeamMembers(@Path(TEAM_ID) String teamId,
+    Observable<BaseResponse<TeamMembersDataEntity>> getTeamMembers(@Path(TEAM_ID) String teamId,
         @Query(QUERY) String searchQuery);
 
     @GET(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + MEMBERS + SIMPLE)
-    Observable<TeamMembersResponse> getTeamSimpleMembers(@Path(TEAM_ID) String teamId);
+    Observable<BaseResponse<TeamMembersDataEntity>> getTeamSimpleMembers(@Path(TEAM_ID) String teamId);
 
     @DELETE(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + MEMBERS + PATH_USER_ID)
-    Observable<TeamResponse> deleteTeamMember(@Path(TEAM_ID) String teamId,
+    Observable<BaseResponse<TeamDataEntity>> deleteTeamMember(@Path(TEAM_ID) String teamId,
         @Path(USER_ID) String userId);
 
     @GET(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + ADMINS)
-    Observable<TeamAdminsResponse> getAdmins(@Path(TEAM_ID) String teamId);
+    Observable<BaseResponse<TeamAdminsDataEntity>> getAdmins(@Path(TEAM_ID) String teamId);
 
     @PUT(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + ADMINS + PATH_USER_ID)
-    Observable<TeamResponse> addTeamAdmin(@Path(TEAM_ID) String teamId,
+    Observable<BaseResponse<TeamDataEntity>> addTeamAdmin(@Path(TEAM_ID) String teamId,
         @Path(USER_ID) String userId);
 
     @DELETE(ApiConfig.API_VERSION + TEAMS + PATH_TEAM_ID + ADMINS + PATH_USER_ID)
-    Observable<TeamResponse> deleteTeamAdmin(@Path(TEAM_ID) String teamId,
+    Observable<BaseResponse<TeamDataEntity>> deleteTeamAdmin(@Path(TEAM_ID) String teamId,
         @Path(USER_ID) String userId);
 
     @GET(ApiConfig.API_VERSION + TEAMS + INVITATIONS)
-    Observable<TeamsResponse> getTeamInvitations();
+    Observable<BaseResponse<TeamsDataEntity>> getTeamInvitations();
 
     @GET(ApiConfig.API_VERSION + TEAMS + INVITES)
-    Observable<TeamsResponse> getTeamInvites();
+    Observable<BaseResponse<TeamsDataEntity>> getTeamInvites();
 
     @POST(ApiConfig.API_VERSION + TEAMS + INVITE)
-    Observable<TeamResponse> inviteUserToTeam(@Body InviteToTeamUserRequest inviteToTeamUserRequest);
+    Observable<BaseResponse<TeamDataEntity>> inviteUserToTeam(@Body InviteToTeamUserRequest inviteToTeamUserRequest);
 
     @POST(ApiConfig.API_VERSION + TEAMS + INVITE + ACCEPT)
-    Observable<TeamResponse> acceptTeamInvitation(@Body TokenRequest tokenRequest);
+    Observable<BaseResponse<TeamDataEntity>> acceptTeamInvitation(@Body TokenRequest tokenRequest);
 
     @POST(ApiConfig.API_VERSION + TEAMS + INVITE + DECLINE)
-    Observable<TeamResponse> declineTeamInvitation(@Body TokenRequest tokenRequest);
+    Observable<BaseResponse<TeamDataEntity>> declineTeamInvitation(@Body TokenRequest tokenRequest);
 
     @GET(ApiConfig.API_VERSION + FRIENDS + GET_ALL_FRIENDS)
-    Observable<FriendsResponse> getAllFriends(@Query(OFFSET) int offset,
+    Observable<BaseResponse<FriendsDataEntity>> getAllFriends(@Query(OFFSET) int offset,
         @Query(TEAM_ID) String teamId);
 
     @GET(ApiConfig.API_VERSION + FRIENDS + SEARCH)
-    Observable<FriendsResponse> searchFriends(@Query(QUERY) String searchQuery,
+    Observable<BaseResponse<FriendsDataEntity>> searchFriends(@Query(QUERY) String searchQuery,
         @Query(OFFSET) int offset, @Query(TEAM_ID) String teamId);
 }
