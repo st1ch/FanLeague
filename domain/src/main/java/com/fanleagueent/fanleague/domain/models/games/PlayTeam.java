@@ -9,37 +9,21 @@ import java.util.List;
 
 public class PlayTeam implements Comparable<PlayTeam> {
   private String id;
-
   private String name;
-
   private String slug;
-
   private String ownerId;
-
   private int weeklyBettingAmountPerMember;
-
   private List<String> adminsList;
-
   private int membersCount;
-
   private Avatar avatarEntity;
-
   private List<String> statusList;
-
   private float averageWinningBets;
-
   private float averageWinningMoneyAmount;
-
   private boolean isCurrentUserAdmin;
-
   private boolean isCurrentUserOwner;
-
   private int tmpWeeklyBettingAmount;
-
   private float weeklyBudget;
 
-  private boolean statusBidChanged;
-  private boolean statusTopUp;
   private String BID_CHANGED = "bid_changed";
   private String TOP_UP = "low_cash";
 
@@ -116,21 +100,21 @@ public class PlayTeam implements Comparable<PlayTeam> {
   }
 
   public boolean isStatusBidChanged() {
-    if(statusList != null && !statusList.isEmpty()){
-      if(statusList.contains(BID_CHANGED)){
-        statusBidChanged = true;
+    if (statusList != null && !statusList.isEmpty()) {
+      if (statusList.contains(BID_CHANGED)) {
+        return true;
       }
     }
-    return statusBidChanged;
+    return false;
   }
 
   public boolean isStatusTopUp() {
-    if(statusList != null && !statusList.isEmpty()){
-      if(statusList.contains(TOP_UP)){
-        statusTopUp = true;
+    if (statusList != null && !statusList.isEmpty()) {
+      if (statusList.contains(TOP_UP)) {
+        return true;
       }
     }
-    return statusTopUp;
+    return false;
   }
 
   public float getAverageWinningBets() {
@@ -186,26 +170,47 @@ public class PlayTeam implements Comparable<PlayTeam> {
   }
 
   @Override public String toString() {
-    return "PlayTeamEntity{" +
-        "id='" + id + '\'' +
-        ", name='" + name + '\'' +
-        ", slug='" + slug + '\'' +
-        ", ownerId='" + ownerId + '\'' +
-        ", weeklyBettingAmountPerMember=" + weeklyBettingAmountPerMember +
-        ", adminsList=" + adminsList +
-        ", membersCount=" + membersCount +
-        ", avatarEntity=" + avatarEntity +
-        ", statusList=" + statusList +
-        ", averageWinningBets=" + averageWinningBets +
-        ", averageWinningMoneyAmount=" + averageWinningMoneyAmount +
-        ", isCurrentUserAdmin=" + isCurrentUserAdmin +
-        ", isCurrentUserOwner=" + isCurrentUserOwner +
-        ", tmpWeeklyBettingAmount=" + tmpWeeklyBettingAmount +
-        ", weeklyBudget=" + weeklyBudget +
-        ", statusBidChanged=" + statusBidChanged +
-        ", statusTopUp=" + statusTopUp +
-        ", BID_CHANGED='" + BID_CHANGED + '\'' +
-        ", TOP_UP='" + TOP_UP + '\'' +
-        '}';
+    return "PlayTeamEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", name='"
+        + name
+        + '\''
+        + ", slug='"
+        + slug
+        + '\''
+        + ", ownerId='"
+        + ownerId
+        + '\''
+        + ", weeklyBettingAmountPerMember="
+        + weeklyBettingAmountPerMember
+        + ", adminsList="
+        + adminsList
+        + ", membersCount="
+        + membersCount
+        + ", avatarEntity="
+        + avatarEntity
+        + ", statusList="
+        + statusList
+        + ", averageWinningBets="
+        + averageWinningBets
+        + ", averageWinningMoneyAmount="
+        + averageWinningMoneyAmount
+        + ", isCurrentUserAdmin="
+        + isCurrentUserAdmin
+        + ", isCurrentUserOwner="
+        + isCurrentUserOwner
+        + ", tmpWeeklyBettingAmount="
+        + tmpWeeklyBettingAmount
+        + ", weeklyBudget="
+        + weeklyBudget
+        + ", BID_CHANGED='"
+        + BID_CHANGED
+        + '\''
+        + ", TOP_UP='"
+        + TOP_UP
+        + '\''
+        + '}';
   }
 }

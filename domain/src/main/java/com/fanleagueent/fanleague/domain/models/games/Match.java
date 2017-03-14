@@ -15,7 +15,7 @@ public class Match {
   private String venue;
   private int week;
   private Result result;
-  private List<BetRate> betRateEntities;
+  private List<BetRate> betRates;
   private GameTeam homeTeam;
   private GameTeam awayTeam;
   private Tournament tournament;
@@ -69,11 +69,11 @@ public class Match {
   }
 
   public List<BetRate> getBetRateEntities() {
-    return betRateEntities;
+    return betRates;
   }
 
-  public void setBetRateEntities(List<BetRate> betRateEntities) {
-    this.betRateEntities = betRateEntities;
+  public void setBetRates(List<BetRate> betRateEntities) {
+    this.betRates = betRateEntities;
   }
 
   public GameTeam getHomeTeam() {
@@ -118,7 +118,7 @@ public class Match {
         + ", resultEntity="
         + result
         + ", betRateEntities="
-        + betRateEntities
+        + betRates
         + ", homeTeam="
         + homeTeam
         + ", awayTeam="

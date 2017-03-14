@@ -38,10 +38,14 @@ public class LuckyDipBet {
   }
 
   @Override public String toString() {
-    return "LuckyDipBetEntity{" +
-        "price=" + price +
-        ", system='" + system + '\'' +
-        ", bets=" + bets +
-        '}';
+    return "LuckyDipBetEntity{"
+        + "price="
+        + price
+        + ", system='"
+        + system
+        + '\''
+        + ", bets="
+        + bets
+        + '}';
   }
 }

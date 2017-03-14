@@ -18,16 +18,8 @@ public class BetRateEntity {
         return communityRate;
     }
 
-    public void setCommunityRate(int communityRate) {
-        this.communityRate = communityRate;
-    }
-
     public int getExpertsRate() {
         return expertsRate;
-    }
-
-    public void setExpertsRate(int expertsRate) {
-        this.expertsRate = expertsRate;
     }
 
     @Override

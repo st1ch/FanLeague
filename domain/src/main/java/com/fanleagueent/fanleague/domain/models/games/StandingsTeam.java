@@ -97,16 +97,27 @@ public class StandingsTeam {
   }
 
   @Override public String toString() {
-    return "StandingsTeamEntity{" +
-        "teamId='" + teamId + '\'' +
-        ", teamName='" + teamName + '\'' +
-        ", rank=" + rank +
-        ", points=" + points +
-        ", matchesPlayed=" + matchesPlayed +
-        ", matchesWon=" + matchesWon +
-        ", matchesLost=" + matchesLost +
-        ", matchesDrawn=" + matchesDrawn +
-        ", goalDifference=" + goalDifference +
-        '}';
+    return "StandingsTeamEntity{"
+        + "teamId='"
+        + teamId
+        + '\''
+        + ", teamName='"
+        + teamName
+        + '\''
+        + ", rank="
+        + rank
+        + ", points="
+        + points
+        + ", matchesPlayed="
+        + matchesPlayed
+        + ", matchesWon="
+        + matchesWon
+        + ", matchesLost="
+        + matchesLost
+        + ", matchesDrawn="
+        + matchesDrawn
+        + ", goalDifference="
+        + goalDifference
+        + '}';
   }
 }

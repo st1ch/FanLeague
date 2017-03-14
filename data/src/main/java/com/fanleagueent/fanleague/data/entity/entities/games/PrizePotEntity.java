@@ -20,40 +20,30 @@ public class PrizePotEntity {
     return turnover;
   }
 
-  public void setTurnover(String turnover) {
-    this.turnover = turnover;
-  }
-
   public String getPot() {
     return pot;
-  }
-
-  public void setPot(String pot) {
-    this.pot = pot;
   }
 
   public PrizesEntity getPrizesEntity() {
     return prizesEntity;
   }
 
-  public void setPrizesEntity(PrizesEntity prizesEntity) {
-    this.prizesEntity = prizesEntity;
-  }
-
   public WinnersEntity getWinnersEntity() {
     return winnersEntity;
   }
 
-  public void setWinnersEntity(WinnersEntity winnersEntity) {
-    this.winnersEntity = winnersEntity;
-  }
-
   @Override public String toString() {
-    return "PrizePotEntity{" +
-        "turnover='" + turnover + '\'' +
-        ", pot='" + pot + '\'' +
-        ", prizesEntity=" + prizesEntity +
-        ", winnersEntity=" + winnersEntity +
-        '}';
+    return "PrizePotEntity{"
+        + "turnover='"
+        + turnover
+        + '\''
+        + ", pot='"
+        + pot
+        + '\''
+        + ", prizesEntity="
+        + prizesEntity
+        + ", winnersEntity="
+        + winnersEntity
+        + '}';
   }
 }

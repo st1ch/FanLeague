@@ -22,40 +22,30 @@ public class PunditSimpleEntity {
     return id;
   }
 
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public AvatarEntity getAvatarEntity() {
     return avatarEntity;
-  }
-
-  public void setAvatarEntity(AvatarEntity avatarEntity) {
-    this.avatarEntity = avatarEntity;
   }
 
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
   public List<PunditRecommendationEntity> getRecommendations() {
     return recommendations;
   }
 
-  public void setRecommendations(List<PunditRecommendationEntity> recommendations) {
-    this.recommendations = recommendations;
-  }
-
   @Override public String toString() {
-    return "PunditSimpleEntity{" +
-        "id='" + id + '\'' +
-        ", avatarEntity=" + avatarEntity +
-        ", name='" + name + '\'' +
-        ", recommendations=" + recommendations +
-        '}';
+    return "PunditSimpleEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", avatarEntity="
+        + avatarEntity
+        + ", name='"
+        + name
+        + '\''
+        + ", recommendations="
+        + recommendations
+        + '}';
   }
 }

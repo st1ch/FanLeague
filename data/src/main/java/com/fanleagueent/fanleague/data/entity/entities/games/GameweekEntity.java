@@ -30,76 +30,53 @@ public class GameweekEntity {
     return id;
   }
 
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public Date getBetClosingTime() {
     return betClosingTime;
-  }
-
-  public void setBetClosingTime(Date betClosingTime) {
-    this.betClosingTime = betClosingTime;
   }
 
   public List<MatchEntity> getMatchEntities() {
     return matchEntities;
   }
 
-  public void setMatchEntities(List<MatchEntity> matchEntities) {
-    this.matchEntities = matchEntities;
-  }
-
   public PrizePotEntity getPrizePotEntity() {
     return prizePotEntity;
-  }
-
-  public void setPrizePotEntity(PrizePotEntity prizePotEntity) {
-    this.prizePotEntity = prizePotEntity;
   }
 
   public int getWeek() {
     return week;
   }
 
-  public void setWeek(int week) {
-    this.week = week;
-  }
-
   public boolean isMatchday() {
     return isMatchday;
-  }
-
-  public void setMatchday(boolean matchday) {
-    isMatchday = matchday;
   }
 
   public boolean isClosed() {
     return isClosed;
   }
 
-  public void setClosed(boolean closed) {
-    isClosed = closed;
-  }
-
   public boolean isUserCanManipulateBet() {
     return isUserCanManipulateBet;
   }
 
-  public void setUserCanManipulateBet(boolean userCanManipulateBet) {
-    isUserCanManipulateBet = userCanManipulateBet;
-  }
-
   @Override public String toString() {
-    return "GameweekEntity{" +
-        "id='" + id + '\'' +
-        ", betClosingTime=" + betClosingTime +
-        ", matchEntities=" + matchEntities +
-        ", prizePotEntity=" + prizePotEntity +
-        ", week=" + week +
-        ", isMatchday=" + isMatchday +
-        ", isClosed=" + isClosed +
-        ", isUserCanManipulateBet=" + isUserCanManipulateBet +
-        '}';
+    return "GameweekEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", betClosingTime="
+        + betClosingTime
+        + ", matchEntities="
+        + matchEntities
+        + ", prizePotEntity="
+        + prizePotEntity
+        + ", week="
+        + week
+        + ", isMatchday="
+        + isMatchday
+        + ", isClosed="
+        + isClosed
+        + ", isUserCanManipulateBet="
+        + isUserCanManipulateBet
+        + '}';
   }
 }

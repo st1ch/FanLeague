@@ -1,8 +1,6 @@
 package com.fanleagueent.fanleague.data.entity.entities.games;
 
-import com.fanleagueent.fanleague.domain.models.games.MatchBet;
 import com.google.gson.annotations.SerializedName;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -11,133 +9,94 @@ import java.util.Map;
 
 public class BetEntity {
 
-    @SerializedName("_id")
-    private String id;
+  @SerializedName("_id") private String id;
 
-    @SerializedName("user_id")
-    private String userId;
+  @SerializedName("user_id") private String userId;
 
-    @SerializedName("week")
-    private int week;
+  @SerializedName("week") private int week;
 
-    @SerializedName("matches")
-    private Map<String, int[]> bets;
+  @SerializedName("matches") private Map<String, int[]> bets;
 
-    @SerializedName("price")
-    private float price;
+  @SerializedName("price") private float price;
 
-    @SerializedName("bets_played")
-    private String betsPlayed;
+  @SerializedName("bets_played") private String betsPlayed;
 
-    @SerializedName("prize")
-    private float prize;
+  @SerializedName("prize") private float prize;
 
-    @SerializedName("updated_at")
-    private String updatedAt;
+  @SerializedName("updated_at") private String updatedAt;
 
-    @SerializedName("created_at")
-    private String createdAt;
+  @SerializedName("created_at") private String createdAt;
 
-    @SerializedName("week_label")
-    private String weekLabel;
+  @SerializedName("week_label") private String weekLabel;
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public float getPrize() {
+    return prize;
+  }
 
-    public float getPrize() {
-        return prize;
-    }
+  public float getPrice() {
+    return price;
+  }
 
-    public void setPrize(float prize) {
-        this.prize = prize;
-    }
+  public int getWeek() {
+    return week;
+  }
 
-    public float getPrice() {
-        return price;
-    }
+  public String getCreatedAt() {
+    return createdAt;
+  }
 
-    public void setPrice(float price) {
-        this.price = price;
-    }
+  public String getWeekLabel() {
+    return weekLabel;
+  }
 
-    public int getWeek() {
-        return week;
-    }
+  public String getUserId() {
+    return userId;
+  }
 
-    public void setWeek(int week) {
-        this.week = week;
-    }
+  public String getUpdatedAt() {
+    return updatedAt;
+  }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
+  public Map<String, int[]> getBets() {
+    return bets;
+  }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
+  public String getBetsPlayed() {
+    return betsPlayed;
+  }
 
-    public String getWeekLabel() {
-        return weekLabel;
-    }
-
-    public void setWeekLabel(String weekLabel) {
-        this.weekLabel = weekLabel;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public Map<String, MatchBet> getBets() {
-        Map<String, MatchBet> matchBets = new HashMap<>();
-        for(String matchId : bets.keySet()){
-            matchBets.put(matchId, new MatchBet(bets.get(matchId)));
-        }
-        return matchBets;
-    }
-
-    public void setBets(Map<String, int[]> bets) {
-        this.bets = bets;
-    }
-
-    public String getBetsPlayed() {
-        return betsPlayed;
-    }
-
-    public void setBetsPlayed(String betsPlayed) {
-        this.betsPlayed = betsPlayed;
-    }
-
-    @Override
-    public String toString() {
-        return "BetEntity{" +
-                "id='" + id + '\'' +
-                ", prize=" + prize +
-                ", price=" + price +
-                ", week=" + week +
-                ", createdAt='" + createdAt + '\'' +
-                ", weekLabel='" + weekLabel + '\'' +
-                ", userId='" + userId + '\'' +
-                ", updatedAt='" + updatedAt + '\'' +
-                ", bets=" + bets +
-                ", betsPlayed='" + betsPlayed + '\'' +
-                '}';
-    }
+  @Override public String toString() {
+    return "BetEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", prize="
+        + prize
+        + ", price="
+        + price
+        + ", week="
+        + week
+        + ", createdAt='"
+        + createdAt
+        + '\''
+        + ", weekLabel='"
+        + weekLabel
+        + '\''
+        + ", userId='"
+        + userId
+        + '\''
+        + ", updatedAt='"
+        + updatedAt
+        + '\''
+        + ", bets="
+        + bets
+        + ", betsPlayed='"
+        + betsPlayed
+        + '\''
+        + '}';
+  }
 }

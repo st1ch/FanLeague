@@ -11,19 +11,12 @@ import java.util.List;
 public class Pundit {
 
   private String id;
-
   private Avatar avatarEntity;
-
   private String title;
-
   private String content;
-
   private Expert expert;
-
   private String status;
-
   private List<PunditRecommendation> recommendations;
-
   private Date publishDate;
 
   public String getId() {
@@ -91,15 +84,27 @@ public class Pundit {
   }
 
   @Override public String toString() {
-    return "PunditEntity{" +
-        "id='" + id + '\'' +
-        ", avatarEntity=" + avatarEntity +
-        ", title='" + title + '\'' +
-        ", content='" + content + '\'' +
-        ", expert=" + expert +
-        ", status='" + status + '\'' +
-        ", recommendations=" + recommendations +
-        ", publishDate=" + publishDate +
-        '}';
+    return "PunditEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", avatarEntity="
+        + avatarEntity
+        + ", title='"
+        + title
+        + '\''
+        + ", content='"
+        + content
+        + '\''
+        + ", expert="
+        + expert
+        + ", status='"
+        + status
+        + '\''
+        + ", recommendations="
+        + recommendations
+        + ", publishDate="
+        + publishDate
+        + '}';
   }
 }

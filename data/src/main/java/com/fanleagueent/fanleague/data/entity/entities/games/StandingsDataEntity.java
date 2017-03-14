@@ -17,22 +17,11 @@ public class StandingsDataEntity {
     return teamList;
   }
 
-  public void setTeamList(List<StandingsTeamEntity> teamList) {
-    this.teamList = teamList;
-  }
-
   public List<MatchHistoryEntity> getGamesHistory() {
     return gamesHistory;
   }
 
-  public void setGamesHistory(List<MatchHistoryEntity> gamesHistory) {
-    this.gamesHistory = gamesHistory;
-  }
-
   @Override public String toString() {
-    return "StandingsDataEntity{" +
-        "teamList=" + teamList +
-        ", gamesHistory=" + gamesHistory +
-        '}';
+    return "StandingsDataEntity{" + "teamList=" + teamList + ", gamesHistory=" + gamesHistory + '}';
   }
 }

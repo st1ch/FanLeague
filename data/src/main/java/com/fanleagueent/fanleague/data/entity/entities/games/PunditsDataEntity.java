@@ -9,15 +9,9 @@ import java.util.List;
 
 public class PunditsDataEntity {
 
-  @SerializedName("posts")
-  List<PunditEntity> punditEntityList;
+  @SerializedName("posts") private List<PunditEntity> punditEntityList;
 
   public List<PunditEntity> getPunditEntityList() {
     return punditEntityList;
   }
-
-  public void setPunditEntityList(List<PunditEntity> punditEntityList) {
-    this.punditEntityList = punditEntityList;
-  }
-
 }

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class PunditsData {
 
-  List<Pundit> punditList;
+  private List<Pundit> punditList;
 
   public List<Pundit> getPunditList() {
     return punditList;
@@ -18,4 +18,7 @@ public class PunditsData {
     this.punditList = punditList;
   }
 
+  @Override public String toString() {
+    return "PunditsData{" + "punditList=" + punditList + '}';
+  }
 }

@@ -8,38 +8,24 @@ import com.google.gson.annotations.SerializedName;
 
 public class ScoreEntity {
 
-    @SerializedName("home_team")
-    private int homeTeam;
+  @SerializedName("home_team") private int homeTeam;
 
-    @SerializedName("away_team")
-    private int awayTeam;
+  @SerializedName("away_team") private int awayTeam;
 
-    public ScoreEntity(int homeTeam, int awayTeam) {
-        this.homeTeam = homeTeam;
-        this.awayTeam = awayTeam;
-    }
+  public ScoreEntity(int homeTeam, int awayTeam) {
+    this.homeTeam = homeTeam;
+    this.awayTeam = awayTeam;
+  }
 
-    public int getHomeTeam() {
-        return homeTeam;
-    }
+  public int getHomeTeam() {
+    return homeTeam;
+  }
 
-    public void setHomeTeam(int homeTeam) {
-        this.homeTeam = homeTeam;
-    }
+  public int getAwayTeam() {
+    return awayTeam;
+  }
 
-    public int getAwayTeam() {
-        return awayTeam;
-    }
-
-    public void setAwayTeam(int awayTeam) {
-        this.awayTeam = awayTeam;
-    }
-
-    @Override
-    public String toString() {
-        return "ScoreEntity{" +
-                "homeTeam=" + homeTeam +
-                ", awayTeam=" + awayTeam +
-                '}';
-    }
+  @Override public String toString() {
+    return "ScoreEntity{" + "homeTeam=" + homeTeam + ", awayTeam=" + awayTeam + '}';
+  }
 }

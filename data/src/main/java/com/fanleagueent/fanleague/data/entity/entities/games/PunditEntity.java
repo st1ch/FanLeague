@@ -31,76 +31,56 @@ public class PunditEntity {
     return id;
   }
 
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public AvatarEntity getAvatarEntity() {
     return avatarEntity;
-  }
-
-  public void setAvatarEntity(AvatarEntity avatarEntity) {
-    this.avatarEntity = avatarEntity;
   }
 
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
   public String getContent() {
     return content;
-  }
-
-  public void setContent(String content) {
-    this.content = content;
   }
 
   public ExpertEntity getExpert() {
     return expert;
   }
 
-  public void setExpert(ExpertEntity expert) {
-    this.expert = expert;
-  }
-
   public String getStatus() {
     return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
   }
 
   public List<PunditRecommendationEntity> getRecommendations() {
     return recommendations;
   }
 
-  public void setRecommendations(List<PunditRecommendationEntity> recommendations) {
-    this.recommendations = recommendations;
-  }
-
   public Date getPublishDate() {
     return publishDate;
   }
 
-  public void setPublishDate(Date publishDate) {
-    this.publishDate = publishDate;
-  }
-
   @Override public String toString() {
-    return "PunditEntity{" +
-        "id='" + id + '\'' +
-        ", avatarEntity=" + avatarEntity +
-        ", title='" + title + '\'' +
-        ", content='" + content + '\'' +
-        ", expert=" + expert +
-        ", status='" + status + '\'' +
-        ", recommendations=" + recommendations +
-        ", publishDate=" + publishDate +
-        '}';
+    return "PunditEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", avatarEntity="
+        + avatarEntity
+        + ", title='"
+        + title
+        + '\''
+        + ", content='"
+        + content
+        + '\''
+        + ", expert="
+        + expert
+        + ", status='"
+        + status
+        + '\''
+        + ", recommendations="
+        + recommendations
+        + ", publishDate="
+        + publishDate
+        + '}';
   }
 }

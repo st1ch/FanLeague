@@ -7,6 +7,8 @@ import com.fanleagueent.fanleague.data.entity.mappers.chat.ChatMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.chat.ChatMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactoryImpl;
+import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactory;
 
 public class MapperFactoryImpl implements MapperFactory {
@@ -29,5 +31,9 @@ public class MapperFactoryImpl implements MapperFactory {
 
   @Override public FriendMapperFactory friendMapperFactory() {
     return new FriendMapperFactoryImpl(this);
+  }
+
+  @Override public GamesMapperFactory gamesMapperFactory() {
+    return new GamesMapperFactoryImpl(this);
   }
 }

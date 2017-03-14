@@ -90,15 +90,24 @@ public class Gameweek {
   }
 
   @Override public String toString() {
-    return "GameweekEntity{" +
-        "id='" + id + '\'' +
-        ", betClosingTime=" + betClosingTime +
-        ", matchEntities=" + matchEntities +
-        ", prizePotEntity=" + prizePot +
-        ", week=" + week +
-        ", isMatchday=" + isMatchday +
-        ", isClosed=" + isClosed +
-        ", isUserCanManipulateBet=" + isUserCanManipulateBet +
-        '}';
+    return "GameweekEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", betClosingTime="
+        + betClosingTime
+        + ", matchEntities="
+        + matchEntities
+        + ", prizePotEntity="
+        + prizePot
+        + ", week="
+        + week
+        + ", isMatchday="
+        + isMatchday
+        + ", isClosed="
+        + isClosed
+        + ", isUserCanManipulateBet="
+        + isUserCanManipulateBet
+        + '}';
   }
 }

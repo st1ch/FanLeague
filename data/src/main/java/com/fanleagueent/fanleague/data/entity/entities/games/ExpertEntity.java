@@ -21,32 +21,16 @@ public class ExpertEntity {
     return id;
   }
 
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public String getName() {
     return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
   }
 
   public String getDetail() {
     return detail;
   }
 
-  public void setDetail(String detail) {
-    this.detail = detail;
-  }
-
   public AvatarEntity getAvatarEntity() {
     return avatarEntity;
-  }
-
-  public void setAvatarEntity(AvatarEntity avatarEntity) {
-    this.avatarEntity = avatarEntity;
   }
 
   @Override public String toString() {

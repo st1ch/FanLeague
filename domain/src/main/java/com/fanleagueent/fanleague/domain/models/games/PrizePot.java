@@ -7,11 +7,8 @@ package com.fanleagueent.fanleague.domain.models.games;
 public class PrizePot {
 
   private String turnover;
-
   private String pot;
-
   private Prizes prizes;
-
   private Winners winners;
 
   public String getTurnover() {
@@ -47,11 +44,17 @@ public class PrizePot {
   }
 
   @Override public String toString() {
-    return "PrizePotEntity{" +
-        "turnover='" + turnover + '\'' +
-        ", pot='" + pot + '\'' +
-        ", prizesEntity=" + prizes +
-        ", winnersEntity=" + winners +
-        '}';
+    return "PrizePotEntity{"
+        + "turnover='"
+        + turnover
+        + '\''
+        + ", pot='"
+        + pot
+        + '\''
+        + ", prizesEntity="
+        + prizes
+        + ", winnersEntity="
+        + winners
+        + '}';
   }
 }

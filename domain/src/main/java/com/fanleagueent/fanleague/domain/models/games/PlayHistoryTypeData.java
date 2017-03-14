@@ -64,13 +64,22 @@ public class PlayHistoryTypeData {
   }
 
   @Override public String toString() {
-    return "PlayHistoryTypeDataEntity{" +
-        "id='" + id + '\'' +
-        ", name='" + name + '\'' +
-        ", slug='" + slug + '\'' +
-        ", currentLevel=" + currentLevel +
-        ", hasBetMedal=" + hasBetMedal +
-        ", avatarEntity=" + avatarEntity +
-        '}';
+    return "PlayHistoryTypeDataEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", name='"
+        + name
+        + '\''
+        + ", slug='"
+        + slug
+        + '\''
+        + ", currentLevel="
+        + currentLevel
+        + ", hasBetMedal="
+        + hasBetMedal
+        + ", avatarEntity="
+        + avatarEntity
+        + '}';
   }
 }

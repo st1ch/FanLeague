@@ -75,9 +75,9 @@ public class PunditRecommendation {
     return bets;
   }
 
-  public Map<String, MatchBet> getMatchBets(){
+  public Map<String, MatchBet> getMatchBets() {
     Map<String, MatchBet> matchBets = new HashMap<>();
-    for(String matchId : bets.keySet()){
+    for (String matchId : bets.keySet()) {
       matchBets.put(matchId, new MatchBet(bets.get(matchId)));
     }
     return matchBets;
@@ -88,14 +88,25 @@ public class PunditRecommendation {
   }
 
   @Override public String toString() {
-    return "PunditRecommendationEntity{" +
-        "id='" + id + '\'' +
-        ", expertId='" + expertId + '\'' +
-        ", week=" + week +
-        ", price=" + price +
-        ", system='" + system + '\'' +
-        ", systemName='" + systemName + '\'' +
-        ", bets=" + bets +
-        '}';
+    return "PunditRecommendationEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", expertId='"
+        + expertId
+        + '\''
+        + ", week="
+        + week
+        + ", price="
+        + price
+        + ", system='"
+        + system
+        + '\''
+        + ", systemName='"
+        + systemName
+        + '\''
+        + ", bets="
+        + bets
+        + '}';
   }
 }

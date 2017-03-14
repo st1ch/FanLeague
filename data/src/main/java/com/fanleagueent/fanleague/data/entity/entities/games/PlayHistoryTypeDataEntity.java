@@ -20,58 +20,43 @@ public class PlayHistoryTypeDataEntity {
     return id;
   }
 
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public String getName() {
     return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
   }
 
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(String slug) {
-    this.slug = slug;
-  }
-
   public AvatarEntity getAvatarEntity() {
     return avatarEntity;
-  }
-
-  public void setAvatarEntity(AvatarEntity avatarEntity) {
-    this.avatarEntity = avatarEntity;
   }
 
   public int getCurrentLevel() {
     return currentLevel;
   }
 
-  public void setCurrentLevel(int currentLevel) {
-    this.currentLevel = currentLevel;
-  }
-
   public boolean isHasBetMedal() {
     return hasBetMedal;
   }
 
-  public void setHasBetMedal(boolean hasBetMedal) {
-    this.hasBetMedal = hasBetMedal;
-  }
-
   @Override public String toString() {
-    return "PlayHistoryTypeDataEntity{" +
-        "id='" + id + '\'' +
-        ", name='" + name + '\'' +
-        ", slug='" + slug + '\'' +
-        ", currentLevel=" + currentLevel +
-        ", hasBetMedal=" + hasBetMedal +
-        ", avatarEntity=" + avatarEntity +
-        '}';
+    return "PlayHistoryTypeDataEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", name='"
+        + name
+        + '\''
+        + ", slug='"
+        + slug
+        + '\''
+        + ", currentLevel="
+        + currentLevel
+        + ", hasBetMedal="
+        + hasBetMedal
+        + ", avatarEntity="
+        + avatarEntity
+        + '}';
   }
 }

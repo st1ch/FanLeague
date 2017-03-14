@@ -50,11 +50,17 @@ public class PunditSimple {
   }
 
   @Override public String toString() {
-    return "PunditSimpleEntity{" +
-        "id='" + id + '\'' +
-        ", avatarEntity=" + avatarEntity +
-        ", name='" + name + '\'' +
-        ", recommendations=" + recommendations +
-        '}';
+    return "PunditSimpleEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", avatarEntity="
+        + avatarEntity
+        + ", name='"
+        + name
+        + '\''
+        + ", recommendations="
+        + recommendations
+        + '}';
   }
 }

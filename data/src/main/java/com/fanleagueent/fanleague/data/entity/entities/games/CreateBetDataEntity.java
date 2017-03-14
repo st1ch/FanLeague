@@ -9,36 +9,21 @@ import com.google.gson.annotations.SerializedName;
 
 public class CreateBetDataEntity {
 
-    @SerializedName("user")
-    private UserEntity userEntity;
+  @SerializedName("user") private UserEntity userEntity;
 
-    @SerializedName("bet")
-    private BetEntity betEntity;
+  @SerializedName("bet") private BetEntity betEntity;
 
-    @SerializedName("gameweek")
-    private GameweekEntity gameweekEntity;
+  @SerializedName("gameweek") private GameweekEntity gameweekEntity;
 
-    public UserEntity getUserEntity() {
-        return userEntity;
-    }
+  public UserEntity getUserEntity() {
+    return userEntity;
+  }
 
-    public void setUserEntity(UserEntity userEntity) {
-        this.userEntity = userEntity;
-    }
+  public BetEntity getBetEntity() {
+    return betEntity;
+  }
 
-    public BetEntity getBetEntity() {
-        return betEntity;
-    }
-
-    public void setBetEntity(BetEntity betEntity) {
-        this.betEntity = betEntity;
-    }
-
-    public GameweekEntity getGameweekEntity() {
-        return gameweekEntity;
-    }
-
-    public void setGameweekEntity(GameweekEntity gameweekEntity) {
-        this.gameweekEntity = gameweekEntity;
-    }
+  public GameweekEntity getGameweekEntity() {
+    return gameweekEntity;
+  }
 }

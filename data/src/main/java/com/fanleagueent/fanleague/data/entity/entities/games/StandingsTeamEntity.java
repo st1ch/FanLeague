@@ -58,38 +58,6 @@ public class StandingsTeamEntity {
     return matchesDrawn;
   }
 
-  public void setTeamId(String teamId) {
-    this.teamId = teamId;
-  }
-
-  public void setTeamName(String teamName) {
-    this.teamName = teamName;
-  }
-
-  public void setRank(int rank) {
-    this.rank = rank;
-  }
-
-  public void setPoints(int points) {
-    this.points = points;
-  }
-
-  public void setMatchesPlayed(int matchesPlayed) {
-    this.matchesPlayed = matchesPlayed;
-  }
-
-  public void setMatchesWon(int matchesWon) {
-    this.matchesWon = matchesWon;
-  }
-
-  public void setMatchesLost(int matchesLost) {
-    this.matchesLost = matchesLost;
-  }
-
-  public void setMatchesDrawn(int matchesDrawn) {
-    this.matchesDrawn = matchesDrawn;
-  }
-
   public int getGoalDifference() {
     return goalDifference;
   }
@@ -99,16 +67,27 @@ public class StandingsTeamEntity {
   }
 
   @Override public String toString() {
-    return "StandingsTeamEntity{" +
-        "teamId='" + teamId + '\'' +
-        ", teamName='" + teamName + '\'' +
-        ", rank=" + rank +
-        ", points=" + points +
-        ", matchesPlayed=" + matchesPlayed +
-        ", matchesWon=" + matchesWon +
-        ", matchesLost=" + matchesLost +
-        ", matchesDrawn=" + matchesDrawn +
-        ", goalDifference=" + goalDifference +
-        '}';
+    return "StandingsTeamEntity{"
+        + "teamId='"
+        + teamId
+        + '\''
+        + ", teamName='"
+        + teamName
+        + '\''
+        + ", rank="
+        + rank
+        + ", points="
+        + points
+        + ", matchesPlayed="
+        + matchesPlayed
+        + ", matchesWon="
+        + matchesWon
+        + ", matchesLost="
+        + matchesLost
+        + ", matchesDrawn="
+        + matchesDrawn
+        + ", goalDifference="
+        + goalDifference
+        + '}';
   }
 }

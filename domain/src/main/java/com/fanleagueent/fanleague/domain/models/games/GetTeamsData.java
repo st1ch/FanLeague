@@ -19,4 +19,16 @@ public class GetTeamsData {
   public int getTotalCount() {
     return totalCount;
   }
+
+  public void setTeamsList(List<PlayTeam> teamsList) {
+    this.teamsList = teamsList;
+  }
+
+  public void setTotalCount(int totalCount) {
+    this.totalCount = totalCount;
+  }
+
+  @Override public String toString() {
+    return "GetTeamsData{" + "teamsList=" + teamsList + ", totalCount=" + totalCount + '}';
+  }
 }

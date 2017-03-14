@@ -6,27 +6,34 @@ package com.fanleagueent.fanleague.domain.models.games;
 
 public class CurrentBetData {
 
-    private Gameweek gameweek;
-    private Bet bet;
+  private Gameweek gameweek;
+  private Bet bet;
 
-    public CurrentBetData(Gameweek gameweek, Bet bet) {
-        this.gameweek = gameweek;
-        this.bet = bet;
-    }
+  public CurrentBetData() {
+  }
 
-    public Gameweek getGameweek() {
-        return gameweek;
-    }
+  public CurrentBetData(Gameweek gameweek, Bet bet) {
+    this.gameweek = gameweek;
+    this.bet = bet;
+  }
 
-    public void setGameweek(Gameweek gameweek) {
-        this.gameweek = gameweek;
-    }
+  public Gameweek getGameweek() {
+    return gameweek;
+  }
 
-    public Bet getBet() {
-        return bet;
-    }
+  public void setGameweek(Gameweek gameweek) {
+    this.gameweek = gameweek;
+  }
 
-    public void setBet(Bet bet) {
-        this.bet = bet;
-    }
+  public Bet getBet() {
+    return bet;
+  }
+
+  public void setBet(Bet bet) {
+    this.bet = bet;
+  }
+
+  @Override public String toString() {
+    return "CurrentBetData{" + "gameweek=" + gameweek + ", bet=" + bet + '}';
+  }
 }

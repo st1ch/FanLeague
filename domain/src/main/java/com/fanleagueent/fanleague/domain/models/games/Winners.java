@@ -52,12 +52,17 @@ public class Winners {
   }
 
   @Override public String toString() {
-    return "WinnersEntity{" +
-        "winnersTree=" + winnersTree +
-        ", winners10=" + winners10 +
-        ", winners11=" + winners11 +
-        ", winners12=" + winners12 +
-        ", winners13=" + winners13 +
-        '}';
+    return "WinnersEntity{"
+        + "winnersTree="
+        + winnersTree
+        + ", winners10="
+        + winners10
+        + ", winners11="
+        + winners11
+        + ", winners12="
+        + winners12
+        + ", winners13="
+        + winners13
+        + '}';
   }
 }

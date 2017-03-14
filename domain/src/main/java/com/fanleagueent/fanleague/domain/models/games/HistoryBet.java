@@ -11,23 +11,14 @@ import java.util.Map;
 public class HistoryBet {
 
   private String id;
-
   private int week;
-
   private Map<String, int[]> bets;
-
   private float price;
-
   private String betsPlayed;
-
   private float prize;
-
   private Date createdAt;
-
   private String weekLabel;
-
   private boolean isTeam;
-
   private PlayHistoryTypeData playHistoryTypeData;
 
   public String getId() {
