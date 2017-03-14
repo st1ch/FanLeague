@@ -17,7 +17,7 @@ public class MessageMapper implements Mapper<MessageEntity, Message> {
     this.chatMapperFactory = chatMapperFactory;
   }
 
-  @Override public Message transform(MessageEntity obj) throws RuntimeException {
+  @Override public Message transform(MessageEntity obj) {
     Message message = new Message();
 
     message.setId(obj.getId());

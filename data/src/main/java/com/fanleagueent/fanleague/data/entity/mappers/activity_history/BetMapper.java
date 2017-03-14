@@ -11,8 +11,7 @@ import com.fanleagueent.fanleague.domain.models.activity_history.ActivityHistory
 
 public class BetMapper implements Mapper<ActivityHistoryBetEntity, ActivityHistoryBet> {
 
-  @Override public ActivityHistoryBet transform(ActivityHistoryBetEntity obj)
-      throws RuntimeException {
+  @Override public ActivityHistoryBet transform(ActivityHistoryBetEntity obj) {
     ActivityHistoryBet activityHistoryBet = new ActivityHistoryBet();
     //todo empty
     return activityHistoryBet;

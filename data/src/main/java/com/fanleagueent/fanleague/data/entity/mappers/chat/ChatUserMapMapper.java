@@ -20,8 +20,7 @@ public class ChatUserMapMapper
     this.chatMapperFactory = chatMapperFactory;
   }
 
-  @Override public Map<String, ChatUser> transform(Map<String, ChatUserEntity> obj)
-      throws RuntimeException {
+  @Override public Map<String, ChatUser> transform(Map<String, ChatUserEntity> obj) {
     Map<String, ChatUser> chatUsers = new HashMap<>();
 
     for (String key : obj.keySet()) {

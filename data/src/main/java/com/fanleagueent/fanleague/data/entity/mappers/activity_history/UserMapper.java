@@ -18,8 +18,7 @@ public class UserMapper implements Mapper<ActivityHistoryUserEntity, ActivityHis
     this.mapperFactory = mapperFactory;
   }
 
-  @Override public ActivityHistoryUser transform(ActivityHistoryUserEntity obj)
-      throws RuntimeException {
+  @Override public ActivityHistoryUser transform(ActivityHistoryUserEntity obj) {
 
     ActivityHistoryUser activityHistoryUser = new ActivityHistoryUser();
 

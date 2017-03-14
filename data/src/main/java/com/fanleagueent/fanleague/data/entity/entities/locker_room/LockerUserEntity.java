@@ -1,6 +1,6 @@
 package com.fanleagueent.fanleague.data.entity.entities.locker_room;
 
-import com.fanleagueent.fanleague.data.entity.entities.friends.FriendshipEntity;
+import com.fanleagueent.fanleague.data.entity.entities.user.FriendshipEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.AvatarEntity;
 import com.google.gson.annotations.SerializedName;
 

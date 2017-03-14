@@ -9,19 +9,26 @@ import io.reactivex.annotations.NonNull;
 
 public class Friend extends Member implements Comparable<Friend> {
 
-    private boolean isTeamInvited;
-    private boolean isLeagueInvited;
+  private boolean isTeamInvited;
+  private boolean isLeagueInvited;
 
-    public boolean isLeagueInvited() {
-        return isLeagueInvited;
-    }
+  public boolean isLeagueInvited() {
+    return isLeagueInvited;
+  }
 
-    public boolean isTeamInvited() {
-        return isTeamInvited;
-    }
+  public boolean isTeamInvited() {
+    return isTeamInvited;
+  }
 
-    @Override
-    public int compareTo(@NonNull Friend friend) {
-        return id.compareTo(friend.getId());
-    }
+  public void setTeamInvited(boolean teamInvited) {
+    isTeamInvited = teamInvited;
+  }
+
+  public void setLeagueInvited(boolean leagueInvited) {
+    isLeagueInvited = leagueInvited;
+  }
+
+  @Override public int compareTo(@NonNull Friend friend) {
+    return id.compareTo(friend.getId());
+  }
 }

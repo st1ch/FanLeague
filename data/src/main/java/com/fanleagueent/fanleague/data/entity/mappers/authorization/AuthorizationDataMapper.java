@@ -18,7 +18,7 @@ public class AuthorizationDataMapper implements Mapper<AuthorizationEntity, Auth
     this.mapperFactory = mapperFactory;
   }
 
-  @Override public Authorization transform(AuthorizationEntity obj) throws RuntimeException {
+  @Override public Authorization transform(AuthorizationEntity obj) {
     Authorization authorization = new Authorization();
 
     authorization.setUser(

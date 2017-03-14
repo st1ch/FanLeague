@@ -1,4 +1,4 @@
-package com.fanleagueent.fanleague.data.entity.entities.friends;
+package com.fanleagueent.fanleague.data.entity.entities.user;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -3,6 +3,7 @@ package com.fanleagueent.fanleague.data.entity.mappers;
 import com.fanleagueent.fanleague.data.entity.mappers.activity_history.ActivityHistoryMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.authorization.AuthorizationDataMapper;
 import com.fanleagueent.fanleague.data.entity.mappers.chat.ChatMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactory;
 
 public interface MapperFactory {
@@ -14,5 +15,7 @@ public interface MapperFactory {
   ActivityHistoryMapperFactory activityHistoryMapperFactory();
 
   ChatMapperFactory chatMapperFactory();
+
+  FriendMapperFactory friendMapperFactory();
 
 }

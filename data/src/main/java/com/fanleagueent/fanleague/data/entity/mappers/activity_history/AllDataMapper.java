@@ -18,8 +18,7 @@ public class AllDataMapper
     this.abstractMapperFactory = abstractMapperFactory;
   }
 
-  @Override public ActivityHistoryAllData transform(ActivityHistoryAllDataEntity obj)
-      throws RuntimeException {
+  @Override public ActivityHistoryAllData transform(ActivityHistoryAllDataEntity obj) {
     ActivityHistoryAllData activityHistoryAllData = new ActivityHistoryAllData();
 
     activityHistoryAllData.setId(obj.getId());

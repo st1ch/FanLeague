@@ -1,6 +1,5 @@
 package com.fanleagueent.fanleague.data.entity.entities.user;
 
-import com.fanleagueent.fanleague.data.entity.entities.friends.FriendshipEntity;
 import com.google.gson.annotations.SerializedName;
 import java.util.Date;
 import java.util.List;

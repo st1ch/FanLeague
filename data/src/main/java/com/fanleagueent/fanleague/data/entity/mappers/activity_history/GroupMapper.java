@@ -19,8 +19,7 @@ public class GroupMapper
     this.mapperFactory = mapperFactory;
   }
 
-  @Override public ActivityHistoryGroup transform(ActivityHistoryGroupEntity obj)
-      throws RuntimeException {
+  @Override public ActivityHistoryGroup transform(ActivityHistoryGroupEntity obj) {
     ActivityHistoryGroup activityHistoryGroup = new ActivityHistoryGroup();
 
     activityHistoryGroup.setId(obj.getId());

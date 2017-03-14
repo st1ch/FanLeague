@@ -11,7 +11,7 @@ public abstract class Member {
     protected String id;
     protected String username;
     protected String email;
-    protected Avatar avatarEntity;
+    protected Avatar avatar;
     protected String displayName;
     protected String fullName;
     protected boolean isGoogleConnected;
@@ -48,12 +48,12 @@ public abstract class Member {
         this.email = email;
     }
 
-    public Avatar getAvatarEntity() {
-        return avatarEntity;
+    public Avatar getAvatar() {
+        return avatar;
     }
 
-    public void setAvatarEntity(Avatar avatarEntity) {
-        this.avatarEntity = avatarEntity;
+    public void setAvatar(Avatar avatarEntity) {
+        this.avatar = avatarEntity;
     }
 
     public String getDisplayName() {
@@ -136,13 +136,21 @@ public abstract class Member {
         return isOwner;
     }
 
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public void setOwner(boolean owner) {
+        isOwner = owner;
+    }
+
     @Override
     public String toString() {
         return "MemberEntity{" +
                 "id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", avatarEntity=" + avatarEntity +
+                ", avatarEntity=" + avatar +
                 ", displayName='" + displayName + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", isGoogleConnected=" + isGoogleConnected +

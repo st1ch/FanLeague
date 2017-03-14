@@ -18,7 +18,7 @@ public class ChatUserDataMapper implements Mapper<ChatUserEntity, ChatUser> {
     this.mapperFactory = mapperFactory;
   }
 
-  @Override public ChatUser transform(ChatUserEntity obj) throws RuntimeException {
+  @Override public ChatUser transform(ChatUserEntity obj) {
     ChatUser chatUser = new ChatUser();
 
     chatUser.setId(obj.getId());

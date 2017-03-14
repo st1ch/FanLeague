@@ -19,7 +19,7 @@ public class MessageListMapper implements Mapper<List<MessageEntity>, List<Messa
     this.chatMapperFactory = chatMapperFactory;
   }
 
-  @Override public List<Message> transform(List<MessageEntity> obj) throws RuntimeException {
+  @Override public List<Message> transform(List<MessageEntity> obj){
     List<Message> messages = new ArrayList<>();
 
     for (MessageEntity messageEntity : obj) {

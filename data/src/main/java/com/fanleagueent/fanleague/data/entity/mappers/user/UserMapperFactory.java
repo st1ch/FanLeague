@@ -1,6 +1,6 @@
 package com.fanleagueent.fanleague.data.entity.mappers.user;
 
-import com.fanleagueent.fanleague.data.entity.entities.friends.FriendshipEntity;
+import com.fanleagueent.fanleague.data.entity.entities.user.FriendshipEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.AvatarEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.UserEntity;
 import com.fanleagueent.fanleague.data.entity.mappers.Mapper;

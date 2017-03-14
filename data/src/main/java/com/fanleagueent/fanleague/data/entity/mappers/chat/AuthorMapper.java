@@ -11,7 +11,7 @@ import com.fanleagueent.fanleague.domain.models.chat.Author;
 
 public class AuthorMapper implements Mapper<AuthorEntity, Author> {
 
-  @Override public Author transform(AuthorEntity obj) throws RuntimeException {
+  @Override public Author transform(AuthorEntity obj) {
     Author author = new Author();
 
     author.setName(obj.getName());
