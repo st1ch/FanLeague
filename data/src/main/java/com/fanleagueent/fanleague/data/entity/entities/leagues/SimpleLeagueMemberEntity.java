@@ -8,31 +8,27 @@ import com.google.gson.annotations.SerializedName;
 
 public class SimpleLeagueMemberEntity {
 
-    @SerializedName("_id")
-    protected String id;
+  @SerializedName("_id") private String id;
 
-    @SerializedName("display_name")
-    protected String displayName;
+  @SerializedName("display_name") private String displayName;
 
-    @SerializedName("is_admin")
-    protected boolean isAdmin;
+  @SerializedName("is_admin") private boolean isAdmin;
 
-    @SerializedName("is_owner")
-    protected boolean isOwner;
+  @SerializedName("is_owner") private boolean isOwner;
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public String getDisplayName() {
-        return displayName;
-    }
+  public String getDisplayName() {
+    return displayName;
+  }
 
-    public boolean isAdmin() {
-        return isAdmin;
-    }
+  public boolean isAdmin() {
+    return isAdmin;
+  }
 
-    public boolean isOwner() {
-        return isOwner;
-    }
+  public boolean isOwner() {
+    return isOwner;
+  }
 }

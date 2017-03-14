@@ -8,14 +8,31 @@ import java.util.List;
 
 public class LeagueMemberData {
 
-    private List<LeagueMember> leagueMemberEntities;
-    private int count;
+  private List<LeagueMember> leagueMemberEntities;
+  private int count;
 
-    public List<LeagueMember> getTeamMembersList() {
-        return leagueMemberEntities;
-    }
+  public List<LeagueMember> getTeamMembersList() {
+    return leagueMemberEntities;
+  }
 
-    public int getCount() {
-        return count;
-    }
+  public int getCount() {
+    return count;
+  }
+
+  public void setLeagueMemberEntities(List<LeagueMember> leagueMemberEntities) {
+    this.leagueMemberEntities = leagueMemberEntities;
+  }
+
+  public void setCount(int count) {
+    this.count = count;
+  }
+
+  @Override public String toString() {
+    return "LeagueMemberData{"
+        + "leagueMemberEntities="
+        + leagueMemberEntities
+        + ", count="
+        + count
+        + '}';
+  }
 }

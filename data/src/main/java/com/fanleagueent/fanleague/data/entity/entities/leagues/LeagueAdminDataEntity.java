@@ -9,9 +9,9 @@ import java.util.List;
 
 public class LeagueAdminDataEntity {
 
-  @SerializedName("admins") private List<LeagueMemberEntityEntity> leagueMemberEntities;
+  @SerializedName("admins") private List<LeagueMemberEntity> leagueMemberEntities;
 
-  public List<LeagueMemberEntityEntity> getAdminsList() {
+  public List<LeagueMemberEntity> getAdminsList() {
     return leagueMemberEntities;
   }
 }
