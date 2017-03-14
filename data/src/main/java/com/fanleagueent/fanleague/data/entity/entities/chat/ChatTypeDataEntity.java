@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by alexeyverbitskiy on 2/2/17.
  */
 
-public class ChatTypeData {
+public class ChatTypeDataEntity {
 
   @SerializedName("has_bet_medal")
   private boolean hasBetMedal;

@@ -48,7 +48,7 @@ public class ChatUser {
     return friendship;
   }
 
-  public Avatar getAvatarEntity() {
+  public Avatar getAvatar() {
     return avatarEntity;
   }
 
@@ -78,6 +78,62 @@ public class ChatUser {
 
   public boolean isHasBetMedal() {
     return hasBetMedal;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
+
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
+  }
+
+  public void setFullName(String fullName) {
+    this.fullName = fullName;
+  }
+
+  public void setFriendship(Friendship friendship) {
+    this.friendship = friendship;
+  }
+
+  public void setAvatar(Avatar avatarEntity) {
+    this.avatarEntity = avatarEntity;
+  }
+
+  public void setFacebookConnected(boolean facebookConnected) {
+    isFacebookConnected = facebookConnected;
+  }
+
+  public void setGoogleConnected(boolean googleConnected) {
+    isGoogleConnected = googleConnected;
+  }
+
+  public void setLevel(int level) {
+    this.level = level;
+  }
+
+  public void setExpPercentage(int expPercentage) {
+    this.expPercentage = expPercentage;
+  }
+
+  public void setNationality(String nationality) {
+    this.nationality = nationality;
+  }
+
+  public void setAverageWinningBets(double averageWinningBets) {
+    this.averageWinningBets = averageWinningBets;
+  }
+
+  public void setHasBetMedal(boolean hasBetMedal) {
+    this.hasBetMedal = hasBetMedal;
   }
 
   @Override public String toString() {

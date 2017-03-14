@@ -25,10 +25,10 @@ public class ChatDataEntity {
   private String createdAt;
 
   @SerializedName("latest_message")
-  private Message latestMessage;
+  private MessageEntity latestMessageEntity;
 
   @SerializedName("type_data")
-  private ChatTypeData chatTypeData;
+  private ChatTypeDataEntity chatTypeDataEntity;
 
   @SerializedName("thread_users")
   private Map<String, ChatUserEntity> threadUsersMap;
@@ -56,12 +56,12 @@ public class ChatDataEntity {
     return createdAt;
   }
 
-  public Message getLatestMessage() {
-    return latestMessage;
+  public MessageEntity getLatestMessageEntity() {
+    return latestMessageEntity;
   }
 
-  public ChatTypeData getChatTypeData() {
-    return chatTypeData;
+  public ChatTypeDataEntity getChatTypeDataEntity() {
+    return chatTypeDataEntity;
   }
 
   public Map<String, ChatUserEntity> getThreadUsersMap() {
@@ -79,8 +79,8 @@ public class ChatDataEntity {
         ", threadType='" + threadType + '\'' +
         ", updatedAt='" + updatedAt + '\'' +
         ", createdAt='" + createdAt + '\'' +
-        ", latestMessage='" + latestMessage + '\'' +
-        ", chatTypeData=" + chatTypeData +
+        ", latestMessage='" + latestMessageEntity + '\'' +
+        ", chatTypeData=" + chatTypeDataEntity +
         ", threadUsersMap=" + threadUsersMap +
         ", unreadCount=" + unreadCount +
         '}';

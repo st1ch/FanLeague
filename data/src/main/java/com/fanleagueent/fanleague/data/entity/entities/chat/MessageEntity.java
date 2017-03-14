@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by alexeyverbitskiy on 2/7/17.
  */
 
-public class Message {
+public class MessageEntity {
 
   @SerializedName("_id")
   private String id;

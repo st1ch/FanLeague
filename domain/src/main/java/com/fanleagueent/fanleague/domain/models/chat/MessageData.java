@@ -17,4 +17,16 @@ public class MessageData {
   public List<Message> getMessageList() {
     return messageList;
   }
+
+  public void setChatData(ChatData chatData) {
+    this.chatData = chatData;
+  }
+
+  public void setMessageList(List<Message> messageList) {
+    this.messageList = messageList;
+  }
+
+  @Override public String toString() {
+    return "MessageData{" + "chatData=" + chatData + ", messageList=" + messageList + '}';
+  }
 }

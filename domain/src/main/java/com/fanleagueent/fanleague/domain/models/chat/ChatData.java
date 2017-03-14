@@ -53,6 +53,42 @@ public class ChatData implements Comparable<ChatData> {
     return unreadCount;
   }
 
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public void setSubject(String subject) {
+    this.subject = subject;
+  }
+
+  public void setThreadType(String threadType) {
+    this.threadType = threadType;
+  }
+
+  public void setUpdatedAt(String updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+  public void setCreatedAt(String createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public void setLatestMessage(Message latestMessage) {
+    this.latestMessage = latestMessage;
+  }
+
+  public void setChatTypeData(ChatTypeData chatTypeData) {
+    this.chatTypeData = chatTypeData;
+  }
+
+  public void setThreadUsersMap(Map<String, ChatUser> threadUsersMap) {
+    this.threadUsersMap = threadUsersMap;
+  }
+
+  public void setUnreadCount(int unreadCount) {
+    this.unreadCount = unreadCount;
+  }
+
   @Override public String toString() {
     return "ChatDataEntity{" +
         "id='" + id + '\'' +

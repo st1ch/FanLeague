@@ -23,6 +23,18 @@ public class ChatTypeData {
     return avatar;
   }
 
+  public void setHasBetMedal(boolean hasBetMedal) {
+    this.hasBetMedal = hasBetMedal;
+  }
+
+  public void setLevel(int level) {
+    this.level = level;
+  }
+
+  public void setAvatar(Avatar avatar) {
+    this.avatar = avatar;
+  }
+
   @Override public String toString() {
     return "ChatTypeData{" +
         "hasBetMedal=" + hasBetMedal +

@@ -12,13 +12,13 @@ public class MessageDataEntity {
   private ChatDataEntity chatDataEntity;
 
   @SerializedName("messages")
-  private List<Message> messageList;
+  private List<MessageEntity> messageEntityList;
 
   public ChatDataEntity getChatDataEntity() {
     return chatDataEntity;
   }
 
-  public List<Message> getMessageList() {
-    return messageList;
+  public List<MessageEntity> getMessageEntityList() {
+    return messageEntityList;
   }
 }

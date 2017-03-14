@@ -16,6 +16,14 @@ public class Author {
     return avatar;
   }
 
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setAvatar(String avatar) {
+    this.avatar = avatar;
+  }
+
   @Override public String toString() {
     return "AuthorEntity{" + "name='" + name + '\'' + ", avatarEntity='" + avatar + '\'' + '}';
   }

@@ -54,6 +54,42 @@ public class Message implements Comparable<Message> {
     return author;
   }
 
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public void setThreadId(String threadId) {
+    this.threadId = threadId;
+  }
+
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
+
+  public void setBody(String body) {
+    this.body = body;
+  }
+
+  public void setTimestamp(long timestamp) {
+    this.timestamp = timestamp;
+  }
+
+  public void setUpdatedAt(String updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+  public void setCreatedAt(String createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public void setMyMessage(boolean myMessage) {
+    isMyMessage = myMessage;
+  }
+
+  public void setAuthor(Author author) {
+    this.author = author;
+  }
+
   @Override public String toString() {
     return "Message{"
         + "id='"

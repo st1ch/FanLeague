@@ -1,6 +1,6 @@
 package com.fanleagueent.fanleague.data.entity.entities.leagues;
 
-import com.fanleagueent.fanleague.data.entity.entities.chat.Message;
+import com.fanleagueent.fanleague.data.entity.entities.chat.MessageEntity;
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
@@ -12,13 +12,13 @@ public class LeagueMessagesDataEntity {
 
   @SerializedName("unread_count") private int unreadCount;
 
-  @SerializedName("list") private List<Message> messageList;
+  @SerializedName("list") private List<MessageEntity> messageEntityList;
 
   public int getUnreadCount() {
     return unreadCount;
   }
 
-  public List<Message> getMessageList() {
-    return messageList;
+  public List<MessageEntity> getMessageEntityList() {
+    return messageEntityList;
   }
 }
