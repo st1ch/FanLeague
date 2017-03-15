@@ -7,6 +7,8 @@ import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactor
 import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.leagues.LeaguesMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.locker_room.LockerRoomMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.pundits.PunditsMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.recruiting.RecruitingMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactory;
 
 public interface MapperFactory {
@@ -28,4 +30,6 @@ public interface MapperFactory {
   LeaguesMapperFactory leaguesMapperFactory();
 
   LockerRoomMapperFactory lockerRoomMapperFactory();
+
+  PunditsMapperFactory punditsMapperFactory();
 }

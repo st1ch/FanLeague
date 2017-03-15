@@ -14,26 +14,7 @@ public class PostImageEntity {
     return originalImage;
   }
 
-  public void setOriginalImage(String originalImage) {
-    this.originalImage = originalImage;
-  }
-
   public String getAppImage() {
     return appImage;
-  }
-
-  public void setAppImage(String appImage) {
-    this.appImage = appImage;
-  }
-
-  @Override public String toString() {
-    return "PostImageEntity{"
-        + "originalImage='"
-        + originalImage
-        + '\''
-        + ", appImage='"
-        + appImage
-        + '\''
-        + '}';
   }
 }

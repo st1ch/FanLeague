@@ -9,6 +9,8 @@ import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactor
 import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactoryImpl;
+import com.fanleagueent.fanleague.data.entity.mappers.pundits.PunditsMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.pundits.PunditsMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.recruiting.RecruitingMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.recruiting.RecruitingMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.leagues.LeaguesMapperFactory;
@@ -53,5 +55,9 @@ public class MapperFactoryImpl implements MapperFactory {
 
   @Override public LockerRoomMapperFactory lockerRoomMapperFactory() {
     return new LockerRoomMapperFactoryImpl(this);
+  }
+
+  @Override public PunditsMapperFactory punditsMapperFactory() {
+    return new PunditsMapperFactoryImpl(this);
   }
 }

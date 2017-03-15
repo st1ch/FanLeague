@@ -15,19 +15,7 @@ public class PunditPostDataEntity {
     return post;
   }
 
-  public void setPost(PunditPostEntity post) {
-    this.post = post;
-  }
-
   public GameweekEntity getGameweek() {
     return gameweek;
-  }
-
-  public void setGameweek(GameweekEntity gameweek) {
-    this.gameweek = gameweek;
-  }
-
-  @Override public String toString() {
-    return "PunditPostDataEntity{" + "post=" + post + ", gameweek=" + gameweek + '}';
   }
 }

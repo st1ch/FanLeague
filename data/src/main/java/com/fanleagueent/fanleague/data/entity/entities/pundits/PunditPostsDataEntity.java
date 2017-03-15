@@ -15,19 +15,7 @@ public class PunditPostsDataEntity {
     return posts;
   }
 
-  public void setPosts(List<PunditPostEntity> posts) {
-    this.posts = posts;
-  }
-
   public int getTotalCount() {
     return totalCount;
-  }
-
-  public void setTotalCount(int totalCount) {
-    this.totalCount = totalCount;
-  }
-
-  @Override public String toString() {
-    return "PunditPostsDataEntity{" + "posts=" + posts + ", totalCount=" + totalCount + '}';
   }
 }
