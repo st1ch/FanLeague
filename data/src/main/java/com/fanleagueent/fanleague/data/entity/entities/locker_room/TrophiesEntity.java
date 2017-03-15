@@ -18,49 +18,19 @@ public class TrophiesEntity {
     return score;
   }
 
-  public void setScore(TrophyEntity score) {
-    this.score = score;
-  }
-
   public TrophyEntity getRecruiting() {
     return recruiting;
-  }
-
-  public void setRecruiting(TrophyEntity recruiting) {
-    this.recruiting = recruiting;
   }
 
   public TrophyEntity getTree() {
     return tree;
   }
 
-  public void setTree(TrophyEntity tree) {
-    this.tree = tree;
-  }
-
   public TrophyEntity getLoyalty() {
     return loyalty;
   }
 
-  public void setLoyalty(TrophyEntity loyalty) {
-    this.loyalty = loyalty;
-  }
-
   public TrophyEntity getConsistency() {
     return consistency;
-  }
-
-  public void setConsistency(TrophyEntity consistency) {
-    this.consistency = consistency;
-  }
-
-  @Override public String toString() {
-    return "TrophiesEntity{" +
-        "score=" + score +
-        ", recruiting=" + recruiting +
-        ", tree=" + tree +
-        ", loyalty=" + loyalty +
-        ", consistency=" + consistency +
-        '}';
   }
 }

@@ -53,12 +53,17 @@ public class Progress {
   }
 
   @Override public String toString() {
-    return "ProgressEntity{" +
-        "score=" + score +
-        ", recruiting=" + recruiting +
-        ", tree=" + tree +
-        ", loyalty=" + loyalty +
-        ", consistency=" + consistency +
-        '}';
+    return "ProgressEntity{"
+        + "score="
+        + score
+        + ", recruiting="
+        + recruiting
+        + ", tree="
+        + tree
+        + ", loyalty="
+        + loyalty
+        + ", consistency="
+        + consistency
+        + '}';
   }
 }

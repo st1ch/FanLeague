@@ -34,6 +34,10 @@ public class PublicWall {
     return memberSince;
   }
 
+  public void setMemberSince(Date memberSince) {
+    this.memberSince = memberSince;
+  }
+
   public String getFavouriteClub() {
     return favouriteClub;
   }
@@ -195,28 +199,60 @@ public class PublicWall {
   }
 
   @Override public String toString() {
-    return "PublicWallEntity{" +
-        "memberSince='" + memberSince + '\'' +
-        ", favouriteClub='" + favouriteClub + '\'' +
-        ", favouriteClubCurrentPosition=" + favouriteClubCurrentPosition +
-        ", favouriteClubDifferencePosition=" + favouriteClubDifferencePosition +
-        ", favouriteYouthClub='" + favouriteYouthClub + '\'' +
-        ", profession='" + profession + '\'' +
-        ", professionCurrentPosition=" + professionCurrentPosition +
-        ", professionDifferencePosition=" + professionDifferencePosition +
-        ", averageWinningBets='" + averageWinningBets + '\'' +
-        ", bestScore='" + bestScore + '\'' +
-        ", age='" + age + '\'' +
-        ", ageCurrentPosition=" + ageCurrentPosition +
-        ", ageDifferencePosition=" + ageDifferencePosition +
-        ", sex='" + sex + '\'' +
-        ", sexCurrentPosition=" + sexCurrentPosition +
-        ", sexDifferencePosition=" + sexDifferencePosition +
-        ", nationality='" + nationality + '\'' +
-        ", nationalityIdent='" + nationalityIdent + '\'' +
-        ", nationalityCurrentPosition=" + nationalityCurrentPosition +
-        ", nationalityDifferencePosition=" + nationalityDifferencePosition +
-        ", recruitTreeSize='" + recruitTreeSize + '\'' +
-        '}';
+    return "PublicWallEntity{"
+        + "memberSince='"
+        + memberSince
+        + '\''
+        + ", favouriteClub='"
+        + favouriteClub
+        + '\''
+        + ", favouriteClubCurrentPosition="
+        + favouriteClubCurrentPosition
+        + ", favouriteClubDifferencePosition="
+        + favouriteClubDifferencePosition
+        + ", favouriteYouthClub='"
+        + favouriteYouthClub
+        + '\''
+        + ", profession='"
+        + profession
+        + '\''
+        + ", professionCurrentPosition="
+        + professionCurrentPosition
+        + ", professionDifferencePosition="
+        + professionDifferencePosition
+        + ", averageWinningBets='"
+        + averageWinningBets
+        + '\''
+        + ", bestScore='"
+        + bestScore
+        + '\''
+        + ", age='"
+        + age
+        + '\''
+        + ", ageCurrentPosition="
+        + ageCurrentPosition
+        + ", ageDifferencePosition="
+        + ageDifferencePosition
+        + ", sex='"
+        + sex
+        + '\''
+        + ", sexCurrentPosition="
+        + sexCurrentPosition
+        + ", sexDifferencePosition="
+        + sexDifferencePosition
+        + ", nationality='"
+        + nationality
+        + '\''
+        + ", nationalityIdent='"
+        + nationalityIdent
+        + '\''
+        + ", nationalityCurrentPosition="
+        + nationalityCurrentPosition
+        + ", nationalityDifferencePosition="
+        + nationalityDifferencePosition
+        + ", recruitTreeSize='"
+        + recruitTreeSize
+        + '\''
+        + '}';
   }
 }

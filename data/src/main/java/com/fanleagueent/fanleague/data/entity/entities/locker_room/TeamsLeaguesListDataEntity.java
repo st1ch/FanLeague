@@ -16,22 +16,7 @@ public class TeamsLeaguesListDataEntity {
     return teamsList;
   }
 
-  public void setTeamsList(List<CommunityItemEntity> teamsList) {
-    this.teamsList = teamsList;
-  }
-
   public List<CommunityItemEntity> getLeaguesList() {
     return leaguesList;
-  }
-
-  public void setLeaguesList(List<CommunityItemEntity> leaguesList) {
-    this.leaguesList = leaguesList;
-  }
-
-  @Override public String toString() {
-    return "TeamsLeaguesListDataEntity{" +
-        "teamsList=" + teamsList +
-        ", leaguesList=" + leaguesList +
-        '}';
   }
 }

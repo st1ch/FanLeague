@@ -53,12 +53,17 @@ public class Trophies {
   }
 
   @Override public String toString() {
-    return "TrophiesEntity{" +
-        "score=" + score +
-        ", recruiting=" + recruiting +
-        ", tree=" + tree +
-        ", loyalty=" + loyalty +
-        ", consistency=" + consistency +
-        '}';
+    return "TrophiesEntity{"
+        + "score="
+        + score
+        + ", recruiting="
+        + recruiting
+        + ", tree="
+        + tree
+        + ", loyalty="
+        + loyalty
+        + ", consistency="
+        + consistency
+        + '}';
   }
 }

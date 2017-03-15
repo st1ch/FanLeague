@@ -16,22 +16,7 @@ public class ProgressDataEntity {
     return userEntity;
   }
 
-  public void setUserEntity(UserEntity userEntity) {
-    this.userEntity = userEntity;
-  }
-
   public ProgressEntity getProgressEntity() {
     return progressEntity;
-  }
-
-  public void setProgressEntity(ProgressEntity progressEntity) {
-    this.progressEntity = progressEntity;
-  }
-
-  @Override public String toString() {
-    return "ProgressDataEntity{" +
-        "userEntity=" + userEntity +
-        ", progressEntity=" + progressEntity +
-        '}';
   }
 }

@@ -10,29 +10,13 @@ import com.google.gson.annotations.SerializedName;
 public class TrophiesDataEntity {
 
   @SerializedName("user") private UserEntity userEntity;
-
   @SerializedName("trophies") private TrophiesEntity trophiesEntity;
 
   public UserEntity getUserEntity() {
     return userEntity;
   }
 
-  public void setUserEntity(UserEntity userEntity) {
-    this.userEntity = userEntity;
-  }
-
   public TrophiesEntity getTrophiesEntity() {
     return trophiesEntity;
-  }
-
-  public void setTrophiesEntity(TrophiesEntity trophiesEntity) {
-    this.trophiesEntity = trophiesEntity;
-  }
-
-  @Override public String toString() {
-    return "TrophiesDataEntity{" +
-        "trophiesEntity=" + trophiesEntity +
-        ", userEntity=" + userEntity +
-        '}';
   }
 }

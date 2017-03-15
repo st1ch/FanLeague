@@ -111,18 +111,28 @@ public class Privacy {
   }
 
   @Override public String toString() {
-    return "PrivacyEntity{" +
-        "recruitTreeSize=" + recruitTreeSize +
-        ", memberSince=" + memberSince +
-        ", favouriteClub=" + favouriteClub +
-        ", favouriteYouthClub=" + favouriteYouthClub +
-        ", profession=" + profession +
-        ", averageWinningBets=" + averageWinningBets +
-        ", bestScore=" + bestScore +
-        ", age=" + age +
-        ", sex=" + sex +
-        ", nationality=" + nationality +
-        '}';
+    return "PrivacyEntity{"
+        + "recruitTreeSize="
+        + recruitTreeSize
+        + ", memberSince="
+        + memberSince
+        + ", favouriteClub="
+        + favouriteClub
+        + ", favouriteYouthClub="
+        + favouriteYouthClub
+        + ", profession="
+        + profession
+        + ", averageWinningBets="
+        + averageWinningBets
+        + ", bestScore="
+        + bestScore
+        + ", age="
+        + age
+        + ", sex="
+        + sex
+        + ", nationality="
+        + nationality
+        + '}';
   }
 
   public static final class Builder {

@@ -28,9 +28,11 @@ public class TeamsLeaguesListData {
   }
 
   @Override public String toString() {
-    return "TeamsLeaguesListDataEntity{" +
-        "teamsList=" + teamsList +
-        ", leaguesList=" + leaguesList +
-        '}';
+    return "TeamsLeaguesListDataEntity{"
+        + "teamsList="
+        + teamsList
+        + ", leaguesList="
+        + leaguesList
+        + '}';
   }
 }

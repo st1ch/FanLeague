@@ -166,38 +166,4 @@ public abstract class MemberEntity {
         return isOwner;
     }
 
-    @Override
-    public String toString() {
-        return "MemberEntity{" +
-                "id='" + id + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", avatarEntity=" + avatarEntity +
-                ", displayName='" + displayName + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", isGoogleConnected=" + isGoogleConnected +
-                ", isFacebookConnected=" + isFacebookConnected +
-                ", level=" + level +
-                ", percentAge=" + percentAge +
-                ", friendship=" + friendship +
-                ", nationality='" + nationality + '\'' +
-                ", averageWinningBets=" + averageWinningBets +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        MemberEntity memberEntity = (MemberEntity) o;
-
-        return id != null ? id.equals(memberEntity.id) : memberEntity.id == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
 }

@@ -11,6 +11,10 @@ import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.recruiting.RecruitingMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.recruiting.RecruitingMapperFactoryImpl;
+import com.fanleagueent.fanleague.data.entity.mappers.leagues.LeaguesMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.leagues.LeaguesMapperFactoryImpl;
+import com.fanleagueent.fanleague.data.entity.mappers.locker_room.LockerRoomMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.locker_room.LockerRoomMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactory;
 
 public class MapperFactoryImpl implements MapperFactory {
@@ -41,5 +45,13 @@ public class MapperFactoryImpl implements MapperFactory {
 
   @Override public RecruitingMapperFactory recruitingMapperFactory() {
     return new RecruitingMapperFactoryImpl(this);
+  }
+
+  @Override public LeaguesMapperFactory leaguesMapperFactory() {
+    return new LeaguesMapperFactoryImpl(this);
+  }
+
+  @Override public LockerRoomMapperFactory lockerRoomMapperFactory() {
+    return new LockerRoomMapperFactoryImpl(this);
   }
 }

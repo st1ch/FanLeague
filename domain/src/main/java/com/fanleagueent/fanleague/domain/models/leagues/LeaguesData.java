@@ -8,14 +8,27 @@ import java.util.List;
 
 public class LeaguesData {
 
-    private List<League> leaguesList;
-    private int totalCount;
+  private List<League> leaguesList;
+  private int totalCount;
 
-    public List<League> getLeagueList() {
-        return leaguesList;
-    }
+  public List<League> getLeagueList() {
+    return leaguesList;
+  }
 
-    public int getTotalCount() {
-        return totalCount;
-    }
+  public int getTotalCount() {
+    return totalCount;
+  }
+
+  public void setLeaguesList(List<League> leaguesList) {
+    this.leaguesList = leaguesList;
+  }
+
+  public void setTotalCount(int totalCount) {
+    this.totalCount = totalCount;
+  }
+
+  @Override public String toString() {
+    return "LeaguesData{" + "leaguesList=" + leaguesList + ", totalCount=" + totalCount + '}';
+  }
 }
+

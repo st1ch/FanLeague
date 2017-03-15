@@ -9,11 +9,11 @@ import java.util.List;
 
 public class LeagueMemberDataEntity {
 
-  @SerializedName("users") private List<LeagueMemberEntityEntity> leagueMemberEntities;
+  @SerializedName("users") private List<LeagueMemberEntity> leagueMemberEntities;
 
   @SerializedName("total") private int count;
 
-  public List<LeagueMemberEntityEntity> getTeamMembersList() {
+  public List<LeagueMemberEntity> getTeamMembersList() {
     return leagueMemberEntities;
   }
 

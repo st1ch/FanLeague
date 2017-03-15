@@ -8,173 +8,205 @@ import java.util.List;
  */
 
 public class League implements Comparable<League> {
-    private String id;
-    private String name;
-    private String slug;
-    private String ownerId;
-    private String createdAt;
-    private String updatedAt;
-    private List<String> adminsList;
-    private int membersCount;
-    private Avatar avatarEntity;
-    private boolean isCurrentUserAdmin;
-    private boolean isCurrentUserOwner;
-    private float averageWinningBets;
-    private float averageWinningMoneyAmount;
-    private String acceptToken;
-    private String denyToken;
-    private String invitedBy;
+  private String id;
+  private String name;
+  private String slug;
+  private String ownerId;
+  private String createdAt;
+  private String updatedAt;
+  private List<String> adminsList;
+  private int membersCount;
+  private Avatar avatarEntity;
+  private boolean isCurrentUserAdmin;
+  private boolean isCurrentUserOwner;
+  private float averageWinningBets;
+  private float averageWinningMoneyAmount;
+  private String acceptToken;
+  private String denyToken;
+  private String invitedBy;
 
-    public String getId() {
-        return id;
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getSlug() {
+    return slug;
+  }
+
+  public void setSlug(String slug) {
+    this.slug = slug;
+  }
+
+  public String getOwnerId() {
+    return ownerId;
+  }
+
+  public void setOwnerId(String ownerId) {
+    this.ownerId = ownerId;
+  }
+
+  public String getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(String createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public String getUpdatedAt() {
+    return updatedAt;
+  }
+
+  public void setUpdatedAt(String updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+  public int getMembersCount() {
+    return membersCount;
+  }
+
+  public void setMembersCount(int membersCount) {
+    this.membersCount = membersCount;
+  }
+
+  public List<String> getAdminsList() {
+    return adminsList;
+  }
+
+  public void setAdminsList(List<String> adminsList) {
+    this.adminsList = adminsList;
+  }
+
+  public Avatar getAvatar() {
+    return avatarEntity;
+  }
+
+  public void setAvatar(Avatar avatarEntity) {
+    this.avatarEntity = avatarEntity;
+  }
+
+  public float getAverageWinningBets() {
+    return averageWinningBets;
+  }
+
+  public void setAverageWinningBets(float averageWinningBets) {
+    this.averageWinningBets = averageWinningBets;
+  }
+
+  public float getAverageWinningMoneyAmount() {
+    return averageWinningMoneyAmount;
+  }
+
+  public void setAverageWinningMoneyAmount(float averageWinningMoneyAmount) {
+    this.averageWinningMoneyAmount = averageWinningMoneyAmount;
+  }
+
+  public String getAcceptToken() {
+    return acceptToken;
+  }
+
+  public boolean isCurrentUserAdmin() {
+    return isCurrentUserAdmin;
+  }
+
+  public String getDenyToken() {
+    return denyToken;
+  }
+
+  public String getInvitedBy() {
+    return invitedBy;
+  }
+
+  public boolean hasInvitation() {
+    if (acceptToken != null && denyToken != null) {
+      return true;
     }
+    return false;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public void setCurrentUserAdmin(boolean currentUserAdmin) {
+    isCurrentUserAdmin = currentUserAdmin;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setCurrentUserOwner(boolean currentUserOwner) {
+    isCurrentUserOwner = currentUserOwner;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setAcceptToken(String acceptToken) {
+    this.acceptToken = acceptToken;
+  }
 
-    public String getSlug() {
-        return slug;
-    }
+  public void setDenyToken(String denyToken) {
+    this.denyToken = denyToken;
+  }
 
-    public void setSlug(String slug) {
-        this.slug = slug;
-    }
+  public void setInvitedBy(String invitedBy) {
+    this.invitedBy = invitedBy;
+  }
 
-    public String getOwnerId() {
-        return ownerId;
-    }
+  public boolean isCurrentUserOwner() {
+    return isCurrentUserOwner;
+  }
 
-    public void setOwnerId(String ownerId) {
-        this.ownerId = ownerId;
-    }
+  @Override public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
+    League league = (League) o;
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
+    return id != null ? id.equals(league.id) : league.id == null;
+  }
 
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
+  @Override public int hashCode() {
+    return id != null ? id.hashCode() : 0;
+  }
 
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+  @Override public String toString() {
+    return "LeagueEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", name='"
+        + name
+        + '\''
+        + ", slug='"
+        + slug
+        + '\''
+        + ", ownerId='"
+        + ownerId
+        + '\''
+        + ", createdAt='"
+        + createdAt
+        + '\''
+        + ", updatedAt='"
+        + updatedAt
+        + '\''
+        + ", adminsList="
+        + adminsList
+        + ", membersCount="
+        + membersCount
+        + ", avatarEntity="
+        + avatarEntity
+        + ", averageWinningBets="
+        + averageWinningBets
+        + ", averageWinningMoneyAmount="
+        + averageWinningMoneyAmount
+        + '}';
+  }
 
-    public int getMembersCount() {
-        return membersCount;
-    }
-
-    public void setMembersCount(int membersCount) {
-        this.membersCount = membersCount;
-    }
-
-    public List<String> getAdminsList() {
-        return adminsList;
-    }
-
-    public void setAdminsList(List<String> adminsList) {
-        this.adminsList = adminsList;
-    }
-
-    public Avatar getAvatarEntity() {
-        return avatarEntity;
-    }
-
-    public void setAvatarEntity(Avatar avatarEntity) {
-        this.avatarEntity = avatarEntity;
-    }
-
-    public float getAverageWinningBets() {
-        return averageWinningBets;
-    }
-
-    public void setAverageWinningBets(float averageWinningBets) {
-        this.averageWinningBets = averageWinningBets;
-    }
-
-    public float getAverageWinningMoneyAmount() {
-        return averageWinningMoneyAmount;
-    }
-
-    public void setAverageWinningMoneyAmount(float averageWinningMoneyAmount) {
-        this.averageWinningMoneyAmount = averageWinningMoneyAmount;
-    }
-
-    public String getAcceptToken() {
-        return acceptToken;
-    }
-
-    public boolean isCurrentUserAdmin() {
-        return isCurrentUserAdmin;
-    }
-
-    public String getDenyToken() {
-        return denyToken;
-    }
-
-    public String getInvitedBy() {
-        return invitedBy;
-    }
-
-    public boolean hasInvitation() {
-        if(acceptToken != null && denyToken != null){
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isCurrentUserOwner() {
-        return isCurrentUserOwner;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        League league = (League) o;
-
-        return id != null ? id.equals(league.id) : league.id == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
-
-    @Override
-    public String toString() {
-        return "LeagueEntity{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", slug='" + slug + '\'' +
-                ", ownerId='" + ownerId + '\'' +
-                ", createdAt='" + createdAt + '\'' +
-                ", updatedAt='" + updatedAt + '\'' +
-                ", adminsList=" + adminsList +
-                ", membersCount=" + membersCount +
-                ", avatarEntity=" + avatarEntity +
-                ", averageWinningBets=" + averageWinningBets +
-                ", averageWinningMoneyAmount=" + averageWinningMoneyAmount +
-                '}';
-    }
-
-    @Override
-    public int compareTo(League league) {
-        return id.compareTo(league.getId());
-    }
+  @Override public int compareTo(League league) {
+    return id.compareTo(league.getId());
+  }
 }
