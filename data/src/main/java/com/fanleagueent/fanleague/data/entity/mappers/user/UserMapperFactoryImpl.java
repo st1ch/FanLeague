@@ -17,6 +17,7 @@ import com.fanleagueent.fanleague.data.entity.entities.user.UserEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.WalletEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.WeeklyDepositLimitEntity;
 import com.fanleagueent.fanleague.data.entity.mappers.Mapper;
+import com.fanleagueent.fanleague.data.entity.mappers.MapperFactory;
 import com.fanleagueent.fanleague.domain.models.friends.Friendship;
 import com.fanleagueent.fanleague.domain.models.user.Avatar;
 import com.fanleagueent.fanleague.domain.models.user.ConnectCounts;
@@ -33,41 +34,81 @@ import com.fanleagueent.fanleague.domain.models.user.Wallet;
 import com.fanleagueent.fanleague.domain.models.user.WeeklyDepositLimit;
 
 /**
- * Created by Artem Getman on 13.03.17.
- * a.e.getman@gmail.com
+ * Created by alexeyverbitskiy on 3/14/17.
  */
 
-public interface UserMapperFactory {
+public class UserMapperFactoryImpl implements UserMapperFactory {
 
-  Mapper<UserEntity, User> getUserMapper();
+  private MapperFactory mapperFactory;
 
-  Mapper<AvatarEntity, Avatar> getAvatarMapper();
+  public UserMapperFactoryImpl(MapperFactory mapperFactory) {
+    this.mapperFactory = mapperFactory;
+  }
 
-  Mapper<FriendshipEntity, Friendship> getFriendshipMapper();
+  @Override public Mapper<UserEntity, User> getUserMapper() {
+    return null;
+  }
 
-  Mapper<ConnectCountsEntity, ConnectCounts> getConnectCountsMapper();
+  @Override public Mapper<AvatarEntity, Avatar> getAvatarMapper() {
+    return null;
+  }
 
-  Mapper<DataTitleEntity, DataTitle> getDataTitleMapper();
+  @Override public Mapper<FriendshipEntity, Friendship> getFriendshipMapper() {
+    return null;
+  }
 
-  Mapper<DisplayNameIdentEntity, DisplayNameIdent> getDisplayNameIdentMapper();
+  @Override public Mapper<ConnectCountsEntity, ConnectCounts> getConnectCountsMapper() {
+    return null;
+  }
 
-  Mapper<FavoriteClubDataEntity, FavoriteClubData> getFavoriteClubDataMapper();
+  @Override public Mapper<DataTitleEntity, DataTitle> getDataTitleMapper() {
+    return null;
+  }
 
-  Mapper<FavoriteClubEntity, FavoriteClub> getFavoriteClubMapper();
+  @Override public Mapper<DisplayNameIdentEntity, DisplayNameIdent> getDisplayNameIdentMapper() {
+    return null;
+  }
 
-  Mapper<NationalitiesEntity, DataTitle> getNationalitiesMapper();
+  @Override public Mapper<FavoriteClubDataEntity, FavoriteClubData> getFavoriteClubDataMapper() {
+    return null;
+  }
 
-  Mapper<NotificationListEntity, NotificationList> getNotificationListMapper();
+  @Override public Mapper<FavoriteClubEntity, FavoriteClub> getFavoriteClubMapper() {
+    return null;
+  }
 
-  Mapper<NotificationValuesEntity, NotificationValues> getNotificationValuesMapper();
+  @Override public Mapper<NationalitiesEntity, DataTitle> getNationalitiesMapper() {
+    return null;
+  }
 
-  Mapper<ProfessionsEntity, DataTitle> getProfessionsMapper();
+  @Override public Mapper<NotificationListEntity, NotificationList> getNotificationListMapper() {
+    return null;
+  }
 
-  Mapper<ProfileViewPermissionEntity, ProfileViewPermission> getProfileViewPermissionMapper();
+  @Override
+  public Mapper<NotificationValuesEntity, NotificationValues> getNotificationValuesMapper() {
+    return null;
+  }
 
-  Mapper<UserDataEntity, UserData> getUserDataMapper();
+  @Override public Mapper<ProfessionsEntity, DataTitle> getProfessionsMapper() {
+    return null;
+  }
 
-  Mapper<WalletEntity, Wallet> getWalletMapper();
+  @Override
+  public Mapper<ProfileViewPermissionEntity, ProfileViewPermission> getProfileViewPermissionMapper() {
+    return null;
+  }
 
-  Mapper<WeeklyDepositLimitEntity, WeeklyDepositLimit> getWeeklyDepositLimitMapper();
+  @Override public Mapper<UserDataEntity, UserData> getUserDataMapper() {
+    return null;
+  }
+
+  @Override public Mapper<WalletEntity, Wallet> getWalletMapper() {
+    return null;
+  }
+
+  @Override
+  public Mapper<WeeklyDepositLimitEntity, WeeklyDepositLimit> getWeeklyDepositLimitMapper() {
+    return null;
+  }
 }

@@ -1,7 +1,7 @@
 package com.fanleagueent.fanleague.data.net.deserializers;
 
 import com.fanleagueent.fanleague.data.entity.BaseResponse;
-import com.fanleagueent.fanleague.data.entity.entities.user.ResetLinkErrorEntity;
+import com.fanleagueent.fanleague.data.entity.entities.authorization.ResetLinkErrorEntity;
 import com.google.gson.Gson;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
