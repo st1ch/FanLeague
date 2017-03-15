@@ -7,9 +7,7 @@ package com.fanleagueent.fanleague.domain.models.locker_room;
 public class MyWallData {
 
   private Wall wall;
-
   private Privacy privacy;
-
   private LockerUser user;
 
   public Wall getWall() {

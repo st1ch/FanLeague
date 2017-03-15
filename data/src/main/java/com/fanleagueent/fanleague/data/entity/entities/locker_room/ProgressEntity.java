@@ -18,49 +18,19 @@ public class ProgressEntity {
     return score;
   }
 
-  public void setScore(ProgressItemEntity score) {
-    this.score = score;
-  }
-
   public ProgressItemEntity getRecruiting() {
     return recruiting;
-  }
-
-  public void setRecruiting(ProgressItemEntity recruiting) {
-    this.recruiting = recruiting;
   }
 
   public ProgressItemEntity getTree() {
     return tree;
   }
 
-  public void setTree(ProgressItemEntity tree) {
-    this.tree = tree;
-  }
-
   public ProgressItemEntity getLoyalty() {
     return loyalty;
   }
 
-  public void setLoyalty(ProgressItemEntity loyalty) {
-    this.loyalty = loyalty;
-  }
-
   public ProgressItemEntity getConsistency() {
     return consistency;
-  }
-
-  public void setConsistency(ProgressItemEntity consistency) {
-    this.consistency = consistency;
-  }
-
-  @Override public String toString() {
-    return "ProgressEntity{" +
-        "score=" + score +
-        ", recruiting=" + recruiting +
-        ", tree=" + tree +
-        ", loyalty=" + loyalty +
-        ", consistency=" + consistency +
-        '}';
   }
 }

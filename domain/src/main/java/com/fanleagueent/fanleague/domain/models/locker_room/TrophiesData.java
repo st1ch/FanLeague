@@ -9,7 +9,6 @@ import com.fanleagueent.fanleague.domain.models.user.User;
 public class TrophiesData {
 
   private User userEntity;
-
   private Trophies trophies;
 
   public User getUserEntity() {
@@ -29,9 +28,11 @@ public class TrophiesData {
   }
 
   @Override public String toString() {
-    return "TrophiesDataEntity{" +
-        "trophiesEntity=" + trophies +
-        ", userEntity=" + userEntity +
-        '}';
+    return "TrophiesDataEntity{"
+        + "trophiesEntity="
+        + trophies
+        + ", userEntity="
+        + userEntity
+        + '}';
   }
 }

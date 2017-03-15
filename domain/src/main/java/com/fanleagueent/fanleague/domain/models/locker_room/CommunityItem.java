@@ -41,7 +41,7 @@ public class CommunityItem {
     return avatarEntity;
   }
 
-  public void setAvatarEntity(Avatar avatarEntity) {
+  public void setAvatar(Avatar avatarEntity) {
     this.avatarEntity = avatarEntity;
   }
 

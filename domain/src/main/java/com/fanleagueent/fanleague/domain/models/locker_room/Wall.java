@@ -24,6 +24,14 @@ public class Wall {
     return memberSince;
   }
 
+  public void setMemberSince(Date memberSince) {
+    this.memberSince = memberSince;
+  }
+
+  public void setNationalityIdent(String nationalityIdent) {
+    this.nationalityIdent = nationalityIdent;
+  }
+
   public String getFavouriteClub() {
     return favouriteClub;
   }
@@ -101,18 +109,37 @@ public class Wall {
   }
 
   @Override public String toString() {
-    return "WallEntity{" +
-        "memberSince='" + memberSince + '\'' +
-        ", favouriteClub='" + favouriteClub + '\'' +
-        ", favouriteYouthClub='" + favouriteYouthClub + '\'' +
-        ", profession='" + profession + '\'' +
-        ", averageWinningBets=" + averageWinningBets +
-        ", bestScore=" + bestScore +
-        ", age='" + age + '\'' +
-        ", sex='" + sex + '\'' +
-        ", nationality='" + nationality + '\'' +
-        ", nationalityIdent='" + nationalityIdent + '\'' +
-        ", recruitTreeSize=" + recruitTreeSize +
-        '}';
+    return "WallEntity{"
+        + "memberSince='"
+        + memberSince
+        + '\''
+        + ", favouriteClub='"
+        + favouriteClub
+        + '\''
+        + ", favouriteYouthClub='"
+        + favouriteYouthClub
+        + '\''
+        + ", profession='"
+        + profession
+        + '\''
+        + ", averageWinningBets="
+        + averageWinningBets
+        + ", bestScore="
+        + bestScore
+        + ", age='"
+        + age
+        + '\''
+        + ", sex='"
+        + sex
+        + '\''
+        + ", nationality='"
+        + nationality
+        + '\''
+        + ", nationalityIdent='"
+        + nationalityIdent
+        + '\''
+        + ", recruitTreeSize="
+        + recruitTreeSize
+        + '}';
   }
 }

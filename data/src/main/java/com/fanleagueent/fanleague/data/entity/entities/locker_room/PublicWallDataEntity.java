@@ -17,40 +17,15 @@ public class PublicWallDataEntity {
     return user;
   }
 
-  public void setUser(LockerUserEntity user) {
-    this.user = user;
-  }
-
   public PublicWallEntity getPublicWallEntity() {
     return publicWallEntity;
-  }
-
-  public void setPublicWallEntity(PublicWallEntity publicWallEntity) {
-    this.publicWallEntity = publicWallEntity;
   }
 
   public ProgressEntity getProgressEntity() {
     return progressEntity;
   }
 
-  public void setProgressEntity(ProgressEntity progressEntity) {
-    this.progressEntity = progressEntity;
-  }
-
   public TrophiesEntity getTrophiesEntity() {
     return trophiesEntity;
-  }
-
-  public void setTrophiesEntity(TrophiesEntity trophiesEntity) {
-    this.trophiesEntity = trophiesEntity;
-  }
-
-  @Override public String toString() {
-    return "PublicWallDataEntity{" +
-        "user=" + user +
-        ", publicWallEntity=" + publicWallEntity +
-        ", progressEntity=" + progressEntity +
-        ", trophiesEntity=" + trophiesEntity +
-        '}';
   }
 }

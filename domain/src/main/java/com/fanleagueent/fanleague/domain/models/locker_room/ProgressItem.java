@@ -52,12 +52,17 @@ public class ProgressItem {
   }
 
   @Override public String toString() {
-    return "ProgressItemEntity{" +
-        "currentLevel=" + currentLevel +
-        ", currentValue=" + currentValue +
-        ", nextLevel=" + nextLevel +
-        ", nextLevelBonus=" + nextLevelBonus +
-        ", nextValue=" + nextValue +
-        '}';
+    return "ProgressItemEntity{"
+        + "currentLevel="
+        + currentLevel
+        + ", currentValue="
+        + currentValue
+        + ", nextLevel="
+        + nextLevel
+        + ", nextLevelBonus="
+        + nextLevelBonus
+        + ", nextValue="
+        + nextValue
+        + '}';
   }
 }

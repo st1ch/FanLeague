@@ -164,24 +164,44 @@ public class LockerUser {
   }
 
   @Override public String toString() {
-    return "LockerUserEntity{" +
-        "id='" + id + '\'' +
-        ", displayName='" + displayName + '\'' +
-        ", avatarEntity=" + avatarEntity +
-        ", averageWinningBets=" + averageWinningBets +
-        ", totalPlayedWeeks=" + totalPlayedWeeks +
-        ", averageWinningBetsDifference=" + averageWinningBetsDifference +
-        ", commonRatingPosition=" + commonRatingPosition +
-        ", differenceRatingPosition=" + differenceRatingPosition +
-        ", currentLevelExp=" + currentLevelExp +
-        ", expPercentage=" + expPercentage +
-        ", nextLevel=" + nextLevel +
-        ", nextLevelExp=" + nextLevelExp +
-        ", hasBetMedal=" + hasBetMedal +
-        ", nationality='" + nationality + '\'' +
-        ", level=" + level +
-        ", privacyEntity=" + privacy +
-        ", friendship=" + friendship +
-        '}';
+    return "LockerUserEntity{"
+        + "id='"
+        + id
+        + '\''
+        + ", displayName='"
+        + displayName
+        + '\''
+        + ", avatarEntity="
+        + avatarEntity
+        + ", averageWinningBets="
+        + averageWinningBets
+        + ", totalPlayedWeeks="
+        + totalPlayedWeeks
+        + ", averageWinningBetsDifference="
+        + averageWinningBetsDifference
+        + ", commonRatingPosition="
+        + commonRatingPosition
+        + ", differenceRatingPosition="
+        + differenceRatingPosition
+        + ", currentLevelExp="
+        + currentLevelExp
+        + ", expPercentage="
+        + expPercentage
+        + ", nextLevel="
+        + nextLevel
+        + ", nextLevelExp="
+        + nextLevelExp
+        + ", hasBetMedal="
+        + hasBetMedal
+        + ", nationality='"
+        + nationality
+        + '\''
+        + ", level="
+        + level
+        + ", privacyEntity="
+        + privacy
+        + ", friendship="
+        + friendship
+        + '}';
   }
 }

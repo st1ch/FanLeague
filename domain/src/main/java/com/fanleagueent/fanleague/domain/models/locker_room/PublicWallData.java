@@ -44,11 +44,15 @@ public class PublicWallData {
   }
 
   @Override public String toString() {
-    return "PublicWallDataEntity{" +
-        "user=" + user +
-        ", publicWallEntity=" + publicWall +
-        ", progressEntity=" + progress +
-        ", trophiesEntity=" + trophies +
-        '}';
+    return "PublicWallDataEntity{"
+        + "user="
+        + user
+        + ", publicWallEntity="
+        + publicWall
+        + ", progressEntity="
+        + progress
+        + ", trophiesEntity="
+        + trophies
+        + '}';
   }
 }

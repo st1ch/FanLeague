@@ -28,9 +28,11 @@ public class ProgressData {
   }
 
   @Override public String toString() {
-    return "ProgressDataEntity{" +
-        "userEntity=" + userEntity +
-        ", progressEntity=" + progress +
-        '}';
+    return "ProgressDataEntity{"
+        + "userEntity="
+        + userEntity
+        + ", progressEntity="
+        + progress
+        + '}';
   }
 }

@@ -62,13 +62,20 @@ public class Trophy {
   }
 
   @Override public String toString() {
-    return "TrophyEntity{" +
-        "value=" + value +
-        ", nextValue=" + nextValue +
-        ", nextLevelPoints=" + nextLevelPoints +
-        ", level=" + level +
-        ", nextLevel=" + nextLevel +
-        ", description='" + description + '\'' +
-        '}';
+    return "TrophyEntity{"
+        + "value="
+        + value
+        + ", nextValue="
+        + nextValue
+        + ", nextLevelPoints="
+        + nextLevelPoints
+        + ", level="
+        + level
+        + ", nextLevel="
+        + nextLevel
+        + ", description='"
+        + description
+        + '\''
+        + '}';
   }
 }
