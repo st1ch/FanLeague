@@ -28,19 +28,4 @@ public class RecruitGroupEntity {
   public String getIdent() {
     return ident;
   }
-
-  @Override public String toString() {
-    return "RecruitGroupEntity{"
-        + "count="
-        + count
-        + ", percent="
-        + percent
-        + ", title='"
-        + title
-        + '\''
-        + ", ident='"
-        + ident
-        + '\''
-        + '}';
-  }
 }

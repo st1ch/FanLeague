@@ -28,21 +28,4 @@ public class ClubEntity {
   public String getAdminTeamId() {
     return adminTeamId;
   }
-
-  @Override public String toString() {
-    return "ClubEntity{"
-        + "id='"
-        + id
-        + '\''
-        + ", name='"
-        + name
-        + '\''
-        + ", updatedAt='"
-        + updatedAt
-        + '\''
-        + ", adminTeamId='"
-        + adminTeamId
-        + '\''
-        + '}';
-  }
 }

@@ -19,8 +19,4 @@ public class RecruitInvitesDataEntity {
   public int getTotalCount() {
     return totalCount;
   }
-
-  @Override public String toString() {
-    return "RecruitInvitesDataEntity{" + "users=" + users + ", totalCount=" + totalCount + '}';
-  }
 }

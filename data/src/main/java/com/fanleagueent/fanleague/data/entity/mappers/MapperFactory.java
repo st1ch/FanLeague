@@ -21,4 +21,6 @@ public interface MapperFactory {
 
   GamesMapperFactory gamesMapperFactory();
 
+  RecruitingMapperFactory recruitingMapperFactory();
+
 }

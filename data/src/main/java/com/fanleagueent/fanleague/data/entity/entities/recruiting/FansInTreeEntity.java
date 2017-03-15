@@ -18,8 +18,4 @@ public class FansInTreeEntity {
   public int getCount() {
     return count;
   }
-
-  @Override public String toString() {
-    return "FansInTreeEntity{" + "club=" + club + ", count=" + count + '}';
-  }
 }

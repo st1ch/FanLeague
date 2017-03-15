@@ -19,6 +19,14 @@ public class RecruitInvitesData {
     return totalCount;
   }
 
+  public void setUsers(List<RecruitUser> users) {
+    this.users = users;
+  }
+
+  public void setTotalCount(int totalCount) {
+    this.totalCount = totalCount;
+  }
+
   @Override public String toString() {
     return "RecruitInvitesDataEntity{" + "users=" + users + ", totalCount=" + totalCount + '}';
   }

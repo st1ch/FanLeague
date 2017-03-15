@@ -27,6 +27,22 @@ public class Club {
     return adminTeamId;
   }
 
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setUpdatedAt(String updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
+  public void setAdminTeamId(String adminTeamId) {
+    this.adminTeamId = adminTeamId;
+  }
+
   @Override public String toString() {
     return "ClubEntity{"
         + "id='"

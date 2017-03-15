@@ -49,26 +49,4 @@ public class RecruitOverviewDataEntity {
   public int getTotalEarnedCredits() {
     return totalEarnedCredits;
   }
-
-  @Override public String toString() {
-    return "RecruitOverviewDataEntity{"
-        + "ageGroups="
-        + ageGroups
-        + ", nationalityGroups="
-        + nationalityGroups
-        + ", professionGroups="
-        + professionGroups
-        + ", favouriteClubGroups="
-        + favouriteClubGroups
-        + ", fansInTreeEntity="
-        + fansInTreeEntity
-        + ", totalPlayersInTree="
-        + totalPlayersInTree
-        + ", totalPlayersInTreeDifference='"
-        + totalPlayersInTreeDifference
-        + '\''
-        + ", totalEarnedCredits="
-        + totalEarnedCredits
-        + '}';
-  }
 }

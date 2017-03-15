@@ -32,6 +32,26 @@ public class RecruitAgeGroups {
     return group56plus;
   }
 
+  public void setGroup18to25(RecruitGroup group18to25) {
+    this.group18to25 = group18to25;
+  }
+
+  public void setGroup26to35(RecruitGroup group26to35) {
+    this.group26to35 = group26to35;
+  }
+
+  public void setGroup36to45(RecruitGroup group36to45) {
+    this.group36to45 = group36to45;
+  }
+
+  public void setGroup46to55(RecruitGroup group46to55) {
+    this.group46to55 = group46to55;
+  }
+
+  public void setGroup56plus(RecruitGroup group56plus) {
+    this.group56plus = group56plus;
+  }
+
   @Override public String toString() {
     return "RecruitAgeGroupsEntity{"
         + "group18to25="

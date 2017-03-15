@@ -19,8 +19,4 @@ public class RecruitTreeDataEntity {
   public int getTotalPlayersInTree() {
     return totalPlayersInTree;
   }
-
-  @Override public String toString() {
-    return "RecruitTreeDataEntity{" + "tree=" + tree + ", totalPlayersInTree=" + totalPlayersInTree + '}';
-  }
 }

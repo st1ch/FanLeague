@@ -35,19 +35,4 @@ public class RecruitTreeEntity {
   public List<RecruitUserEntity> getLevel1Items() {
     return level1Items;
   }
-
-  @Override public String toString() {
-    return "RecruitTreeEntity{"
-        + "level5Items="
-        + level5Items
-        + ", level4Items="
-        + level4Items
-        + ", level3Items="
-        + level3Items
-        + ", level2Items="
-        + level2Items
-        + ", level1Items="
-        + level1Items
-        + '}';
-  }
 }

@@ -49,6 +49,38 @@ public class RecruitOverviewData {
     return totalEarnedCredits;
   }
 
+  public void setAgeGroups(Map<String, RecruitGroup> ageGroups) {
+    this.ageGroups = ageGroups;
+  }
+
+  public void setNationalityGroups(Map<String, RecruitGroup> nationalityGroups) {
+    this.nationalityGroups = nationalityGroups;
+  }
+
+  public void setProfessionGroups(Map<String, RecruitGroup> professionGroups) {
+    this.professionGroups = professionGroups;
+  }
+
+  public void setFavouriteClubGroups(Map<String, RecruitGroup> favouriteClubGroups) {
+    this.favouriteClubGroups = favouriteClubGroups;
+  }
+
+  public void setFansInTree(FansInTree fansInTree) {
+    this.fansInTree = fansInTree;
+  }
+
+  public void setTotalPlayersInTree(int totalPlayersInTree) {
+    this.totalPlayersInTree = totalPlayersInTree;
+  }
+
+  public void setTotalPlayersInTreeDifference(String totalPlayersInTreeDifference) {
+    this.totalPlayersInTreeDifference = totalPlayersInTreeDifference;
+  }
+
+  public void setTotalEarnedCredits(int totalEarnedCredits) {
+    this.totalEarnedCredits = totalEarnedCredits;
+  }
+
   @Override public String toString() {
     return "RecruitOverviewDataEntity{"
         + "ageGroups="

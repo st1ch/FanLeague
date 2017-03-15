@@ -95,6 +95,70 @@ public class RecruitUser implements Comparable<RecruitUser>{
     return status.equals("confirmed");
   }
 
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
+
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
+  }
+
+  public void setFullName(String fullName) {
+    this.fullName = fullName;
+  }
+
+  public void setAvatarEntity(Avatar avatarEntity) {
+    this.avatarEntity = avatarEntity;
+  }
+
+  public void setFriendship(Friendship friendship) {
+    this.friendship = friendship;
+  }
+
+  public void setFacebookConnected(boolean facebookConnected) {
+    isFacebookConnected = facebookConnected;
+  }
+
+  public void setGoogleConnected(boolean googleConnected) {
+    isGoogleConnected = googleConnected;
+  }
+
+  public void setLevel(int level) {
+    this.level = level;
+  }
+
+  public void setExpPercentage(int expPercentage) {
+    this.expPercentage = expPercentage;
+  }
+
+  public void setNationality(String nationality) {
+    this.nationality = nationality;
+  }
+
+  public void setAverageWinningBets(float averageWinningBets) {
+    this.averageWinningBets = averageWinningBets;
+  }
+
+  public void setHasBetMedal(boolean hasBetMedal) {
+    this.hasBetMedal = hasBetMedal;
+  }
+
+  public void setTreeSize(int treeSize) {
+    this.treeSize = treeSize;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
   @Override public String toString() {
     return "RecruitUserEntity{"
         + "id='"

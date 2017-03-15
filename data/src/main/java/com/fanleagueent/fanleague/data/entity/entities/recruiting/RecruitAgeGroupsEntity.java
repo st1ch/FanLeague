@@ -33,19 +33,4 @@ public class RecruitAgeGroupsEntity {
   public RecruitGroupEntity getGroup56plus() {
     return group56plus;
   }
-
-  @Override public String toString() {
-    return "RecruitAgeGroupsEntity{"
-        + "group18to25="
-        + group18to25
-        + ", group26to35="
-        + group26to35
-        + ", group36to45="
-        + group36to45
-        + ", group46to55="
-        + group46to55
-        + ", group56plus="
-        + group56plus
-        + '}';
-  }
 }

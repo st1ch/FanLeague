@@ -13,8 +13,4 @@ public class InviteLinkEntity {
   public String getInviteCode() {
     return inviteCode;
   }
-
-  @Override public String toString() {
-    return "InviteLinkEntity{" + "inviteCode='" + inviteCode + '\'' + '}';
-  }
 }

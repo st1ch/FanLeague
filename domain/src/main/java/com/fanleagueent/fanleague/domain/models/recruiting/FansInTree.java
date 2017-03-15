@@ -17,6 +17,14 @@ public class FansInTree {
     return count;
   }
 
+  public void setClub(Club club) {
+    this.club = club;
+  }
+
+  public void setCount(int count) {
+    this.count = count;
+  }
+
   @Override public String toString() {
     return "FansInTreeEntity{" + "club=" + club + ", count=" + count + '}';
   }

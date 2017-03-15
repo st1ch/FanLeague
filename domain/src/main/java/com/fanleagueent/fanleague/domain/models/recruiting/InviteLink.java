@@ -12,6 +12,10 @@ public class InviteLink {
     return inviteCode;
   }
 
+  public void setInviteCode(String inviteCode) {
+    this.inviteCode = inviteCode;
+  }
+
   @Override public String toString() {
     return "InviteLinkEntity{" + "inviteCode='" + inviteCode + '\'' + '}';
   }

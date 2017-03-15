@@ -27,6 +27,22 @@ public class RecruitGroup {
     return ident;
   }
 
+  public void setCount(int count) {
+    this.count = count;
+  }
+
+  public void setPercent(float percent) {
+    this.percent = percent;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public void setIdent(String ident) {
+    this.ident = ident;
+  }
+
   @Override public String toString() {
     return "RecruitGroupEntity{"
         + "count="

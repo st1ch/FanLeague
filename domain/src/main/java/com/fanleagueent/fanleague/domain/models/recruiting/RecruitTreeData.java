@@ -18,6 +18,14 @@ public class RecruitTreeData {
     return totalPlayersInTree;
   }
 
+  public void setTree(RecruitTree tree) {
+    this.tree = tree;
+  }
+
+  public void setTotalPlayersInTree(int totalPlayersInTree) {
+    this.totalPlayersInTree = totalPlayersInTree;
+  }
+
   @Override public String toString() {
     return "RecruitTreeDataEntity{" + "tree=" + tree + ", totalPlayersInTree=" + totalPlayersInTree + '}';
   }
