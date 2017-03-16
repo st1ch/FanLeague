@@ -8,73 +8,63 @@ import com.google.gson.annotations.SerializedName;
 
 public class InvitationEntity {
 
-    @SerializedName("_id")
-    private String id;
+  @SerializedName("_id") private String id;
 
-    @SerializedName("user_id")
-    private String userId;
+  @SerializedName("user_id") private String userId;
 
-    @SerializedName("invited_user_id")
-    private String invitedUserId;
+  @SerializedName("invited_user_id") private String invitedUserId;
 
-    @SerializedName("team_id")
-    private String teamId;
+  @SerializedName("team_id") private String teamId;
 
-    @SerializedName("type")
-    private String type;
+  @SerializedName("type") private String type;
 
-    @SerializedName("email")
-    private String email;
+  @SerializedName("email") private String email;
 
-    @SerializedName("accept_token")
-    private String acceptToken;
+  @SerializedName("accept_token") private String acceptToken;
 
-    @SerializedName("deny_token")
-    private String denyToken;
+  @SerializedName("deny_token") private String denyToken;
 
-    @SerializedName("updated_at")
-    private String updatedAt;
+  @SerializedName("updated_at") private String updatedAt;
 
-    @SerializedName("created_at")
-    private String createdAt;
+  @SerializedName("created_at") private String createdAt;
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public String getUserId() {
-        return userId;
-    }
+  public String getUserId() {
+    return userId;
+  }
 
-    public String getInvitedUserId() {
-        return invitedUserId;
-    }
+  public String getInvitedUserId() {
+    return invitedUserId;
+  }
 
-    public String getTeamId() {
-        return teamId;
-    }
+  public String getTeamId() {
+    return teamId;
+  }
 
-    public String getType() {
-        return type;
-    }
+  public String getType() {
+    return type;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public String getAcceptToken() {
-        return acceptToken;
-    }
+  public String getAcceptToken() {
+    return acceptToken;
+  }
 
-    public String getDenyToken() {
-        return denyToken;
-    }
+  public String getDenyToken() {
+    return denyToken;
+  }
 
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
+  public String getUpdatedAt() {
+    return updatedAt;
+  }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
+  public String getCreatedAt() {
+    return createdAt;
+  }
 }

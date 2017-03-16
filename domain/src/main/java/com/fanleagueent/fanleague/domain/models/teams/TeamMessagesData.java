@@ -19,4 +19,21 @@ public class TeamMessagesData {
   public List<Message> getMessageList() {
     return messageList;
   }
+
+  public void setUnreadCount(int unreadCount) {
+    this.unreadCount = unreadCount;
+  }
+
+  public void setMessageList(List<Message> messageList) {
+    this.messageList = messageList;
+  }
+
+  @Override public String toString() {
+    return "TeamMessagesData{"
+        + "unreadCount="
+        + unreadCount
+        + ", messageList="
+        + messageList
+        + '}';
+  }
 }

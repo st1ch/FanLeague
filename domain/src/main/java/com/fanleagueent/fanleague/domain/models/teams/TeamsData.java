@@ -8,14 +8,26 @@ import java.util.List;
 
 public class TeamsData {
 
-    private List<Team> teamsList;
-    private int totalCount;
+  private List<Team> teamsList;
+  private int totalCount;
 
-    public List<Team> getTeamList() {
-        return teamsList;
-    }
+  public List<Team> getTeamList() {
+    return teamsList;
+  }
 
-    public int getTotalCount() {
-        return totalCount;
-    }
+  public int getTotalCount() {
+    return totalCount;
+  }
+
+  public void setTeamsList(List<Team> teamsList) {
+    this.teamsList = teamsList;
+  }
+
+  public void setTotalCount(int totalCount) {
+    this.totalCount = totalCount;
+  }
+
+  @Override public String toString() {
+    return "TeamsData{" + "teamsList=" + teamsList + ", totalCount=" + totalCount + '}';
+  }
 }

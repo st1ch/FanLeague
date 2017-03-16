@@ -17,6 +17,8 @@ import com.fanleagueent.fanleague.data.entity.mappers.leagues.LeaguesMapperFacto
 import com.fanleagueent.fanleague.data.entity.mappers.leagues.LeaguesMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.locker_room.LockerRoomMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.locker_room.LockerRoomMapperFactoryImpl;
+import com.fanleagueent.fanleague.data.entity.mappers.teams.TeamsMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.teams.TeamsMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactory;
 
 public class MapperFactoryImpl implements MapperFactory {
@@ -59,5 +61,9 @@ public class MapperFactoryImpl implements MapperFactory {
 
   @Override public PunditsMapperFactory punditsMapperFactory() {
     return new PunditsMapperFactoryImpl(this);
+  }
+
+  @Override public TeamsMapperFactory teamsMapperFactory() {
+    return new TeamsMapperFactoryImpl(this);
   }
 }

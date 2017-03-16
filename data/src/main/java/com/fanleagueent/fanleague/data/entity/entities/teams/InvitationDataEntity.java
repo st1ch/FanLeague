@@ -8,17 +8,15 @@ import java.util.List;
  */
 
 public class InvitationDataEntity {
-    @SerializedName("invitations")
-    private List<InvitationEntity> invitationEntityList;
+  @SerializedName("invitations") private List<InvitationEntity> invitationEntityList;
 
-    @SerializedName("count")
-    private int count;
+  @SerializedName("count") private int count;
 
-    public List<InvitationEntity> getInvitationEntityList() {
-        return invitationEntityList;
-    }
+  public List<InvitationEntity> getInvitationEntityList() {
+    return invitationEntityList;
+  }
 
-    public int getCount() {
-        return count;
-    }
+  public int getCount() {
+    return count;
+  }
 }

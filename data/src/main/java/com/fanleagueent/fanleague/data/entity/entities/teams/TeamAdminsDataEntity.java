@@ -9,11 +9,9 @@ import java.util.List;
 
 public class TeamAdminsDataEntity {
 
-    @SerializedName("admins")
-    private List<TeamMemberEntityEntity> teamMemberEntities;
+  @SerializedName("admins") private List<TeamMemberEntity> teamMemberEntities;
 
-    public List<TeamMemberEntityEntity> getTeamMembersList() {
-        return teamMemberEntities;
-    }
-
+  public List<TeamMemberEntity> getTeamMembersList() {
+    return teamMemberEntities;
+  }
 }

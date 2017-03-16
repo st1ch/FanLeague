@@ -8,10 +8,17 @@ import java.util.List;
 
 public class TeamAdminsData {
 
-    private List<TeamMember> teamMemberEntities;
+  private List<TeamMember> teamMemberEntities;
 
-    public List<TeamMember> getTeamMembersList() {
-        return teamMemberEntities;
-    }
+  public List<TeamMember> getTeamMembersList() {
+    return teamMemberEntities;
+  }
 
+  public void setTeamMemberEntities(List<TeamMember> teamMemberEntities) {
+    this.teamMemberEntities = teamMemberEntities;
+  }
+
+  @Override public String toString() {
+    return "TeamAdminsData{" + "teamMemberEntities=" + teamMemberEntities + '}';
+  }
 }
