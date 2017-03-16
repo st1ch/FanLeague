@@ -1,4 +1,4 @@
-package com.fanleagueent.fanleague.data.entity.entities.user;
+package com.fanleagueent.fanleague.data.entity.entities.authorization;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
