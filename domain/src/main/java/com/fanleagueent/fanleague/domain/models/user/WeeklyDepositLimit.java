@@ -9,11 +9,6 @@ public class WeeklyDepositLimit {
     private int pending;
     private String pendingMessage;
 
-    public WeeklyDepositLimit(int current, int pending, String pendingMessage) {
-        this.current = current;
-        this.pending = pending;
-    }
-
     public int getCurrent() {
         return current;
     }
@@ -36,5 +31,17 @@ public class WeeklyDepositLimit {
 
     public void setPendingMessage(String pendingMessage) {
         this.pendingMessage = pendingMessage;
+    }
+
+    @Override public String toString() {
+        return "WeeklyDepositLimit{"
+            + "current="
+            + current
+            + ", pending="
+            + pending
+            + ", pendingMessage='"
+            + pendingMessage
+            + '\''
+            + '}';
     }
 }

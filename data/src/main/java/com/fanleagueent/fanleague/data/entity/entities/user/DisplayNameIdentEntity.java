@@ -16,17 +16,7 @@ public enum DisplayNameIdentEntity {
         this.value = value;
     }
 
-    public static DisplayNameIdentEntity fromValue(String value) {
-        for (DisplayNameIdentEntity s : values())
-            if (s.value.equals(value))
-                return s;
-
-        return null;
+    public String getValue() {
+        return value;
     }
-
-    @Override
-    public String toString() {
-        return this.value;
-    }
-
 }

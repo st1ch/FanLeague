@@ -1,6 +1,5 @@
 package com.fanleagueent.fanleague.data.entity.entities.user;
 
-import com.fanleagueent.fanleague.domain.models.user.DataTitle;
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
@@ -10,9 +9,9 @@ import java.util.List;
 
 public class ProfessionsEntity {
     @SerializedName("professions")
-    List<DataTitle> dataTitles;
+    List<DataTitleEntity> dataTitles;
 
-    public List<DataTitle> getDataTitles() {
+    public List<DataTitleEntity> getDataTitles() {
         return dataTitles;
     }
 }

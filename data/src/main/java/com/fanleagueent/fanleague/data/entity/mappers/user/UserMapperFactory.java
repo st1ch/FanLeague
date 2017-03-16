@@ -31,6 +31,7 @@ import com.fanleagueent.fanleague.domain.models.user.User;
 import com.fanleagueent.fanleague.domain.models.user.UserData;
 import com.fanleagueent.fanleague.domain.models.user.Wallet;
 import com.fanleagueent.fanleague.domain.models.user.WeeklyDepositLimit;
+import java.util.List;
 
 /**
  * Created by Artem Getman on 13.03.17.
@@ -53,15 +54,17 @@ public interface UserMapperFactory {
 
   Mapper<FavoriteClubDataEntity, FavoriteClubData> getFavoriteClubDataMapper();
 
+  Mapper<List<FavoriteClubEntity>, List<FavoriteClub>> getFavoriteClubListMapper();
+
   Mapper<FavoriteClubEntity, FavoriteClub> getFavoriteClubMapper();
 
-  Mapper<NationalitiesEntity, DataTitle> getNationalitiesMapper();
+  Mapper<NationalitiesEntity, List<DataTitle>> getNationalitiesMapper();
 
   Mapper<NotificationListEntity, NotificationList> getNotificationListMapper();
 
   Mapper<NotificationValuesEntity, NotificationValues> getNotificationValuesMapper();
 
-  Mapper<ProfessionsEntity, DataTitle> getProfessionsMapper();
+  Mapper<ProfessionsEntity, List<DataTitle>> getProfessionsMapper();
 
   Mapper<ProfileViewPermissionEntity, ProfileViewPermission> getProfileViewPermissionMapper();
 

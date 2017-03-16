@@ -13,4 +13,8 @@ public class FavoriteClubData {
     public List<FavoriteClub> getFavoriteClubList() {
         return favoriteClubList;
     }
+
+    public void setFavoriteClubList(List<FavoriteClub> favoriteClubList) {
+        this.favoriteClubList = favoriteClubList;
+    }
 }

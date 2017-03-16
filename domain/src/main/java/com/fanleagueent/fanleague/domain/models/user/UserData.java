@@ -12,6 +12,10 @@ public class UserData {
         return user;
     }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "UserDataEntity{" +

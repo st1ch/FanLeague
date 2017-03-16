@@ -69,4 +69,23 @@ public class NotificationValues {
     public void setFriendsSignup(boolean friendsSignup) {
         this.friendsSignup = friendsSignup;
     }
+
+    @Override public String toString() {
+        return "NotificationValues{"
+            + "inbox="
+            + inbox
+            + ", upcomingMatchday="
+            + upcomingMatchday
+            + ", winnings="
+            + winnings
+            + ", gameResults="
+            + gameResults
+            + ", leagueInvitations="
+            + leagueInvitations
+            + ", teamsInvitations="
+            + teamsInvitations
+            + ", friendsSignup="
+            + friendsSignup
+            + '}';
+    }
 }

@@ -51,6 +51,8 @@ public class User {
     firstName = builder.firstName;
     lastName = builder.lastName;
     username = builder.username;
+    displayName = builder.displayName;
+    fullName = builder.fullName;
     isFriends = builder.isFriends;
     avatar = builder.avatar;
     email = builder.email;
@@ -389,6 +391,8 @@ public class User {
     private String firstName;
     private String lastName;
     private String username;
+    private String displayName;
+    private String fullName;
     private boolean isFriends;
     private Avatar avatar;
     private String email;
@@ -410,6 +414,9 @@ public class User {
     private ProfileViewPermission profileViewPermission = ProfileViewPermission.ANYONE;
     private Wallet wallet;
 
+    public Builder() {
+    }
+
     public Builder id(String id) {
       this.id = id;
       return this;
@@ -427,6 +434,16 @@ public class User {
 
     public Builder username(String nickname) {
       this.username = nickname;
+      return this;
+    }
+
+    public Builder displayName(String displayName) {
+      this.displayName = displayName;
+      return this;
+    }
+
+    public Builder fullName(String fullName) {
+      this.fullName = fullName;
       return this;
     }
 
