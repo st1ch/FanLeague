@@ -47,7 +47,7 @@ public class Wallet {
         return creditInMoneyEquivalent;
     }
 
-    public void setCreditInMoneyEquivalent(int creditInMoneyEquivalent) {
+    public void setCreditInMoneyEquivalent(float creditInMoneyEquivalent) {
         this.creditInMoneyEquivalent = creditInMoneyEquivalent;
     }
 

@@ -47,6 +47,10 @@ public class Friendship {
     return mutualFriendsCount;
   }
 
+  public void setMutualFriendsCount(int mutualFriendsCount) {
+    this.mutualFriendsCount = mutualFriendsCount;
+  }
+
   @Override public String toString() {
     return "FriendshipEntity{"
         + "isFriends="

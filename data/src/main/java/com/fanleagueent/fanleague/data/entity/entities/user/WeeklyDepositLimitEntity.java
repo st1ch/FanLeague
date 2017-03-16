@@ -9,13 +9,9 @@ import com.google.gson.annotations.SerializedName;
 public class WeeklyDepositLimitEntity {
     private int current;
     private int pending;
+
     @SerializedName("pending_message")
     private String pendingMessage;
-
-    public WeeklyDepositLimitEntity(int current, int pending, String pendingMessage) {
-        this.current = current;
-        this.pending = pending;
-    }
 
     public int getCurrent() {
         return current;
@@ -29,15 +25,8 @@ public class WeeklyDepositLimitEntity {
         return pending;
     }
 
-    public void setPending(int pending) {
-        this.pending = pending;
-    }
-
     public String getPendingMessage() {
         return pendingMessage;
     }
 
-    public void setPendingMessage(String pendingMessage) {
-        this.pendingMessage = pendingMessage;
-    }
 }

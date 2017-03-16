@@ -22,15 +22,22 @@ public class Avatar {
         return mediumImage;
     }
 
+    public void setOriginalImage(String originalImage) {
+        this.originalImage = originalImage;
+    }
+
     public void setMediumImage(String mediumImage) {
         this.mediumImage = mediumImage;
     }
 
-    @Override
-    public String toString() {
-        return "AvatarEntity{" +
-                "originalImage='" + originalImage + '\'' +
-                ", mediumImage='" + mediumImage + '\'' +
-                '}';
+    @Override public String toString() {
+        return "Avatar{"
+            + "originalImage='"
+            + originalImage
+            + '\''
+            + ", mediumImage='"
+            + mediumImage
+            + '\''
+            + '}';
     }
 }

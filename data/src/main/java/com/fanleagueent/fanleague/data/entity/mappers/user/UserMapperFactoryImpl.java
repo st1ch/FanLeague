@@ -32,6 +32,7 @@ import com.fanleagueent.fanleague.domain.models.user.User;
 import com.fanleagueent.fanleague.domain.models.user.UserData;
 import com.fanleagueent.fanleague.domain.models.user.Wallet;
 import com.fanleagueent.fanleague.domain.models.user.WeeklyDepositLimit;
+import java.util.List;
 
 /**
  * Created by alexeyverbitskiy on 3/14/17.
@@ -46,69 +47,74 @@ public class UserMapperFactoryImpl implements UserMapperFactory {
   }
 
   @Override public Mapper<UserEntity, User> getUserMapper() {
-    return null;
+    return new UserMapper(this);
   }
 
   @Override public Mapper<AvatarEntity, Avatar> getAvatarMapper() {
-    return null;
+    return new AvatarMapper();
   }
 
   @Override public Mapper<FriendshipEntity, Friendship> getFriendshipMapper() {
-    return null;
+    return new FriendshipMapper();
   }
 
   @Override public Mapper<ConnectCountsEntity, ConnectCounts> getConnectCountsMapper() {
-    return null;
+    return new ConnectCountsMapper();
   }
 
   @Override public Mapper<DataTitleEntity, DataTitle> getDataTitleMapper() {
-    return null;
+    return new DataTitleMapper();
   }
 
   @Override public Mapper<DisplayNameIdentEntity, DisplayNameIdent> getDisplayNameIdentMapper() {
-    return null;
+    return new DisplayNameIdentMapper();
   }
 
   @Override public Mapper<FavoriteClubDataEntity, FavoriteClubData> getFavoriteClubDataMapper() {
-    return null;
+    return new FavoriteClubDataMapper(this);
   }
 
   @Override public Mapper<FavoriteClubEntity, FavoriteClub> getFavoriteClubMapper() {
-    return null;
+    return new FavoriteClubMapper();
   }
 
-  @Override public Mapper<NationalitiesEntity, DataTitle> getNationalitiesMapper() {
-    return null;
+  @Override
+  public Mapper<List<FavoriteClubEntity>, List<FavoriteClub>> getFavoriteClubListMapper() {
+    return new FavoriteClubListMapper(this);
+  }
+
+  @Override public Mapper<NationalitiesEntity, List<DataTitle>> getNationalitiesMapper() {
+    return new NationalityMapper(this);
   }
 
   @Override public Mapper<NotificationListEntity, NotificationList> getNotificationListMapper() {
-    return null;
+    return new NotificationListMapper(this);
   }
 
   @Override
   public Mapper<NotificationValuesEntity, NotificationValues> getNotificationValuesMapper() {
-    return null;
+    return new NotificationValueMapper();
   }
 
-  @Override public Mapper<ProfessionsEntity, DataTitle> getProfessionsMapper() {
-    return null;
+  @Override public Mapper<ProfessionsEntity, List<DataTitle>> getProfessionsMapper() {
+    return new ProfessionMapper(this);
   }
 
   @Override
   public Mapper<ProfileViewPermissionEntity, ProfileViewPermission> getProfileViewPermissionMapper() {
-    return null;
+    return new ProfileViewPermissionMapper();
   }
 
   @Override public Mapper<UserDataEntity, UserData> getUserDataMapper() {
-    return null;
+    return new UserDataMapper(this);
   }
 
   @Override public Mapper<WalletEntity, Wallet> getWalletMapper() {
-    return null;
+    return new WalletMapper(this);
   }
 
   @Override
   public Mapper<WeeklyDepositLimitEntity, WeeklyDepositLimit> getWeeklyDepositLimitMapper() {
-    return null;
+    return new WeeklyDepositLimitMapper();
   }
 }

@@ -33,55 +33,27 @@ public class NotificationValuesEntity {
         return inbox;
     }
 
-    public void setInbox(boolean inbox) {
-        this.inbox = inbox;
-    }
-
     public boolean isUpcomingMatchday() {
         return upcomingMatchday;
-    }
-
-    public void setUpcomingMatchday(boolean upcomingMatchday) {
-        this.upcomingMatchday = upcomingMatchday;
     }
 
     public boolean isWinnings() {
         return winnings;
     }
 
-    public void setWinnings(boolean winnings) {
-        this.winnings = winnings;
-    }
-
     public boolean isGameResults() {
         return gameResults;
-    }
-
-    public void setGameResults(boolean gameResults) {
-        this.gameResults = gameResults;
     }
 
     public boolean isLeagueInvitations() {
         return leagueInvitations;
     }
 
-    public void setLeagueInvitations(boolean leagueInvitations) {
-        this.leagueInvitations = leagueInvitations;
-    }
-
     public boolean isTeamsInvitations() {
         return teamsInvitations;
     }
 
-    public void setTeamsInvitations(boolean teamsInvitations) {
-        this.teamsInvitations = teamsInvitations;
-    }
-
     public boolean isFriendsSignup() {
         return friendsSignup;
-    }
-
-    public void setFriendsSignup(boolean friendsSignup) {
-        this.friendsSignup = friendsSignup;
     }
 }

@@ -33,20 +33,4 @@ public class DataTitleEntity {
     public String getId() {
         return id;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        DataTitleEntity dataTitleEntity = (DataTitleEntity) o;
-
-        return ident != null ? ident.equals(dataTitleEntity.ident) : dataTitleEntity.ident == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return ident != null ? ident.hashCode() : 0;
-    }
 }

@@ -15,4 +15,12 @@ public class NotificationList {
     public NotificationValues getNotificationValuesEmail() {
         return notificationValuesEmail;
     }
+
+    public void setNotificationValuesPush(NotificationValues notificationValuesPush) {
+        this.notificationValuesPush = notificationValuesPush;
+    }
+
+    public void setNotificationValuesEmail(NotificationValues notificationValuesEmail) {
+        this.notificationValuesEmail = notificationValuesEmail;
+    }
 }

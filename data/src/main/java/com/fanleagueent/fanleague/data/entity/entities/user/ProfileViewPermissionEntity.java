@@ -27,8 +27,7 @@ public enum ProfileViewPermissionEntity {
         return null;
     }
 
-    @Override
-    public String toString() {
-        return this.value;
+    public String getValue() {
+        return value;
     }
 }

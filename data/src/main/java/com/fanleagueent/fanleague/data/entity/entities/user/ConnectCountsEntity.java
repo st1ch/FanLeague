@@ -30,16 +30,4 @@ public class ConnectCountsEntity {
   public int getFriends() {
     return friends;
   }
-
-  public void setFriends(int friends) {
-    this.friends = friends;
-  }
-
-  @Override public String toString() {
-    return "ConnectCountsEntity{" +
-        "friends=" + friends +
-        ", leagues=" + leagues +
-        ", teams=" + teams +
-        '}';
-  }
 }
