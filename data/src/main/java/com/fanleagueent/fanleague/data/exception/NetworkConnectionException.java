@@ -21,7 +21,7 @@ package com.fanleagueent.fanleague.data.exception;
 public class NetworkConnectionException extends Exception {
 
   public NetworkConnectionException() {
-    super();
+    super("Please check Internet connection before requesting data");
   }
 
   public NetworkConnectionException(final Throwable cause) {

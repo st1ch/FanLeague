@@ -14,38 +14,36 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiManager {
 
-    private static final String BASE_URL = ApiConfig.BASE_URL;
-    private Retrofit mRetrofit;
+  private static final String BASE_URL = ApiConfig.BASE_URL;
+  private Retrofit mRetrofit;
 
-    @Inject
-    public ApiManager(Gson gson, PreferenceHelper preferenceHelper) {
+  @Inject ApiManager(Gson gson, PreferenceHelper preferenceHelper) {
 
-        HttpLoggingInterceptor interceptorBody = new HttpLoggingInterceptor();
-        interceptorBody.setLevel(HttpLoggingInterceptor.Level.BODY);
+    HttpLoggingInterceptor interceptorBody = new HttpLoggingInterceptor();
+    interceptorBody.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-        /**
-         * Add Auth header interceptor
-         */
+    /**
+     * Add Auth header interceptor
+     */
 
-        HeaderAuthInterceptor headerAuthInterceptor = new HeaderAuthInterceptor(preferenceHelper);
+    HeaderAuthInterceptor headerAuthInterceptor = new HeaderAuthInterceptor(preferenceHelper);
 
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .connectTimeout(ApiConfig.HTTP_TIMEOUT, TimeUnit.MILLISECONDS)
-                .writeTimeout(ApiConfig.HTTP_TIMEOUT, TimeUnit.MILLISECONDS)
-                .readTimeout(ApiConfig.HTTP_TIMEOUT, TimeUnit.MILLISECONDS)
-                .addInterceptor(interceptorBody)
-                .addInterceptor(headerAuthInterceptor)
-                .build();
+    OkHttpClient okHttpClient =
+        new OkHttpClient.Builder().connectTimeout(ApiConfig.HTTP_TIMEOUT, TimeUnit.MILLISECONDS)
+            .writeTimeout(ApiConfig.HTTP_TIMEOUT, TimeUnit.MILLISECONDS)
+            .readTimeout(ApiConfig.HTTP_TIMEOUT, TimeUnit.MILLISECONDS)
+            .addInterceptor(interceptorBody)
+            .addInterceptor(headerAuthInterceptor)
+            .build();
 
-        mRetrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .client(okHttpClient)
-                .build();
-    }
+    mRetrofit = new Retrofit.Builder().baseUrl(BASE_URL)
+        .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(gson))
+        .client(okHttpClient)
+        .build();
+  }
 
-    public Retrofit getRetrofit() {
-        return mRetrofit;
-    }
+  public Retrofit getRetrofit() {
+    return mRetrofit;
+  }
 }

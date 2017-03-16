@@ -18,29 +18,31 @@ import rx.Observable;
 
 public interface AuthorizationAPI {
 
-    String AUTH = "/auth";
-    String LOGIN = "/login";
-    String REGISTRATION = "/registration";
-    String STANDARD = "/standard";
-    String FACEBOOK = "/facebook";
-    String GOOGLE = "/google";
-    String PASSWORD = "/password";
-    String RESET_LINK = "/send-reset-link";
+  String AUTH = "/auth";
+  String LOGIN = "/login";
+  String REGISTRATION = "/registration";
+  String STANDARD = "/standard";
+  String FACEBOOK = "/facebook";
+  String GOOGLE = "/google";
+  String PASSWORD = "/password";
+  String RESET_LINK = "/send-reset-link";
 
-    @POST(ApiConfig.API_VERSION + AUTH + REGISTRATION + STANDARD)
-    Observable<BaseResponse<AuthorizationEntity>> registrationStandard(
-        @Body EmailStandardRequest emailStandardRequest);
+  @POST(ApiConfig.API_VERSION + AUTH + REGISTRATION + STANDARD)
+  Observable<BaseResponse<AuthorizationEntity>> registrationStandard(
+      @Body EmailStandardRequest emailStandardRequest);
 
-    @POST(ApiConfig.API_VERSION + AUTH + LOGIN + STANDARD)
-    Observable<BaseResponse<AuthorizationEntity>> loginStandard(@Body AuthStandardRequest authCredentials);
+  @POST(ApiConfig.API_VERSION + AUTH + LOGIN + STANDARD)
+  Observable<BaseResponse<AuthorizationEntity>> loginStandard(
+      @Body AuthStandardRequest authCredentials);
 
+  @POST(ApiConfig.API_VERSION + AUTH + LOGIN + FACEBOOK)
+  Observable<Response<BaseResponse<AuthorizationEntity>>> loginFacebook(
+      @Body FBCredentials fbCredentials);
 
-    @POST(ApiConfig.API_VERSION + AUTH + LOGIN + FACEBOOK)
-    Observable<Response<BaseResponse<AuthorizationEntity>>> loginFacebook(@Body FBCredentials fbCredentials);
+  @POST(ApiConfig.API_VERSION + AUTH + LOGIN + GOOGLE)
+  Observable<BaseResponse<AuthorizationEntity>> loginGoogle(
+      @Body GoogleCredentials googleCredentials);
 
-    @POST(ApiConfig.API_VERSION + AUTH + LOGIN + GOOGLE)
-    Observable<BaseResponse<AuthorizationEntity>> loginGoogle(@Body GoogleCredentials googleCredentials);
-
-    @POST(ApiConfig.API_VERSION + AUTH + PASSWORD + RESET_LINK)
-    Observable<BaseResponse> resetLink(@Body EmailStandardRequest emailStandardRequest);
+  @POST(ApiConfig.API_VERSION + AUTH + PASSWORD + RESET_LINK)
+  Observable<BaseResponse<Object>> resetLink(@Body EmailStandardRequest emailStandardRequest);
 }
