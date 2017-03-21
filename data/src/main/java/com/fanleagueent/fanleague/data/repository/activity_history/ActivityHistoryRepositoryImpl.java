@@ -29,32 +29,32 @@ public class ActivityHistoryRepositoryImpl implements ActivityHistoryRepository 
   }
 
   @Override public Flowable<List<ActivityHistoryAllData>> getHistoryAll(int offset) {
-    return local.getHistoryAll(offset)
-        .concatWith(remote.getHistoryAll(offset))
+    return Flowable.concatArrayDelayError(local.getHistoryAll(offset).toFlowable(),
+        remote.getHistoryAll(offset).toFlowable())
         .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 
   @Override public Flowable<List<ActivityHistoryUser>> getHistoryFriends(int offset) {
-    return local.getHistoryFriends(offset)
-        .concatWith(remote.getHistoryFriends(offset))
+    return Flowable.concatArrayDelayError(local.getHistoryFriends(offset).toFlowable(),
+        remote.getHistoryFriends(offset).toFlowable())
         .map(o -> activityHistoryMapperFactory.getActivityHistoryUserListMapper().transform(o));
   }
 
   @Override public Flowable<List<ActivityHistoryGroup>> getHistoryTeams(int offset) {
-    return local.getHistoryTeams(offset)
-        .concatWith(remote.getHistoryTeams(offset))
+    return Flowable.concatArrayDelayError(local.getHistoryTeams(offset).toFlowable(),
+        remote.getHistoryTeams(offset).toFlowable())
         .map(o -> activityHistoryMapperFactory.getActivityHistoryGroupListMapper().transform(o));
   }
 
   @Override public Flowable<List<ActivityHistoryGroup>> getHistoryLeagues(int offset) {
-    return local.getHistoryLeagues(offset)
-        .concatWith(remote.getHistoryLeagues(offset))
+    return Flowable.concatArrayDelayError(local.getHistoryLeagues(offset).toFlowable(),
+        remote.getHistoryLeagues(offset).toFlowable())
         .map(o -> activityHistoryMapperFactory.getActivityHistoryGroupListMapper().transform(o));
   }
 
   @Override public Flowable<List<ActivityHistoryBet>> getHistoryBets(int offset) {
-    return local.getHistoryBets(offset)
-        .concatWith(remote.getHistoryBets(offset))
+    return Flowable.concatArrayDelayError(local.getHistoryBets(offset).toFlowable(),
+        remote.getHistoryBets(offset).toFlowable())
         .map(o -> activityHistoryMapperFactory.getActivityHistoryBetListMapper().transform(o));
   }
 }
