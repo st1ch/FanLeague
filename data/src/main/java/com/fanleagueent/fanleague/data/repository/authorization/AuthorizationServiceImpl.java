@@ -12,7 +12,8 @@ import com.fanleagueent.fanleague.data.net.requests.auth.FBCredentials;
 import com.fanleagueent.fanleague.data.net.requests.auth.GoogleCredentials;
 import com.fanleagueent.fanleague.data.observables.BaseResponseObservable;
 import com.fanleagueent.fanleague.domain.models.user.User;
-import rx.Observable;
+import com.fanleagueent.fanleague.domain.repository.AuthorizationService;
+import io.reactivex.Maybe;
 
 /**
  * Created by st1ch on 01.11.2016.
@@ -31,7 +32,7 @@ public class AuthorizationServiceImpl implements AuthorizationService {
     this.mapperFactory = mapperFactory;
   }
 
-  @Override public Observable<User> signUpStandard(@NonNull String email) {
+  @Override public Maybe<User> signUpStandard(@NonNull String email) {
     return api.registrationStandard(new EmailStandardRequest(email))
         .flatMap(BaseResponseObservable::new)
         .flatMap(authorizationResponse -> {
@@ -43,11 +44,11 @@ public class AuthorizationServiceImpl implements AuthorizationService {
 
           saveUserToken(user.getId(), data.getAccessToken());
 
-          return Observable.just(user);
+          return Maybe.just(user);
         });
   }
 
-  @Override public Observable<User> loginStandard(@NonNull String login, @NonNull String password) {
+  @Override public Maybe<User> loginStandard(@NonNull String login, @NonNull String password) {
     return api.loginStandard(new AuthStandardRequest(login, password))
         .flatMap(BaseResponseObservable::new)
         .flatMap(authorizationResponse -> {
@@ -59,16 +60,16 @@ public class AuthorizationServiceImpl implements AuthorizationService {
 
           saveUserToken(user.getId(), data.getAccessToken());
 
-          return Observable.just(user);
+          return Maybe.just(user);
         });
   }
 
-  @Override public Observable<User> loginFacebook(@NonNull String code, @NonNull String email) {
+  @Override public Maybe<User> loginFacebook(@NonNull String code, @NonNull String email) {
     return api.loginFacebook(new FBCredentials(code, email)).flatMap(response -> {
       if (response.code() == 422) {
-        return Observable.error(new FacebookEmailException());
+        return Maybe.error(new FacebookEmailException());
       } else {
-        return Observable.just(response.body());
+        return Maybe.just(response.body());
       }
     }).flatMap(BaseResponseObservable::new).flatMap(authorizationResponse -> {
 
@@ -78,11 +79,11 @@ public class AuthorizationServiceImpl implements AuthorizationService {
 
       saveUserToken(user.getId(), data.getAccessToken());
 
-      return Observable.just(user);
+      return Maybe.just(user);
     });
   }
 
-  @Override public Observable<User> loginGoogle(@NonNull String code) {
+  @Override public Maybe<User> loginGoogle(@NonNull String code) {
     return api.loginGoogle(new GoogleCredentials(code))
         .flatMap(BaseResponseObservable::new)
         .flatMap(authorizationResponse -> {
@@ -94,11 +95,11 @@ public class AuthorizationServiceImpl implements AuthorizationService {
 
           saveUserToken(user.getId(), data.getAccessToken());
 
-          return Observable.just(user);
+          return Maybe.just(user);
         });
   }
 
-  @Override public Observable<Boolean> resetLink(@NonNull String email) {
+  @Override public Maybe<Boolean> resetLink(@NonNull String email) {
     return api.resetLink(new EmailStandardRequest(email))
         .flatMap(BaseResponseObservable::new)
         .map(o -> true);

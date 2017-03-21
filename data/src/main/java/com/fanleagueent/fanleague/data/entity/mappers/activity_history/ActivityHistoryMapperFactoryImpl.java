@@ -10,6 +10,7 @@ import com.fanleagueent.fanleague.domain.models.activity_history.ActivityHistory
 import com.fanleagueent.fanleague.domain.models.activity_history.ActivityHistoryBet;
 import com.fanleagueent.fanleague.domain.models.activity_history.ActivityHistoryGroup;
 import com.fanleagueent.fanleague.domain.models.activity_history.ActivityHistoryUser;
+import java.util.List;
 
 /**
  * Created by Artem Getman on 13.03.17.
@@ -30,8 +31,18 @@ public class ActivityHistoryMapperFactoryImpl implements ActivityHistoryMapperFa
   }
 
   @Override
+  public Mapper<List<ActivityHistoryAllDataEntity>, List<ActivityHistoryAllData>> getActivityHistoryAllDataListMapper() {
+    return new AllDataListMapper(this);
+  }
+
+  @Override
   public Mapper<ActivityHistoryBetEntity, ActivityHistoryBet> getActivityHistoryBetMapper() {
     return new BetMapper();
+  }
+
+  @Override
+  public Mapper<List<ActivityHistoryBetEntity>, List<ActivityHistoryBet>> getActivityHistoryBetListMapper() {
+    return new BetListMapper(this);
   }
 
   @Override
@@ -40,7 +51,17 @@ public class ActivityHistoryMapperFactoryImpl implements ActivityHistoryMapperFa
   }
 
   @Override
+  public Mapper<List<ActivityHistoryGroupEntity>, List<ActivityHistoryGroup>> getActivityHistoryGroupListMapper() {
+    return new GroupListMapper(this);
+  }
+
+  @Override
   public Mapper<ActivityHistoryUserEntity, ActivityHistoryUser> getActivityHistoryUserMapper() {
     return new UserMapper(mapperFactory);
+  }
+
+  @Override
+  public Mapper<List<ActivityHistoryUserEntity>, List<ActivityHistoryUser>> getActivityHistoryUserListMapper() {
+    return new UserListMapper(this);
   }
 }

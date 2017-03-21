@@ -7,10 +7,10 @@ import com.fanleagueent.fanleague.data.net.requests.auth.AuthStandardRequest;
 import com.fanleagueent.fanleague.data.net.requests.auth.EmailStandardRequest;
 import com.fanleagueent.fanleague.data.net.requests.auth.FBCredentials;
 import com.fanleagueent.fanleague.data.net.requests.auth.GoogleCredentials;
+import io.reactivex.Maybe;
 import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
-import rx.Observable;
 
 /**
  * Created by st1ch on 01.11.2016.
@@ -28,21 +28,21 @@ public interface AuthorizationAPI {
   String RESET_LINK = "/send-reset-link";
 
   @POST(ApiConfig.API_VERSION + AUTH + REGISTRATION + STANDARD)
-  Observable<BaseResponse<AuthorizationEntity>> registrationStandard(
+  Maybe<BaseResponse<AuthorizationEntity>> registrationStandard(
       @Body EmailStandardRequest emailStandardRequest);
 
   @POST(ApiConfig.API_VERSION + AUTH + LOGIN + STANDARD)
-  Observable<BaseResponse<AuthorizationEntity>> loginStandard(
+  Maybe<BaseResponse<AuthorizationEntity>> loginStandard(
       @Body AuthStandardRequest authCredentials);
 
   @POST(ApiConfig.API_VERSION + AUTH + LOGIN + FACEBOOK)
-  Observable<Response<BaseResponse<AuthorizationEntity>>> loginFacebook(
+  Maybe<Response<BaseResponse<AuthorizationEntity>>> loginFacebook(
       @Body FBCredentials fbCredentials);
 
   @POST(ApiConfig.API_VERSION + AUTH + LOGIN + GOOGLE)
-  Observable<BaseResponse<AuthorizationEntity>> loginGoogle(
+  Maybe<BaseResponse<AuthorizationEntity>> loginGoogle(
       @Body GoogleCredentials googleCredentials);
 
   @POST(ApiConfig.API_VERSION + AUTH + PASSWORD + RESET_LINK)
-  Observable<BaseResponse<Object>> resetLink(@Body EmailStandardRequest emailStandardRequest);
+  Maybe<BaseResponse<Object>> resetLink(@Body EmailStandardRequest emailStandardRequest);
 }
