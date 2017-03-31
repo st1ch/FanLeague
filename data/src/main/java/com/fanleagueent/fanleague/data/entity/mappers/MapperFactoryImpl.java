@@ -20,11 +20,12 @@ import com.fanleagueent.fanleague.data.entity.mappers.locker_room.LockerRoomMapp
 import com.fanleagueent.fanleague.data.entity.mappers.teams.TeamsMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.teams.TeamsMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactoryImpl;
 
 public class MapperFactoryImpl implements MapperFactory {
 
   @Override public UserMapperFactory userMapperFactory() {
-    return null;
+    return new UserMapperFactoryImpl(this);
   }
 
   @Override public AuthorizationDataMapper authorizationMapper() {

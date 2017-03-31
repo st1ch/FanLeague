@@ -46,4 +46,18 @@ public class ActivityHistoryUser {
   public void setLevel(int level) {
     this.level = level;
   }
+
+  @Override public String toString() {
+    return "ActivityHistoryUser{"
+        + "id='"
+        + id
+        + '\''
+        + ", avatar="
+        + avatar
+        + ", hasBetMedal="
+        + hasBetMedal
+        + ", level="
+        + level
+        + '}';
+  }
 }

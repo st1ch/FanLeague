@@ -3,9 +3,6 @@ package com.fanleagueent.fanleague.data.net.api;
 import com.fanleagueent.fanleague.data.constants.ApiConfig;
 import com.fanleagueent.fanleague.data.entity.BaseResponse;
 import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryAllDataEntity;
-import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryBetEntity;
-import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryGroupEntity;
-import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryUserEntity;
 import io.reactivex.Maybe;
 import java.util.List;
 import retrofit2.http.GET;
@@ -30,16 +27,16 @@ public interface ActivityHistoryAPI {
   Maybe<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryAll(@Query(OFFSET) int offset);
 
   @GET(ApiConfig.API_VERSION + HISTORY + FRIENDS)
-  Maybe<BaseResponse<List<ActivityHistoryUserEntity>>> getHistoryFriends(
+  Maybe<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryFriends(
       @Query(OFFSET) int offset);
 
   @GET(ApiConfig.API_VERSION + HISTORY + TEAMS)
-  Maybe<BaseResponse<List<ActivityHistoryGroupEntity>>> getHistoryTeams(@Query(OFFSET) int offset);
+  Maybe<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryTeams(@Query(OFFSET) int offset);
 
   @GET(ApiConfig.API_VERSION + HISTORY + LEAGUES)
-  Maybe<BaseResponse<List<ActivityHistoryGroupEntity>>> getHistoryLeagues(
+  Maybe<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryLeagues(
       @Query(OFFSET) int offset);
 
   @GET(ApiConfig.API_VERSION + HISTORY + BETS)
-  Maybe<BaseResponse<List<ActivityHistoryBetEntity>>> getHistoryBets(@Query(OFFSET) int offset);
+  Maybe<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryBets(@Query(OFFSET) int offset);
 }

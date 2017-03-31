@@ -1,21 +1,5 @@
 package com.fanleagueent.fanleague.data.net.api;
 
-import com.fanleagueent.fanleague.data.constants.ApiConfig;
-import com.fanleagueent.fanleague.data.entity.BaseResponse;
-import com.fanleagueent.fanleague.data.entity.entities.chat.ChatDataEntity;
-import com.fanleagueent.fanleague.data.entity.entities.friends.FriendsDataEntity;
-import com.fanleagueent.fanleague.data.net.requests.chat.RecipientsRequest;
-import java.util.List;
-import retrofit2.http.Body;
-import retrofit2.http.DELETE;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
-import rx.Observable;
-
 /**
  * Created by alexeyverbitskiy on 11/14/16.
  */
@@ -41,40 +25,40 @@ public interface FriendsAPI {
     String OFFSET = "offset";
     String RECIPIENT_ID = "recipient_id";
 
-    @GET(ApiConfig.API_VERSION + FRIENDS + GET_ALL_FRIENDS)
-    Observable<BaseResponse<FriendsDataEntity>> getAllFriends(@Query(OFFSET) int offset);
-
-    @GET(ApiConfig.API_VERSION + FRIENDS + GET_PENDING_FRIENDS)
-    Observable<BaseResponse<FriendsDataEntity>> getPendingFriends(@Query(OFFSET) int offset);
-
-    @GET(ApiConfig.API_VERSION + FRIENDS + GET_FACEBOOK_FRIENDS)
-    Observable<BaseResponse<FriendsDataEntity>> getFacebookFriends(@Query(OFFSET) int offset);
-
-    @GET(ApiConfig.API_VERSION + FRIENDS + GET_FACEBOOK_SUGGESTIONS)
-    Observable<BaseResponse<FriendsDataEntity>> getFacebookSuggestions();
-
-    @GET(ApiConfig.API_VERSION + FRIENDS + SEARCH)
-    Observable<BaseResponse<FriendsDataEntity>> searchFriends(@Query(QUERY) String searchQuery,
-        @Query(OFFSET) int offset);
-
-    @DELETE(ApiConfig.API_VERSION + FRIENDS + PATH_FRIEND_ID + DELETE_FRIEND)
-    Observable<BaseResponse<List<Boolean>>> deleteFriend(@Path(FRIEND_ID) String friendId);
-
-    @FormUrlEncoded
-    @POST(ApiConfig.API_VERSION + FRIENDS + ADD_FRIEND)
-    Observable<BaseResponse<List<Boolean>>> addFriend(@Field(RECIPIENT_ID) String recipientId);
-
-    @FormUrlEncoded
-    @POST(ApiConfig.API_VERSION + FRIENDS + ACCEPT_FRIEND)
-    Observable<BaseResponse<List<Boolean>>> acceptFriend(@Field(RECIPIENT_ID) String recipientId);
-
-    @FormUrlEncoded
-    @POST(ApiConfig.API_VERSION + FRIENDS + DECLINE_FRIEND)
-    Observable<BaseResponse<List<Boolean>>> declineFriend(@Field(RECIPIENT_ID) String recipientId);
-
-    @DELETE(ApiConfig.API_VERSION + FRIENDS + PATH_FRIEND_ID + CANCEL_FRIEND)
-    Observable<BaseResponse<List<Boolean>>> cancelFriend(@Path(FRIEND_ID) String friendId);
-
-    @POST(ApiConfig.API_VERSION + MESSENGER + CREATE_THREAD)
-    Observable<BaseResponse<ChatDataEntity>> createThread(@Body RecipientsRequest recipientsRequest);
+    //@GET(ApiConfig.API_VERSION + FRIENDS + GET_ALL_FRIENDS)
+    //Observable<BaseResponse<FriendsDataEntity>> getAllFriends(@Query(OFFSET) int offset);
+    //
+    //@GET(ApiConfig.API_VERSION + FRIENDS + GET_PENDING_FRIENDS)
+    //Observable<BaseResponse<FriendsDataEntity>> getPendingFriends(@Query(OFFSET) int offset);
+    //
+    //@GET(ApiConfig.API_VERSION + FRIENDS + GET_FACEBOOK_FRIENDS)
+    //Observable<BaseResponse<FriendsDataEntity>> getFacebookFriends(@Query(OFFSET) int offset);
+    //
+    //@GET(ApiConfig.API_VERSION + FRIENDS + GET_FACEBOOK_SUGGESTIONS)
+    //Observable<BaseResponse<FriendsDataEntity>> getFacebookSuggestions();
+    //
+    //@GET(ApiConfig.API_VERSION + FRIENDS + SEARCH)
+    //Observable<BaseResponse<FriendsDataEntity>> searchFriends(@Query(QUERY) String searchQuery,
+    //    @Query(OFFSET) int offset);
+    //
+    //@DELETE(ApiConfig.API_VERSION + FRIENDS + PATH_FRIEND_ID + DELETE_FRIEND)
+    //Observable<BaseResponse<List<Boolean>>> deleteFriend(@Path(FRIEND_ID) String friendId);
+    //
+    //@FormUrlEncoded
+    //@POST(ApiConfig.API_VERSION + FRIENDS + ADD_FRIEND)
+    //Observable<BaseResponse<List<Boolean>>> addFriend(@Field(RECIPIENT_ID) String recipientId);
+    //
+    //@FormUrlEncoded
+    //@POST(ApiConfig.API_VERSION + FRIENDS + ACCEPT_FRIEND)
+    //Observable<BaseResponse<List<Boolean>>> acceptFriend(@Field(RECIPIENT_ID) String recipientId);
+    //
+    //@FormUrlEncoded
+    //@POST(ApiConfig.API_VERSION + FRIENDS + DECLINE_FRIEND)
+    //Observable<BaseResponse<List<Boolean>>> declineFriend(@Field(RECIPIENT_ID) String recipientId);
+    //
+    //@DELETE(ApiConfig.API_VERSION + FRIENDS + PATH_FRIEND_ID + CANCEL_FRIEND)
+    //Observable<BaseResponse<List<Boolean>>> cancelFriend(@Path(FRIEND_ID) String friendId);
+    //
+    //@POST(ApiConfig.API_VERSION + MESSENGER + CREATE_THREAD)
+    //Observable<BaseResponse<ChatDataEntity>> createThread(@Body RecipientsRequest recipientsRequest);
 }

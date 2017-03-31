@@ -1,22 +1,5 @@
 package com.fanleagueent.fanleague.data.net.api;
 
-import com.fanleagueent.fanleague.data.constants.ApiConfig;
-import com.fanleagueent.fanleague.data.entity.BaseResponse;
-import com.fanleagueent.fanleague.data.entity.entities.chat.ChatDataEntity;
-import com.fanleagueent.fanleague.data.entity.entities.chat.MessageDataEntity;
-import com.fanleagueent.fanleague.data.entity.entities.friends.FriendsDataEntity;
-import com.fanleagueent.fanleague.data.net.requests.chat.MessageRequest;
-import com.fanleagueent.fanleague.data.net.requests.chat.RecipientsRequest;
-import java.util.List;
-import retrofit2.http.Body;
-import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
-import retrofit2.http.PATCH;
-import retrofit2.http.POST;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
-import rx.Observable;
-
 /**
  * Created by alexeyverbitskiy on 02/1/17.
  */
@@ -46,46 +29,46 @@ public interface ChatAPI {
     String SEARCH_PLAYER = "/player_search";
     String GET_ALL_FRIENDS = "/get_list";
 
-    @GET(ApiConfig.API_VERSION + MESSENGER + THREADS)
-    Observable<BaseResponse<List<ChatDataEntity>>> getThreads(@Query(OFFSET) int offset);
-
-    @POST(ApiConfig.API_VERSION + MESSENGER + CREATE_THREAD)
-    Observable<BaseResponse<ChatDataEntity>> createThread(@Body RecipientsRequest recipientsRequest);
-
-    @GET(ApiConfig.API_VERSION + MESSENGER + SEARCH)
-    Observable<BaseResponse<List<ChatDataEntity>>> searchThreads(@Query(QUERY) String searchQuery);
-
-    @POST(ApiConfig.API_VERSION + MESSENGER + NEW_MESSAGE)
-    Observable<BaseResponse<MessageDataEntity>> newMessage(@Body MessageRequest messageRequest);
-
-    @GET(ApiConfig.API_VERSION + MESSENGER + THREAD_MESSAGES)
-    Observable<BaseResponse<MessageDataEntity>> getThreadMessagesByTimestemp(@Query(THREAD_ID) String threadId,
-        @Query(TIMESTAMP) int timestamp);
-
-    @GET(ApiConfig.API_VERSION + MESSENGER + OLD_THREAD_MESSAGES)
-    Observable<Void> getOldThreadMessagesByTimestemp(@Query(THREAD_ID) String threadId,
-        @Query(TIMESTAMP) int timestamp);
-
-    @GET(ApiConfig.API_VERSION + MESSENGER + THREAD)
-    Observable<BaseResponse<ChatDataEntity>> getThread(@Query(THREAD_ID) String threadId);
-
-    @GET(ApiConfig.API_VERSION + MESSENGER + SYSTEM)
-    Observable<Void> getSystemMessagesThreads();
-
-    @PATCH(ApiConfig.API_VERSION + MESSENGER + SYSTEM + PATH_SYSTEM_MESSAGE_ID + READ)
-    Observable<Void> readMessage(@Path(SYSTEM_MESSAGE_ID) String systemMessageId);
-
-    @PATCH(ApiConfig.API_VERSION + MESSENGER + SYSTEM + PATH_SYSTEM_MESSAGE_ID + MARK)
-    Observable<Void> markMessage(@Path(SYSTEM_MESSAGE_ID) String systemMessageId);
-
-    @FormUrlEncoded
-    @POST(ApiConfig.API_VERSION + MESSENGER + SYSTEM + CREATE)
-    Observable<Void> createSystemMessage();
-
-    @GET(ApiConfig.API_VERSION + FRIENDS + GET_ALL_FRIENDS)
-    Observable<BaseResponse<FriendsDataEntity>> getAllFriends(@Query(OFFSET) int offset);
-
-    @GET(ApiConfig.API_VERSION + FRIENDS + SEARCH_PLAYER)
-    Observable<BaseResponse<FriendsDataEntity>> searchFriends(@Query(QUERY) String searchQuery,
-        @Query(OFFSET) int offset);
+    //@GET(ApiConfig.API_VERSION + MESSENGER + THREADS)
+    //Observable<BaseResponse<List<ChatDataEntity>>> getThreads(@Query(OFFSET) int offset);
+    //
+    //@POST(ApiConfig.API_VERSION + MESSENGER + CREATE_THREAD)
+    //Observable<BaseResponse<ChatDataEntity>> createThread(@Body RecipientsRequest recipientsRequest);
+    //
+    //@GET(ApiConfig.API_VERSION + MESSENGER + SEARCH)
+    //Observable<BaseResponse<List<ChatDataEntity>>> searchThreads(@Query(QUERY) String searchQuery);
+    //
+    //@POST(ApiConfig.API_VERSION + MESSENGER + NEW_MESSAGE)
+    //Observable<BaseResponse<MessageDataEntity>> newMessage(@Body MessageRequest messageRequest);
+    //
+    //@GET(ApiConfig.API_VERSION + MESSENGER + THREAD_MESSAGES)
+    //Observable<BaseResponse<MessageDataEntity>> getThreadMessagesByTimestemp(@Query(THREAD_ID) String threadId,
+    //    @Query(TIMESTAMP) int timestamp);
+    //
+    //@GET(ApiConfig.API_VERSION + MESSENGER + OLD_THREAD_MESSAGES)
+    //Observable<Void> getOldThreadMessagesByTimestemp(@Query(THREAD_ID) String threadId,
+    //    @Query(TIMESTAMP) int timestamp);
+    //
+    //@GET(ApiConfig.API_VERSION + MESSENGER + THREAD)
+    //Observable<BaseResponse<ChatDataEntity>> getThread(@Query(THREAD_ID) String threadId);
+    //
+    //@GET(ApiConfig.API_VERSION + MESSENGER + SYSTEM)
+    //Observable<Void> getSystemMessagesThreads();
+    //
+    //@PATCH(ApiConfig.API_VERSION + MESSENGER + SYSTEM + PATH_SYSTEM_MESSAGE_ID + READ)
+    //Observable<Void> readMessage(@Path(SYSTEM_MESSAGE_ID) String systemMessageId);
+    //
+    //@PATCH(ApiConfig.API_VERSION + MESSENGER + SYSTEM + PATH_SYSTEM_MESSAGE_ID + MARK)
+    //Observable<Void> markMessage(@Path(SYSTEM_MESSAGE_ID) String systemMessageId);
+    //
+    //@FormUrlEncoded
+    //@POST(ApiConfig.API_VERSION + MESSENGER + SYSTEM + CREATE)
+    //Observable<Void> createSystemMessage();
+    //
+    //@GET(ApiConfig.API_VERSION + FRIENDS + GET_ALL_FRIENDS)
+    //Observable<BaseResponse<FriendsDataEntity>> getAllFriends(@Query(OFFSET) int offset);
+    //
+    //@GET(ApiConfig.API_VERSION + FRIENDS + SEARCH_PLAYER)
+    //Observable<BaseResponse<FriendsDataEntity>> searchFriends(@Query(QUERY) String searchQuery,
+    //    @Query(OFFSET) int offset);
 }

@@ -1,9 +1,6 @@
 package com.fanleagueent.fanleague.data.repository.activity_history.datasource;
 
 import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryAllDataEntity;
-import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryBetEntity;
-import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryGroupEntity;
-import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryUserEntity;
 import io.reactivex.Maybe;
 import java.util.List;
 
@@ -16,11 +13,11 @@ public interface ActivityHistoryDataSource {
 
   Maybe<List<ActivityHistoryAllDataEntity>> getHistoryAll(int offset);
 
-  Maybe<List<ActivityHistoryUserEntity>> getHistoryFriends(int offset);
+  Maybe<List<ActivityHistoryAllDataEntity>> getHistoryFriends(int offset);
 
-  Maybe<List<ActivityHistoryGroupEntity>> getHistoryTeams(int offset);
+  Maybe<List<ActivityHistoryAllDataEntity>> getHistoryTeams(int offset);
 
-  Maybe<List<ActivityHistoryGroupEntity>> getHistoryLeagues(int offset);
+  Maybe<List<ActivityHistoryAllDataEntity>> getHistoryLeagues(int offset);
 
-  Maybe<List<ActivityHistoryBetEntity>> getHistoryBets(int offset);
+  Maybe<List<ActivityHistoryAllDataEntity>> getHistoryBets(int offset);
 }

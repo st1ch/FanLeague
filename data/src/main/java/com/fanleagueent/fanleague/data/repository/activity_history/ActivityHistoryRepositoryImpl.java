@@ -1,11 +1,9 @@
 package com.fanleagueent.fanleague.data.repository.activity_history;
 
+import com.fanleagueent.fanleague.data.entity.mappers.MapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.activity_history.ActivityHistoryMapperFactory;
 import com.fanleagueent.fanleague.data.repository.activity_history.datasource.ActivityHistoryDataSource;
 import com.fanleagueent.fanleague.domain.models.activity_history.ActivityHistoryAllData;
-import com.fanleagueent.fanleague.domain.models.activity_history.ActivityHistoryBet;
-import com.fanleagueent.fanleague.domain.models.activity_history.ActivityHistoryGroup;
-import com.fanleagueent.fanleague.domain.models.activity_history.ActivityHistoryUser;
 import com.fanleagueent.fanleague.domain.repository.ActivityHistoryRepository;
 import io.reactivex.Flowable;
 import java.util.List;
@@ -22,10 +20,10 @@ public class ActivityHistoryRepositoryImpl implements ActivityHistoryRepository 
   private ActivityHistoryMapperFactory activityHistoryMapperFactory;
 
   public ActivityHistoryRepositoryImpl(ActivityHistoryDataSource remote,
-      ActivityHistoryDataSource local, ActivityHistoryMapperFactory activityHistoryMapperFactory) {
+      ActivityHistoryDataSource local, MapperFactory mapperFactory) {
     this.remote = remote;
     this.local = local;
-    this.activityHistoryMapperFactory = activityHistoryMapperFactory;
+    this.activityHistoryMapperFactory = mapperFactory.activityHistoryMapperFactory();
   }
 
   @Override public Flowable<List<ActivityHistoryAllData>> getHistoryAll(int offset) {
@@ -34,27 +32,27 @@ public class ActivityHistoryRepositoryImpl implements ActivityHistoryRepository 
         .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 
-  @Override public Flowable<List<ActivityHistoryUser>> getHistoryFriends(int offset) {
+  @Override public Flowable<List<ActivityHistoryAllData>> getHistoryFriends(int offset) {
     return Flowable.concatArrayDelayError(local.getHistoryFriends(offset).toFlowable(),
         remote.getHistoryFriends(offset).toFlowable())
-        .map(o -> activityHistoryMapperFactory.getActivityHistoryUserListMapper().transform(o));
+        .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 
-  @Override public Flowable<List<ActivityHistoryGroup>> getHistoryTeams(int offset) {
+  @Override public Flowable<List<ActivityHistoryAllData>> getHistoryTeams(int offset) {
     return Flowable.concatArrayDelayError(local.getHistoryTeams(offset).toFlowable(),
         remote.getHistoryTeams(offset).toFlowable())
-        .map(o -> activityHistoryMapperFactory.getActivityHistoryGroupListMapper().transform(o));
+        .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 
-  @Override public Flowable<List<ActivityHistoryGroup>> getHistoryLeagues(int offset) {
+  @Override public Flowable<List<ActivityHistoryAllData>> getHistoryLeagues(int offset) {
     return Flowable.concatArrayDelayError(local.getHistoryLeagues(offset).toFlowable(),
         remote.getHistoryLeagues(offset).toFlowable())
-        .map(o -> activityHistoryMapperFactory.getActivityHistoryGroupListMapper().transform(o));
+        .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 
-  @Override public Flowable<List<ActivityHistoryBet>> getHistoryBets(int offset) {
+  @Override public Flowable<List<ActivityHistoryAllData>> getHistoryBets(int offset) {
     return Flowable.concatArrayDelayError(local.getHistoryBets(offset).toFlowable(),
         remote.getHistoryBets(offset).toFlowable())
-        .map(o -> activityHistoryMapperFactory.getActivityHistoryBetListMapper().transform(o));
+        .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 }

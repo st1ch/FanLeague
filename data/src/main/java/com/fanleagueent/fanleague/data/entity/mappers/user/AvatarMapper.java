@@ -15,8 +15,11 @@ public class AvatarMapper implements Mapper<AvatarEntity, Avatar> {
 
   @Override public Avatar transform(AvatarEntity obj) {
     Avatar avatar = new Avatar();
-    avatar.setMediumImage(obj.getMediumImage());
-    avatar.setOriginalImage(obj.getOriginalImage());
+
+    if (obj != null) {
+      avatar.setMediumImage(obj.getMediumImage());
+      avatar.setOriginalImage(obj.getOriginalImage());
+    }
 
     return avatar;
   }

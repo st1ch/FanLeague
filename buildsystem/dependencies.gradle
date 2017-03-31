@@ -31,10 +31,10 @@ ext {
   butterKnifeVersion = '8.5.1'
 
   // Retrofit 2
-  retrofitVersion = '2.1.0'
+  retrofitVersion = '2.2.0'
 
   // OkHttp3
-  okHttpVersion = '3.3.1'
+  okHttpVersion = '3.4.1'
 
   // Dagger 2
   daggerVersion = '2.9'
@@ -126,7 +126,7 @@ ext {
 
   dataDependencies = [
       retrofit2:          "com.squareup.retrofit2:retrofit:${retrofitVersion}",
-      retrofitRxAdapter:  "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+      retrofitRxAdapter:  "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
       retrofitGson:       "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
 
       okHttp:             "com.squareup.okhttp3:okhttp:${okHttpVersion}",
