@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import com.fanleagueent.fanleague.data.cache.PreferenceHelper;
 import com.fanleagueent.fanleague.data.entity.mappers.MapperFactory;
+import com.fanleagueent.fanleague.data.net.ApiManager;
+import com.fanleagueent.fanleague.data.utils.ConnectionUtil;
 import com.fanleagueent.fanleague.domain.schedulers.ObserveOn;
 import com.fanleagueent.fanleague.domain.schedulers.SubscribeOn;
 import com.fanleagueent.fanleague.presentation.di.modules.SettingsModule;
@@ -123,10 +125,14 @@ import io.reactivecache2.ReactiveCache;
 
   DateUtils dateUtils();
 
+  ConnectionUtil connectionUtil();
+
   SharedPreferences sharedPreferences();
 
   ReactiveCache reactiveCache();
 
   MapperFactory mapperFactory();
+
+  ApiManager apiManager();
 
 }

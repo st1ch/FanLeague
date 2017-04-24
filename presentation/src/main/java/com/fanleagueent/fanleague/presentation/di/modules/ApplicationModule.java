@@ -6,6 +6,8 @@ import com.fanleagueent.fanleague.data.cache.PreferenceHelper;
 import com.fanleagueent.fanleague.data.constants.Preferences;
 import com.fanleagueent.fanleague.data.entity.mappers.MapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.MapperFactoryImpl;
+import com.fanleagueent.fanleague.data.net.ApiManager;
+import com.fanleagueent.fanleague.data.net.interceptors.HeaderAuthInterceptor;
 import com.fanleagueent.fanleague.domain.schedulers.ObserveOn;
 import com.fanleagueent.fanleague.domain.schedulers.SubscribeOn;
 import com.fanleagueent.fanleague.presentation.utils.DateUtils;
@@ -69,6 +71,10 @@ import javax.inject.Singleton;
 
   @Provides @Singleton ReactiveCache provideReactiveCache(Context context) {
     return new ReactiveCache.Builder().using(context.getFilesDir(), new GsonSpeaker());
+  }
+
+  @Provides @Singleton ApiManager provideApiManager(Gson gson, HeaderAuthInterceptor headerAuthInterceptor) {
+    return new ApiManager(gson, headerAuthInterceptor);
   }
 
   @Provides @Singleton MapperFactory provideMapperFactory() {

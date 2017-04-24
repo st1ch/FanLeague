@@ -28,7 +28,7 @@ public class ActivityHistoryRepositoryImpl implements ActivityHistoryRepository 
 
   @Override public Flowable<List<ActivityHistoryAllData>> getHistoryAll(int offset) {
     return Flowable.concatArrayDelayError(local.getHistoryAll(offset).toFlowable(),
-        remote.getHistoryAll(offset).toFlowable())
+        remote.getHistoryAll(offset).compose(local.saveHistoryAll(offset)).toFlowable())
         .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 

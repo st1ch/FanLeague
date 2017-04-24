@@ -20,5 +20,4 @@ public interface ActivityHistoryRepository {
   Flowable<List<ActivityHistoryAllData>> getHistoryLeagues(int offset);
 
   Flowable<List<ActivityHistoryAllData>> getHistoryBets(int offset);
-
 }

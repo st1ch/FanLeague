@@ -4,7 +4,6 @@ import com.fanleagueent.fanleague.data.constants.ApiConfig;
 import com.fanleagueent.fanleague.data.net.interceptors.HeaderAuthInterceptor;
 import com.google.gson.Gson;
 import java.util.concurrent.TimeUnit;
-import javax.inject.Inject;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -16,7 +15,7 @@ public class ApiManager {
   private static final String BASE_URL = ApiConfig.BASE_URL;
   private Retrofit mRetrofit;
 
-  @Inject ApiManager(Gson gson, HeaderAuthInterceptor headerAuthInterceptor) {
+  public ApiManager(Gson gson, HeaderAuthInterceptor headerAuthInterceptor) {
 
     HttpLoggingInterceptor interceptorBody = new HttpLoggingInterceptor();
     interceptorBody.setLevel(HttpLoggingInterceptor.Level.BODY);

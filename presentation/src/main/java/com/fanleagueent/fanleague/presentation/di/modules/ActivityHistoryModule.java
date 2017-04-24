@@ -7,6 +7,7 @@ import com.fanleagueent.fanleague.data.repository.activity_history.ActivityHisto
 import com.fanleagueent.fanleague.data.repository.activity_history.datasource.ActivityHistoryDataSource;
 import com.fanleagueent.fanleague.data.repository.activity_history.datasource.ActivityHistoryLocalDataSource;
 import com.fanleagueent.fanleague.data.repository.activity_history.datasource.ActivityHistoryRemoteDataSource;
+import com.fanleagueent.fanleague.data.utils.ConnectionUtil;
 import com.fanleagueent.fanleague.domain.repository.ActivityHistoryRepository;
 import com.fanleagueent.fanleague.presentation.di.qualifiers.Local;
 import com.fanleagueent.fanleague.presentation.di.qualifiers.Remote;
@@ -26,9 +27,8 @@ import io.reactivecache2.ReactiveCache;
   }
 
   @Provides @ActivityHistoryScope @Remote
-  ActivityHistoryDataSource provideActivityHistoryRemoteDataSource(ActivityHistoryAPI api,
-      ReactiveCache reactiveCache) {
-    return new ActivityHistoryRemoteDataSource(api, reactiveCache);
+  ActivityHistoryDataSource provideActivityHistoryRemoteDataSource(ConnectionUtil connectionUtil, ActivityHistoryAPI api) {
+    return new ActivityHistoryRemoteDataSource(connectionUtil, api);
   }
 
   @Provides @ActivityHistoryScope @Local
