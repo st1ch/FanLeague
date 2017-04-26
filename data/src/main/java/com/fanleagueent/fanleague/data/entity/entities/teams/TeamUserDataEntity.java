@@ -8,17 +8,15 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class TeamUserDataEntity {
-    @SerializedName("user")
-    private UserEntity userEntity;
+  @SerializedName("user") private UserEntity userEntity;
 
-    @SerializedName("team")
-    private TeamEntity teamEntity;
+  @SerializedName("team") private TeamEntity teamEntity;
 
-    public UserEntity getUserEntity() {
-        return userEntity;
-    }
+  public UserEntity getUserEntity() {
+    return userEntity;
+  }
 
-    public TeamEntity getTeamEntity() {
-        return teamEntity;
-    }
+  public TeamEntity getTeamEntity() {
+    return teamEntity;
+  }
 }

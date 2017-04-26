@@ -9,17 +9,15 @@ import java.util.List;
 
 public class TeamsDataEntity {
 
-    @SerializedName("teams")
-    private List<TeamEntity> teamsList;
+  @SerializedName("teams") private List<TeamEntity> teamsList;
 
-    @SerializedName("total")
-    private int totalCount;
+  @SerializedName("total") private int totalCount;
 
-    public List<TeamEntity> getTeamList() {
-        return teamsList;
-    }
+  public List<TeamEntity> getTeamList() {
+    return teamsList;
+  }
 
-    public int getTotalCount() {
-        return totalCount;
-    }
+  public int getTotalCount() {
+    return totalCount;
+  }
 }

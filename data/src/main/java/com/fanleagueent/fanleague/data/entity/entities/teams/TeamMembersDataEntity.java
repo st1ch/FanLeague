@@ -10,9 +10,9 @@ import java.util.List;
 public class TeamMembersDataEntity {
 
     @SerializedName("users")
-    private List<TeamMemberEntityEntity> teamMemberEntities;
+    private List<TeamMemberEntity> teamMemberEntities;
 
-    public List<TeamMemberEntityEntity> getTeamMembersList() {
+    public List<TeamMemberEntity> getTeamMembersList() {
         return teamMemberEntities;
     }
 

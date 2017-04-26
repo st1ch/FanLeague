@@ -3,10 +3,10 @@ package com.fanleagueent.fanleague.data.net.api;
 import com.fanleagueent.fanleague.data.constants.ApiConfig;
 import com.fanleagueent.fanleague.data.entity.BaseResponse;
 import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryAllDataEntity;
+import io.reactivex.Maybe;
 import java.util.List;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import rx.Observable;
 
 /**
  * Created by alexeyverbitskiy on 3/2/17.
@@ -24,19 +24,19 @@ public interface ActivityHistoryAPI {
   String OFFSET = "offset";
 
   @GET(ApiConfig.API_VERSION + HISTORY + ALL)
-  Observable<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryAll(@Query(OFFSET) int offset);
+  Maybe<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryAll(@Query(OFFSET) int offset);
 
   @GET(ApiConfig.API_VERSION + HISTORY + FRIENDS)
-  Observable<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryFriends(
+  Maybe<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryFriends(
       @Query(OFFSET) int offset);
 
   @GET(ApiConfig.API_VERSION + HISTORY + TEAMS)
-  Observable<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryTeams(@Query(OFFSET) int offset);
+  Maybe<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryTeams(@Query(OFFSET) int offset);
 
   @GET(ApiConfig.API_VERSION + HISTORY + LEAGUES)
-  Observable<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryLeagues(
+  Maybe<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryLeagues(
       @Query(OFFSET) int offset);
 
   @GET(ApiConfig.API_VERSION + HISTORY + BETS)
-  Observable<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryBets(@Query(OFFSET) int offset);
+  Maybe<BaseResponse<List<ActivityHistoryAllDataEntity>>> getHistoryBets(@Query(OFFSET) int offset);
 }

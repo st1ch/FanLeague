@@ -30,11 +30,14 @@ ext {
   // ButterKnife
   butterKnifeVersion = '8.5.1'
 
+  // Lombok
+  lombok = '1.12.6'
+
   // Retrofit 2
-  retrofitVersion = '2.1.0'
+  retrofitVersion = '2.2.0'
 
   // OkHttp3
-  okHttpVersion = '3.3.1'
+  okHttpVersion = '3.4.1'
 
   // Dagger 2
   daggerVersion = '2.9'
@@ -44,7 +47,7 @@ ext {
   rxAndroidVersion = '2.0.1'
 
   // ReactiveCache
-  reactiveCacheVersion = '0.0.6'
+  reactiveCacheVersion = '1.1.0-2.x'
   reactiveCacheGsonVersion = '0.0.3'
 
   // Picasso
@@ -100,7 +103,9 @@ ext {
 
       picasso:            "com.squareup.picasso:picasso:${picassoVersion}",
 
-      facebook:           "com.facebook.android:facebook-android-sdk:${facebookVersion}"
+      facebook:           "com.facebook.android:facebook-android-sdk:${facebookVersion}",
+
+      lombok:             "org.projectlombok:lombok:${lombok}"
   ]
 
   presentationTestDependencies = [
@@ -116,6 +121,7 @@ ext {
       javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
       javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
       rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+      lombok:             "org.projectlombok:lombok:${lombok}"
   ]
 
   domainTestDependencies = [
@@ -126,7 +132,7 @@ ext {
 
   dataDependencies = [
       retrofit2:          "com.squareup.retrofit2:retrofit:${retrofitVersion}",
-      retrofitRxAdapter:  "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+      retrofitRxAdapter:  "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
       retrofitGson:       "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
 
       okHttp:             "com.squareup.okhttp3:okhttp:${okHttpVersion}",
@@ -143,7 +149,9 @@ ext {
 
       javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
       javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
-      androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}"
+      androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
+
+      lombok:             "org.projectlombok:lombok:${lombok}"
   ]
 
   dataTestDependencies = [

@@ -10,11 +10,9 @@ import java.util.List;
 
 public class TeamMessagesDataEntity {
 
-  @SerializedName("unread_count")
-  private int unreadCount;
+  @SerializedName("unread_count") private int unreadCount;
 
-  @SerializedName("list")
-  private List<MessageEntity> messageEntityList;
+  @SerializedName("list") private List<MessageEntity> messageEntityList;
 
   public int getUnreadCount() {
     return unreadCount;

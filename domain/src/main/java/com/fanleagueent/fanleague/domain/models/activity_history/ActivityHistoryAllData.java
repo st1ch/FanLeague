@@ -151,4 +151,41 @@ public class ActivityHistoryAllData {
   public enum TYPE {
     BET, FRIEND, TEAM, LEAGUE
   }
+
+  @Override public String toString() {
+    return "ActivityHistoryAllData{"
+        + "id='"
+        + id
+        + '\''
+        + ", teamId='"
+        + teamId
+        + '\''
+        + ", memberId='"
+        + memberId
+        + '\''
+        + ", type='"
+        + type
+        + '\''
+        + ", createdAt="
+        + createdAt
+        + ", updatedAt="
+        + updatedAt
+        + ", text='"
+        + text
+        + '\''
+        + ", title='"
+        + title
+        + '\''
+        + ", activityHistoryUserEntity="
+        + activityHistoryUserEntity
+        + ", activityHistoryTeam="
+        + activityHistoryTeam
+        + ", activityHistoryLeague="
+        + activityHistoryLeague
+        + ", activityHistorySender="
+        + activityHistorySender
+        + ", activityHistoryMember="
+        + activityHistoryMember
+        + '}';
+  }
 }

@@ -9,18 +9,23 @@ import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactor
 import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactoryImpl;
+import com.fanleagueent.fanleague.data.entity.mappers.pundits.PunditsMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.pundits.PunditsMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.recruiting.RecruitingMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.recruiting.RecruitingMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.leagues.LeaguesMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.leagues.LeaguesMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.locker_room.LockerRoomMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.locker_room.LockerRoomMapperFactoryImpl;
+import com.fanleagueent.fanleague.data.entity.mappers.teams.TeamsMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.teams.TeamsMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactoryImpl;
 
 public class MapperFactoryImpl implements MapperFactory {
 
   @Override public UserMapperFactory userMapperFactory() {
-    return null;
+    return new UserMapperFactoryImpl(this);
   }
 
   @Override public AuthorizationDataMapper authorizationMapper() {
@@ -53,5 +58,13 @@ public class MapperFactoryImpl implements MapperFactory {
 
   @Override public LockerRoomMapperFactory lockerRoomMapperFactory() {
     return new LockerRoomMapperFactoryImpl(this);
+  }
+
+  @Override public PunditsMapperFactory punditsMapperFactory() {
+    return new PunditsMapperFactoryImpl(this);
+  }
+
+  @Override public TeamsMapperFactory teamsMapperFactory() {
+    return new TeamsMapperFactoryImpl(this);
   }
 }
