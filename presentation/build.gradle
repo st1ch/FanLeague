@@ -132,6 +132,8 @@ dependencies {
 
   provided presentationDependencies.javaxAnnotation
 
+  provided presentationDependencies.lombok
+
   androidTestCompile presentationTestDependencies.mockito
   androidTestCompile presentationTestDependencies.dexmaker
   androidTestCompile presentationTestDependencies.dexmakerMockito

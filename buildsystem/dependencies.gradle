@@ -30,6 +30,9 @@ ext {
   // ButterKnife
   butterKnifeVersion = '8.5.1'
 
+  // Lombok
+  lombok = '1.12.6'
+
   // Retrofit 2
   retrofitVersion = '2.2.0'
 
@@ -100,7 +103,9 @@ ext {
 
       picasso:            "com.squareup.picasso:picasso:${picassoVersion}",
 
-      facebook:           "com.facebook.android:facebook-android-sdk:${facebookVersion}"
+      facebook:           "com.facebook.android:facebook-android-sdk:${facebookVersion}",
+
+      lombok:             "org.projectlombok:lombok:${lombok}"
   ]
 
   presentationTestDependencies = [
@@ -116,6 +121,7 @@ ext {
       javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
       javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
       rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+      lombok:             "org.projectlombok:lombok:${lombok}"
   ]
 
   domainTestDependencies = [
@@ -143,7 +149,9 @@ ext {
 
       javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
       javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
-      androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}"
+      androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
+
+      lombok:             "org.projectlombok:lombok:${lombok}"
   ]
 
   dataTestDependencies = [

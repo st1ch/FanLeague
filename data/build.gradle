@@ -44,6 +44,8 @@ dependencies {
   compile project(':domain')
   provided dataDependencies.javaxAnnotation
 
+  provided dataDependencies.lombok
+
   compile dataDependencies.retrofit2
   compile dataDependencies.retrofitRxAdapter
   compile dataDependencies.retrofitGson
