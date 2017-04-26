@@ -21,7 +21,7 @@ ext {
   //Libraries
   playServicesVersion = '10.2.0'
   supportVersion = '25.2.0'
-  constraintLayoutVersion = '1.0.1'
+  constraintLayoutVersion = '1.0.2'
 
   javaxAnnotationVersion = '1.0'
   javaxInjectVersion = '1'
