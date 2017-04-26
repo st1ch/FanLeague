@@ -22,6 +22,7 @@ dependencies {
   provided domainDependencies.javaxAnnotation
 
   provided domainDependencies.lombok
+  compile domainDependencies.lombok
 
   compile domainDependencies.javaxInject
   compile domainDependencies.rxJava

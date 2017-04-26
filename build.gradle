@@ -19,11 +19,11 @@ buildscript {
 
 allprojects {
   ext {
-    androidApplicationId = 'com.fanleagueent.fanleague.presentation'
+    androidApplicationId = 'com.fanleagueent.fanleague'
     androidVersionCode = 1
     androidVersionName = "1.0"
     testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
-    testApplicationId = 'com.fanleagueent.fanleague.presentation.test'
+    testApplicationId = 'com.fanleagueent.fanleague.test'
   }
 }
 

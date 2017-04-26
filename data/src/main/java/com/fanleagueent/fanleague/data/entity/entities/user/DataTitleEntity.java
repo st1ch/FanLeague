@@ -1,36 +1,17 @@
 package com.fanleagueent.fanleague.data.entity.entities.user;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 /**
  * Created by alexeyverbitskiy on 11/4/16.
  */
+@RequiredArgsConstructor public class DataTitleEntity {
+  @SerializedName("_id") @Getter @NonNull private String id;
 
-public class DataTitleEntity {
-    @SerializedName("_id")
-    private String id;
+  @SerializedName("title") @Getter @NonNull private String title;
 
-    @SerializedName("title")
-    private String title;
-
-    @SerializedName("ident")
-    private String ident;
-
-    public DataTitleEntity(String id, String title, String ident) {
-        this.id = id;
-        this.title = title;
-        this.ident = ident;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getIdent() {
-        return ident;
-    }
-
-    public String getId() {
-        return id;
-    }
+  @SerializedName("ident") @Getter @NonNull private String ident;
 }

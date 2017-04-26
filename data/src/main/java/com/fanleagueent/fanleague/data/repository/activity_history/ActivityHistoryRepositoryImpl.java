@@ -29,30 +29,41 @@ public class ActivityHistoryRepositoryImpl implements ActivityHistoryRepository 
   @Override public Flowable<List<ActivityHistoryAllData>> getHistoryAll(int offset) {
     return Flowable.concatArrayDelayError(local.getHistoryAll(offset).toFlowable(),
         remote.getHistoryAll(offset).compose(local.saveHistoryAll(offset)).toFlowable())
-        .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
+        .filter(activityHistoryAllDataEntities -> activityHistoryAllDataEntities != null
+            && !activityHistoryAllDataEntities.isEmpty())
+        .map(entities -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper()
+            .transform(entities));
   }
 
   @Override public Flowable<List<ActivityHistoryAllData>> getHistoryFriends(int offset) {
     return Flowable.concatArrayDelayError(local.getHistoryFriends(offset).toFlowable(),
         remote.getHistoryFriends(offset).toFlowable())
+        .filter(activityHistoryAllDataEntities -> activityHistoryAllDataEntities != null
+            && !activityHistoryAllDataEntities.isEmpty())
         .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 
   @Override public Flowable<List<ActivityHistoryAllData>> getHistoryTeams(int offset) {
     return Flowable.concatArrayDelayError(local.getHistoryTeams(offset).toFlowable(),
         remote.getHistoryTeams(offset).toFlowable())
+        .filter(activityHistoryAllDataEntities -> activityHistoryAllDataEntities != null
+            && !activityHistoryAllDataEntities.isEmpty())
         .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 
   @Override public Flowable<List<ActivityHistoryAllData>> getHistoryLeagues(int offset) {
     return Flowable.concatArrayDelayError(local.getHistoryLeagues(offset).toFlowable(),
         remote.getHistoryLeagues(offset).toFlowable())
+        .filter(activityHistoryAllDataEntities -> activityHistoryAllDataEntities != null
+            && !activityHistoryAllDataEntities.isEmpty())
         .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 
   @Override public Flowable<List<ActivityHistoryAllData>> getHistoryBets(int offset) {
     return Flowable.concatArrayDelayError(local.getHistoryBets(offset).toFlowable(),
         remote.getHistoryBets(offset).toFlowable())
+        .filter(activityHistoryAllDataEntities -> activityHistoryAllDataEntities != null
+            && !activityHistoryAllDataEntities.isEmpty())
         .map(o -> activityHistoryMapperFactory.getActivityHistoryAllDataListMapper().transform(o));
   }
 }

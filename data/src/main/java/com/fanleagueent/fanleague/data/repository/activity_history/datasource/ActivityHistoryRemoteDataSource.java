@@ -28,7 +28,9 @@ public class ActivityHistoryRemoteDataSource implements ActivityHistoryDataSourc
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryAll(int offset) {
-    if (!connectionUtil.isThereInternetConnection()) return Maybe.error(new NetworkConnectionException());
+    if (!connectionUtil.isThereInternetConnection()) {
+      return Maybe.error(new NetworkConnectionException());
+    }
 
     return activityHistoryAPI.getHistoryAll(offset)
         .flatMap(BaseResponseObservable::new)
@@ -42,7 +44,9 @@ public class ActivityHistoryRemoteDataSource implements ActivityHistoryDataSourc
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryFriends(int offset) {
-    if (!connectionUtil.isThereInternetConnection()) return Maybe.error(new NetworkConnectionException());
+    if (!connectionUtil.isThereInternetConnection()) {
+      return Maybe.error(new NetworkConnectionException());
+    }
 
     return activityHistoryAPI.getHistoryFriends(offset)
         .flatMap(BaseResponseObservable::new)
@@ -56,7 +60,9 @@ public class ActivityHistoryRemoteDataSource implements ActivityHistoryDataSourc
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryTeams(int offset) {
-    if (!connectionUtil.isThereInternetConnection()) return Maybe.error(new NetworkConnectionException());
+    if (!connectionUtil.isThereInternetConnection()) {
+      return Maybe.error(new NetworkConnectionException());
+    }
 
     return activityHistoryAPI.getHistoryTeams(offset)
         .flatMap(BaseResponseObservable::new)
@@ -70,7 +76,9 @@ public class ActivityHistoryRemoteDataSource implements ActivityHistoryDataSourc
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryLeagues(int offset) {
-    if (!connectionUtil.isThereInternetConnection()) return Maybe.error(new NetworkConnectionException());
+    if (!connectionUtil.isThereInternetConnection()) {
+      return Maybe.error(new NetworkConnectionException());
+    }
 
     return activityHistoryAPI.getHistoryLeagues(offset)
         .flatMap(BaseResponseObservable::new)
@@ -84,7 +92,9 @@ public class ActivityHistoryRemoteDataSource implements ActivityHistoryDataSourc
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryBets(int offset) {
-    if (!connectionUtil.isThereInternetConnection()) return Maybe.error(new NetworkConnectionException());
+    if (!connectionUtil.isThereInternetConnection()) {
+      return Maybe.error(new NetworkConnectionException());
+    }
 
     return activityHistoryAPI.getHistoryBets(offset)
         .flatMap(BaseResponseObservable::new)
