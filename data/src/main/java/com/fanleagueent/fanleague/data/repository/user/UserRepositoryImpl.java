@@ -15,11 +15,13 @@ import com.fanleagueent.fanleague.domain.models.user.SystemMessage;
 import com.fanleagueent.fanleague.domain.models.user.User;
 import com.fanleagueent.fanleague.domain.models.user.UserGeneralData;
 import com.fanleagueent.fanleague.domain.repository.UserRepository;
+
+import java.io.File;
+import java.util.List;
+
 import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 import io.reactivex.annotations.NonNull;
-import java.io.File;
-import java.util.List;
 
 /**
  * Created by Artem Getman on 31.03.17.
@@ -224,12 +226,10 @@ public class UserRepositoryImpl implements UserRepository {
   }
 
   @Override public Flowable<List<SystemMessage>> getSystemMessagesThreads() {
-    return null;
-    //return Flowable.concatArrayDelayError(local.getSystemMessagesThreads().toFlowable(),
-    //    remote.getSystemMessagesThreads().compose(local.saveSystemMessagesThreads()).toFlowable())
-    //    .filter(data -> data != null)
-    //    .map(threads -> userMapperFactory.getSystemMessages().transform(counts))
-    //    ;
+    return Flowable.concatArrayDelayError(local.getSystemMessagesThreads().toFlowable(),
+        remote.getSystemMessagesThreads().compose(local.saveSystemMessagesThreads()).toFlowable())
+        .filter(data -> data != null)
+        .map(threads -> userMapperFactory.geSystemMessagesList().transform(threads));
   }
 
   @Override public Flowable<Boolean> acknowledgeSystemMessage(String systemMessageId) {

@@ -12,6 +12,7 @@ import com.fanleagueent.fanleague.data.entity.entities.user.NotificationListEnti
 import com.fanleagueent.fanleague.data.entity.entities.user.NotificationValuesEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.ProfessionsEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.ProfileViewPermissionEntity;
+import com.fanleagueent.fanleague.data.entity.entities.user.SystemMessageEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.UserDataEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.UserEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.WalletEntity;
@@ -28,6 +29,7 @@ import com.fanleagueent.fanleague.domain.models.user.FavoriteClubData;
 import com.fanleagueent.fanleague.domain.models.user.NotificationList;
 import com.fanleagueent.fanleague.domain.models.user.NotificationValues;
 import com.fanleagueent.fanleague.domain.models.user.ProfileViewPermission;
+import com.fanleagueent.fanleague.domain.models.user.SystemMessage;
 import com.fanleagueent.fanleague.domain.models.user.User;
 import com.fanleagueent.fanleague.domain.models.user.UserData;
 import com.fanleagueent.fanleague.domain.models.user.Wallet;
@@ -120,5 +122,15 @@ public class UserMapperFactoryImpl implements UserMapperFactory {
   @Override
   public Mapper<WeeklyDepositLimitEntity, WeeklyDepositLimit> getWeeklyDepositLimitMapper() {
     return new WeeklyDepositLimitMapper();
+  }
+
+  @Override
+  public Mapper<SystemMessageEntity, SystemMessage> getSystemMessage() {
+    return new SystemMessageMapper();
+  }
+
+  @Override
+  public Mapper<List<SystemMessageEntity>, List<SystemMessage>> geSystemMessagesList() {
+    return new SystemMessageListMapper(this);
   }
 }
