@@ -11,17 +11,17 @@ import com.fanleagueent.fanleague.domain.models.locker_room.Privacy;
 
 public class PrivacyMapper implements Mapper<PrivacyEntity, Privacy> {
   @Override public Privacy transform(PrivacyEntity obj) {
-    return new Privacy.Builder()
-        .memberSince(obj.isMemberSinceVisible())
-        .favouriteClub(obj.isFavouriteClubVisible())
-        .favouriteYouthClub(obj.isFavouriteYouthClubVisible())
-        .profession(obj.isProfessionVisible())
-        .averageWinningBets(obj.isAverageWinningBetsVisible())
-        .bestScore(obj.isBestScoreVisible())
-        .age(obj.isAgeVisible())
-        .sex(obj.isSexVisible())
-        .nationality(obj.isNationalityVisible())
-        .recruitTreeSize(obj.isRecruitTreeSizeVisible())
+    return Privacy.builder()
+        .memberSince(obj.isMemberSince())
+        .favouriteClub(obj.isFavouriteClub())
+        .favouriteYouthClub(obj.isFavouriteYouthClub())
+        .profession(obj.isProfession())
+        .averageWinningBets(obj.isAverageWinningBets())
+        .bestScore(obj.isBestScore())
+        .age(obj.isAge())
+        .sex(obj.isSex())
+        .nationality(obj.isNationality())
+        .recruitTreeSize(obj.isRecruitTreeSize())
         .build();
   }
 }

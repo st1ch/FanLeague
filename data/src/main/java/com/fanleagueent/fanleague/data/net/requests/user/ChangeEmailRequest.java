@@ -1,17 +1,12 @@
 package com.fanleagueent.fanleague.data.net.requests.user;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
-public class ChangeEmailRequest {
+@RequiredArgsConstructor public class ChangeEmailRequest {
 
-    @SerializedName("email")
-    private String email;
+  @SerializedName("email") @NonNull private String email;
 
-    @SerializedName("password")
-    private String password;
-
-    public ChangeEmailRequest(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
+  @SerializedName("password") @NonNull private String password;
 }

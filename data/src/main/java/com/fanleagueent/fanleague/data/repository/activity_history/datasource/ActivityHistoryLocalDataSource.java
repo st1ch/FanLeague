@@ -1,5 +1,6 @@
 package com.fanleagueent.fanleague.data.repository.activity_history.datasource;
 
+import com.fanleagueent.fanleague.data.constants.CacheTitle;
 import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryAllDataEntity;
 import io.reactivecache2.ProviderGroup;
 import io.reactivecache2.ReactiveCache;
@@ -23,19 +24,19 @@ public class ActivityHistoryLocalDataSource implements ActivityHistoryDataSource
   public ActivityHistoryLocalDataSource(final ReactiveCache reactiveCache) {
     this.allHistoryCache =
         reactiveCache.<List<ActivityHistoryAllDataEntity>>providerGroup().withKey(
-            "allHistoryCache");
+            CacheTitle.ActivityHistory.ALL_HISTORY);
     this.friendsHistoryCache =
         reactiveCache.<List<ActivityHistoryAllDataEntity>>providerGroup().withKey(
-            "friendsHistoryCache");
+            CacheTitle.ActivityHistory.FRIENDS_HISTORY);
     this.teamsHistoryCache =
         reactiveCache.<List<ActivityHistoryAllDataEntity>>providerGroup().withKey(
-            "teamsHistoryCache");
+            CacheTitle.ActivityHistory.TEAMS_HISTORY);
     this.leaguesHistoryCache =
         reactiveCache.<List<ActivityHistoryAllDataEntity>>providerGroup().withKey(
-            "leaguesHistoryCache");
+            CacheTitle.ActivityHistory.LEAGUES_HISTORY);
     this.betsHistoryCache =
         reactiveCache.<List<ActivityHistoryAllDataEntity>>providerGroup().withKey(
-            "betsHistoryCache");
+            CacheTitle.ActivityHistory.BETS_HISTORY);
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryAll(int offset) {

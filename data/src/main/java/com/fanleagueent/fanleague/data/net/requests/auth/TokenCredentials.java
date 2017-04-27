@@ -1,17 +1,14 @@
 package com.fanleagueent.fanleague.data.net.requests.auth;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 /**
  * Created by st1ch on 09.11.2016.
  */
 
-public class TokenCredentials {
+@RequiredArgsConstructor public class TokenCredentials {
 
-    @SerializedName("code")
-    String token;
-
-    public TokenCredentials(String token) {
-        this.token = token;
-    }
+  @SerializedName("code") @NonNull private String token;
 }

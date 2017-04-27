@@ -1,27 +1,14 @@
 package com.fanleagueent.fanleague.data.entity.entities.user;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.Getter;
 
 /**
  * Created by alexeyverbitskiy on 3/21/17.
  */
 
 public class SystemMessageEntity {
-  @SerializedName("_id") private String id;
-
-  @SerializedName("text") private String text;
-
-  @SerializedName("updated_at") private String updatedAt;
-
-  public String getId() {
-    return id;
-  }
-
-  public String getText() {
-    return text;
-  }
-
-  public String getUpdatedAt() {
-    return updatedAt;
-  }
+  @SerializedName("_id") @Getter private String id;
+  @SerializedName("text") @Getter private String text;
+  @SerializedName("updated_at") @Getter private String updatedAt;
 }
