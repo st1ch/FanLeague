@@ -1,40 +1,15 @@
 package com.fanleagueent.fanleague.domain.models.user;
 
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+
 /**
  * Created by st1ch on 11.11.2016.
  */
-
+@RequiredArgsConstructor @ToString
 public class PrivacyStatus {
-
-    private ProfileViewPermission profileViewPermission;
-    private DisplayNameIdent displayNameIdent;
-
-    public PrivacyStatus(ProfileViewPermission profileViewPermission, DisplayNameIdent displayNameIdent) {
-        this.profileViewPermission = profileViewPermission;
-        this.displayNameIdent = displayNameIdent;
-    }
-
-    public ProfileViewPermission getProfileViewPermission() {
-        return profileViewPermission;
-    }
-
-    public DisplayNameIdent getDisplayNameIdent() {
-        return displayNameIdent;
-    }
-
-    public void setDisplayNameIdent(DisplayNameIdent displayNameIdent) {
-        this.displayNameIdent = displayNameIdent;
-    }
-
-    public void setProfileViewPermission(ProfileViewPermission profileViewPermission) {
-        this.profileViewPermission = profileViewPermission;
-    }
-
-    @Override
-    public String toString() {
-        return "PrivacyStatusEntity{" +
-                "profileViewPermissionEntity=" + profileViewPermission +
-                ", displayNameIdentEntity=" + displayNameIdent +
-                '}';
-    }
+    @Getter @NonNull private ProfileViewPermission profileViewPermission;
+    @Getter @NonNull private DisplayNameIdent displayNameIdent;
 }

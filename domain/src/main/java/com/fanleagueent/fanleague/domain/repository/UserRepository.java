@@ -1,5 +1,6 @@
 package com.fanleagueent.fanleague.domain.repository;
 
+import com.fanleagueent.fanleague.domain.models.locker_room.MyWallData;
 import com.fanleagueent.fanleague.domain.models.user.ConnectCounts;
 import com.fanleagueent.fanleague.domain.models.user.DataTitle;
 import com.fanleagueent.fanleague.domain.models.user.DisplayNameIdent;
@@ -21,26 +22,18 @@ import java.util.List;
 
 public interface UserRepository {
 
-  Flowable<UserGeneralData> getUserData();
+  Flowable<UserGeneralData> getUserData(boolean refresh);
 
-  Flowable<UserGeneralData> getLocalUserData();
-
-  Flowable<User> getUser();
-
-  Flowable<User> getCachedUser();
+  Flowable<User> getUser(boolean refresh);
 
   Flowable<User> updateUser(String firstName, String lastName, String username, String profession,
       String birthday, String sex, String nationality, int yearlyEarnings,
       String favouriteFootballClubId, String favouriteYouthClub, int weeklyDepositLimit,
       String streetAddress, String country, String postalCode, String city, String phoneNumber);
 
-  Flowable<User> saveUser(@NonNull User user);
-
   Flowable<User> changeDepositLimit(int depositLimit);
 
   Flowable<User> changeWagerLimit(float wagerLimit);
-
-  Flowable<Void> deleteUser();
 
   Flowable<List<DataTitle>> getProfession();
 
@@ -86,4 +79,10 @@ public interface UserRepository {
   Flowable<Integer> addUnreadThread(String newThreadId);
 
   Flowable<Integer> removeUnreadThread(String threadId);
+
+  Flowable<MyWallData> getMyWallData(boolean refresh);
+
+  Flowable<MyWallData> updateMyWallPrivacy(boolean memberSince, boolean favouriteClub,
+      boolean favouriteYouthClub, boolean profession, boolean averageWinningBets, boolean bestScore,
+      boolean age, boolean sex, boolean nationality, boolean recruitTreeSize);
 }

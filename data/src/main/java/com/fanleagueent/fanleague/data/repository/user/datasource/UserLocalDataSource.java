@@ -9,8 +9,8 @@ import com.fanleagueent.fanleague.data.entity.entities.user.FavoriteClubEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.SystemMessageEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.UserEntity;
 import com.fanleagueent.fanleague.data.exception.UnsupportedDataSourceOperationException;
-import com.fanleagueent.fanleague.data.net.requests.user.NotificationsRequest;
 import com.fanleagueent.fanleague.domain.models.user.DisplayNameIdent;
+import com.fanleagueent.fanleague.domain.models.user.NotificationValues;
 import com.fanleagueent.fanleague.domain.models.user.ProfileViewPermission;
 import io.reactivecache2.Provider;
 import io.reactivecache2.ReactiveCache;
@@ -153,7 +153,7 @@ public class UserLocalDataSource implements UserDataSource {
   }
 
   @Override
-  public Maybe<UserEntity> changeNotifications(NotificationsRequest notificationsRequest) {
+  public Maybe<UserEntity> changeNotifications(NotificationValues notificationValues) {
     throw new UnsupportedDataSourceOperationException();
   }
 
