@@ -18,7 +18,7 @@ public class UserMapper implements Mapper<UserEntity, User> {
 
   @Override public User transform(UserEntity obj) {
     //TODO User not full check User Entity
-    return new User.Builder()
+    return User.builder()
         .id(obj.getId())
         .firstName(obj.getFirstName())
         .lastName(obj.getLastName())
@@ -35,11 +35,11 @@ public class UserMapper implements Mapper<UserEntity, User> {
         .birthday(obj.getBirthday())
         .sex(obj.getSex())
         .favouriteFootballClubId(obj.getFavouriteFootballClubId())
-        .favouriteYouthClubId(obj.getFavouriteYouthClub())
+        .favouriteYouthClub(obj.getFavouriteYouthClub())
         .yearlyEarnings(obj.getYearlyEarnings())
-        .weaklyDepositLimit(userMapperFactory.getWeeklyDepositLimitMapper().transform(obj.getWeeklyDepositLimitEntity()))
+        .weeklyDepositLimit(userMapperFactory.getWeeklyDepositLimitMapper().transform(obj.getWeeklyDepositLimitEntity()))
         .isGoogleConnected(obj.isGoogleConnected())
-        .isFaceBookConnected(obj.isFacebookConnected())
+        .isFacebookConnected(obj.isFacebookConnected())
         .level(obj.getLevel())
         .displayNameIdent(userMapperFactory.getDisplayNameIdentMapper().transform(obj.getDisplayNameIdentEntity()))
         .profileViewPermission(userMapperFactory.getProfileViewPermissionMapper().transform(obj.getProfileViewPermissionEntity()))
