@@ -66,6 +66,10 @@ public class UserMapperFactoryImpl implements UserMapperFactory {
     return new DataTitleMapper();
   }
 
+  @Override public Mapper<List<DataTitleEntity>, List<DataTitle>> getListDataTitleMapper() {
+    return new DataTitleListMapper(this);
+  }
+
   @Override public Mapper<DisplayNameIdentEntity, DisplayNameIdent> getDisplayNameIdentMapper() {
     return new DisplayNameIdentMapper();
   }

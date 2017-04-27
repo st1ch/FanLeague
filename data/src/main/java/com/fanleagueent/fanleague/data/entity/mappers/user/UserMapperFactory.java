@@ -50,6 +50,8 @@ public interface UserMapperFactory {
 
   Mapper<DataTitleEntity, DataTitle> getDataTitleMapper();
 
+  Mapper<List<DataTitleEntity>, List<DataTitle>> getListDataTitleMapper();
+
   Mapper<DisplayNameIdentEntity, DisplayNameIdent> getDisplayNameIdentMapper();
 
   Mapper<FavoriteClubDataEntity, FavoriteClubData> getFavoriteClubDataMapper();

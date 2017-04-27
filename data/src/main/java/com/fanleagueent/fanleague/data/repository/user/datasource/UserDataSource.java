@@ -7,8 +7,8 @@ import com.fanleagueent.fanleague.data.entity.entities.user.DataTitleEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.FavoriteClubEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.SystemMessageEntity;
 import com.fanleagueent.fanleague.data.entity.entities.user.UserEntity;
-import com.fanleagueent.fanleague.data.net.requests.user.NotificationsRequest;
 import com.fanleagueent.fanleague.domain.models.user.DisplayNameIdent;
+import com.fanleagueent.fanleague.domain.models.user.NotificationValues;
 import com.fanleagueent.fanleague.domain.models.user.ProfileViewPermission;
 import io.reactivex.Maybe;
 import io.reactivex.MaybeTransformer;
@@ -72,7 +72,7 @@ public interface UserDataSource {
 
   Maybe<UserEntity> changePrivacy(ProfileViewPermission profileViewPermission);
 
-  Maybe<UserEntity> changeNotifications(NotificationsRequest notificationsRequest);
+  Maybe<UserEntity> changeNotifications(NotificationValues notificationValues);
 
   Maybe<ConnectCountsEntity> getConnectCounts();
 

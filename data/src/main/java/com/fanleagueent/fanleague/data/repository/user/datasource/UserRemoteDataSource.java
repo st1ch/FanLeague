@@ -24,6 +24,7 @@ import com.fanleagueent.fanleague.data.net.requests.user.UpdateUserRequest;
 import com.fanleagueent.fanleague.data.observables.BaseResponseObservable;
 import com.fanleagueent.fanleague.data.utils.ConnectionUtil;
 import com.fanleagueent.fanleague.domain.models.user.DisplayNameIdent;
+import com.fanleagueent.fanleague.domain.models.user.NotificationValues;
 import com.fanleagueent.fanleague.domain.models.user.ProfileViewPermission;
 import io.reactivex.Maybe;
 import io.reactivex.MaybeTransformer;
@@ -282,13 +283,20 @@ public class UserRemoteDataSource implements UserDataSource {
         .map(userResponse -> userResponse.getData().getUserEntity());
   }
 
-  @Override
-  public Maybe<UserEntity> changeNotifications(NotificationsRequest notificationsRequest) {
+  @Override public Maybe<UserEntity> changeNotifications(NotificationValues notificationValues) {
     if (!connectionUtil.isThereInternetConnection()) {
       return Maybe.error(new NetworkConnectionException());
     }
 
-    return api.changeNotifications(notificationsRequest)
+    return api.changeNotifications(NotificationsRequest.builder()
+        .friendsSignup(notificationValues.isFriendsSignup())
+        .gameResults(notificationValues.isGameResults())
+        .upcomingMatchday(notificationValues.isUpcomingMatchday())
+        .inbox(notificationValues.isInbox())
+        .winnings(notificationValues.isWinnings())
+        .leagueInvitations(notificationValues.isLeagueInvitations())
+        .teamsInvitations(notificationValues.isTeamsInvitations())
+        .build())
         .flatMap(BaseResponseObservable::new)
         .map(userResponse -> userResponse.getData().getUserEntity());
   }
