@@ -25,4 +25,12 @@ public interface CacheTitle {
     String SYSTEM_MESSAGES = "systemMessagesCache";
     String UNREAD_MESSAGES = "unreadMessagesCache";
   }
+
+  interface Chat {
+    String THREADS = "chatThreadsCache";
+  }
+
+  interface Friends {
+    String FRIENDS_LIST = "allFriendsListCache";
+  }
 }

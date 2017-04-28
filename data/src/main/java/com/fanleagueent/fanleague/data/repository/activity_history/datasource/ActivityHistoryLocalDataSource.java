@@ -2,7 +2,7 @@ package com.fanleagueent.fanleague.data.repository.activity_history.datasource;
 
 import com.fanleagueent.fanleague.data.constants.CacheTitle;
 import com.fanleagueent.fanleague.data.entity.entities.activity_history.ActivityHistoryAllDataEntity;
-import io.reactivecache2.ProviderGroup;
+import io.reactivecache2.ProviderGroupList;
 import io.reactivecache2.ReactiveCache;
 import io.reactivex.Maybe;
 import io.reactivex.MaybeTransformer;
@@ -15,28 +15,26 @@ import java.util.List;
 
 public class ActivityHistoryLocalDataSource implements ActivityHistoryDataSource {
 
-  private final ProviderGroup<List<ActivityHistoryAllDataEntity>> allHistoryCache;
-  private final ProviderGroup<List<ActivityHistoryAllDataEntity>> friendsHistoryCache;
-  private final ProviderGroup<List<ActivityHistoryAllDataEntity>> teamsHistoryCache;
-  private final ProviderGroup<List<ActivityHistoryAllDataEntity>> leaguesHistoryCache;
-  private final ProviderGroup<List<ActivityHistoryAllDataEntity>> betsHistoryCache;
+  private final ProviderGroupList<ActivityHistoryAllDataEntity> allHistoryCache;
+  private final ProviderGroupList<ActivityHistoryAllDataEntity> friendsHistoryCache;
+  private final ProviderGroupList<ActivityHistoryAllDataEntity> teamsHistoryCache;
+  private final ProviderGroupList<ActivityHistoryAllDataEntity> leaguesHistoryCache;
+  private final ProviderGroupList<ActivityHistoryAllDataEntity> betsHistoryCache;
 
   public ActivityHistoryLocalDataSource(final ReactiveCache reactiveCache) {
-    this.allHistoryCache =
-        reactiveCache.<List<ActivityHistoryAllDataEntity>>providerGroup().withKey(
-            CacheTitle.ActivityHistory.ALL_HISTORY);
+    this.allHistoryCache = reactiveCache.<ActivityHistoryAllDataEntity>providerGroupList().withKey(
+        CacheTitle.ActivityHistory.ALL_HISTORY);
     this.friendsHistoryCache =
-        reactiveCache.<List<ActivityHistoryAllDataEntity>>providerGroup().withKey(
+        reactiveCache.<ActivityHistoryAllDataEntity>providerGroupList().withKey(
             CacheTitle.ActivityHistory.FRIENDS_HISTORY);
     this.teamsHistoryCache =
-        reactiveCache.<List<ActivityHistoryAllDataEntity>>providerGroup().withKey(
+        reactiveCache.<ActivityHistoryAllDataEntity>providerGroupList().withKey(
             CacheTitle.ActivityHistory.TEAMS_HISTORY);
     this.leaguesHistoryCache =
-        reactiveCache.<List<ActivityHistoryAllDataEntity>>providerGroup().withKey(
+        reactiveCache.<ActivityHistoryAllDataEntity>providerGroupList().withKey(
             CacheTitle.ActivityHistory.LEAGUES_HISTORY);
-    this.betsHistoryCache =
-        reactiveCache.<List<ActivityHistoryAllDataEntity>>providerGroup().withKey(
-            CacheTitle.ActivityHistory.BETS_HISTORY);
+    this.betsHistoryCache = reactiveCache.<ActivityHistoryAllDataEntity>providerGroupList().withKey(
+        CacheTitle.ActivityHistory.BETS_HISTORY);
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryAll(int offset) {

@@ -6,6 +6,7 @@ import com.fanleagueent.fanleague.data.exception.NetworkConnectionException;
 import com.fanleagueent.fanleague.data.exception.UnsupportedDataSourceOperationException;
 import com.fanleagueent.fanleague.data.net.api.ActivityHistoryAPI;
 import com.fanleagueent.fanleague.data.observables.BaseResponseObservable;
+import com.fanleagueent.fanleague.data.repository.BaseRemoteDataSource;
 import com.fanleagueent.fanleague.data.utils.ConnectionUtil;
 import io.reactivex.Maybe;
 import io.reactivex.MaybeTransformer;
@@ -16,25 +17,27 @@ import java.util.List;
  * a.e.getman@gmail.com
  */
 
-public class ActivityHistoryRemoteDataSource implements ActivityHistoryDataSource {
+public class ActivityHistoryRemoteDataSource extends BaseRemoteDataSource
+    implements ActivityHistoryDataSource {
 
-  private ConnectionUtil connectionUtil;
   private ActivityHistoryAPI activityHistoryAPI;
 
   public ActivityHistoryRemoteDataSource(ConnectionUtil connectionUtil,
       ActivityHistoryAPI activityHistoryAPI) {
-    this.connectionUtil = connectionUtil;
+    super(connectionUtil);
     this.activityHistoryAPI = activityHistoryAPI;
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryAll(int offset) {
-    if (!connectionUtil.isThereInternetConnection()) {
-      return Maybe.error(new NetworkConnectionException());
-    }
+    try {
+      checkConnection();
 
-    return activityHistoryAPI.getHistoryAll(offset)
-        .flatMap(BaseResponseObservable::new)
-        .map(BaseResponse::getData);
+      return activityHistoryAPI.getHistoryAll(offset)
+          .flatMap(BaseResponseObservable::new)
+          .map(BaseResponse::getData);
+    } catch (NetworkConnectionException e) {
+      return Maybe.error(e);
+    }
   }
 
   @Override
@@ -44,13 +47,15 @@ public class ActivityHistoryRemoteDataSource implements ActivityHistoryDataSourc
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryFriends(int offset) {
-    if (!connectionUtil.isThereInternetConnection()) {
-      return Maybe.error(new NetworkConnectionException());
-    }
+    try {
+      checkConnection();
 
-    return activityHistoryAPI.getHistoryFriends(offset)
-        .flatMap(BaseResponseObservable::new)
-        .map(BaseResponse::getData);
+      return activityHistoryAPI.getHistoryFriends(offset)
+          .flatMap(BaseResponseObservable::new)
+          .map(BaseResponse::getData);
+    } catch (NetworkConnectionException e) {
+      return Maybe.error(e);
+    }
   }
 
   @Override
@@ -60,13 +65,15 @@ public class ActivityHistoryRemoteDataSource implements ActivityHistoryDataSourc
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryTeams(int offset) {
-    if (!connectionUtil.isThereInternetConnection()) {
-      return Maybe.error(new NetworkConnectionException());
-    }
+    try {
+      checkConnection();
 
-    return activityHistoryAPI.getHistoryTeams(offset)
-        .flatMap(BaseResponseObservable::new)
-        .map(BaseResponse::getData);
+      return activityHistoryAPI.getHistoryTeams(offset)
+          .flatMap(BaseResponseObservable::new)
+          .map(BaseResponse::getData);
+    } catch (NetworkConnectionException e) {
+      return Maybe.error(e);
+    }
   }
 
   @Override
@@ -76,13 +83,15 @@ public class ActivityHistoryRemoteDataSource implements ActivityHistoryDataSourc
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryLeagues(int offset) {
-    if (!connectionUtil.isThereInternetConnection()) {
-      return Maybe.error(new NetworkConnectionException());
-    }
+    try {
+      checkConnection();
 
-    return activityHistoryAPI.getHistoryLeagues(offset)
-        .flatMap(BaseResponseObservable::new)
-        .map(BaseResponse::getData);
+      return activityHistoryAPI.getHistoryLeagues(offset)
+          .flatMap(BaseResponseObservable::new)
+          .map(BaseResponse::getData);
+    } catch (NetworkConnectionException e) {
+      return Maybe.error(e);
+    }
   }
 
   @Override
@@ -92,13 +101,15 @@ public class ActivityHistoryRemoteDataSource implements ActivityHistoryDataSourc
   }
 
   @Override public Maybe<List<ActivityHistoryAllDataEntity>> getHistoryBets(int offset) {
-    if (!connectionUtil.isThereInternetConnection()) {
-      return Maybe.error(new NetworkConnectionException());
-    }
+    try {
+      checkConnection();
 
-    return activityHistoryAPI.getHistoryBets(offset)
-        .flatMap(BaseResponseObservable::new)
-        .map(BaseResponse::getData);
+      return activityHistoryAPI.getHistoryBets(offset)
+          .flatMap(BaseResponseObservable::new)
+          .map(BaseResponse::getData);
+    } catch (NetworkConnectionException e) {
+      return Maybe.error(e);
+    }
   }
 
   @Override

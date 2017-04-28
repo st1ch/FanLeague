@@ -13,6 +13,7 @@ import com.fanleagueent.fanleague.domain.models.user.DisplayNameIdent;
 import com.fanleagueent.fanleague.domain.models.user.NotificationValues;
 import com.fanleagueent.fanleague.domain.models.user.ProfileViewPermission;
 import io.reactivecache2.Provider;
+import io.reactivecache2.ProviderList;
 import io.reactivecache2.ReactiveCache;
 import io.reactivex.Maybe;
 import io.reactivex.MaybeTransformer;
@@ -27,30 +28,30 @@ import java.util.List;
 public class UserLocalDataSource implements UserDataSource {
 
   private final Provider<UserEntity> userCacheProvider;
-  private final Provider<List<DataTitleEntity>> professionsCacheProvider;
-  private final Provider<List<DataTitleEntity>> nationalitiesCacheProvider;
-  private final Provider<List<DataTitleEntity>> countriesCacheProvider;
-  private final Provider<List<FavoriteClubEntity>> favouriteClubCacheProvider;
+  private final ProviderList<DataTitleEntity> professionsCacheProvider;
+  private final ProviderList<DataTitleEntity> nationalitiesCacheProvider;
+  private final ProviderList<DataTitleEntity> countriesCacheProvider;
+  private final ProviderList<FavoriteClubEntity> favouriteClubCacheProvider;
   private final Provider<ConnectCountsEntity> connectCountsProvider;
-  private final Provider<List<SystemMessageEntity>> systemMessageCacheProvider;
-  private final Provider<List<String>> unreadThreadsCacheProvider;
+  private final ProviderList<SystemMessageEntity> systemMessageCacheProvider;
+  private final ProviderList<String> unreadThreadsCacheProvider;
 
   public UserLocalDataSource(final ReactiveCache reactiveCache) {
     this.userCacheProvider = reactiveCache.<UserEntity>provider().withKey(CacheTitle.User.USER);
     this.professionsCacheProvider =
-        reactiveCache.<List<DataTitleEntity>>provider().withKey(CacheTitle.User.PROFESSIONS);
+        reactiveCache.<DataTitleEntity>providerList().withKey(CacheTitle.User.PROFESSIONS);
     this.nationalitiesCacheProvider =
-        reactiveCache.<List<DataTitleEntity>>provider().withKey(CacheTitle.User.NATIONALITIES);
+        reactiveCache.<DataTitleEntity>providerList().withKey(CacheTitle.User.NATIONALITIES);
     this.countriesCacheProvider =
-        reactiveCache.<List<DataTitleEntity>>provider().withKey(CacheTitle.User.COUNTRIES);
+        reactiveCache.<DataTitleEntity>providerList().withKey(CacheTitle.User.COUNTRIES);
     this.favouriteClubCacheProvider =
-        reactiveCache.<List<FavoriteClubEntity>>provider().withKey(CacheTitle.User.FAVOURITE_CLUB);
+        reactiveCache.<FavoriteClubEntity>providerList().withKey(CacheTitle.User.FAVOURITE_CLUB);
     this.connectCountsProvider =
         reactiveCache.<ConnectCountsEntity>provider().withKey(CacheTitle.User.CONNECT_COUNTS);
-    this.systemMessageCacheProvider = reactiveCache.<List<SystemMessageEntity>>provider().withKey(
-        CacheTitle.User.SYSTEM_MESSAGES);
+    this.systemMessageCacheProvider =
+        reactiveCache.<SystemMessageEntity>providerList().withKey(CacheTitle.User.SYSTEM_MESSAGES);
     this.unreadThreadsCacheProvider =
-        reactiveCache.<List<String>>provider().withKey(CacheTitle.User.UNREAD_MESSAGES);
+        reactiveCache.<String>providerList().withKey(CacheTitle.User.UNREAD_MESSAGES);
   }
 
   @Override public Maybe<UserEntity> getUser() {
@@ -152,8 +153,7 @@ public class UserLocalDataSource implements UserDataSource {
     throw new UnsupportedDataSourceOperationException();
   }
 
-  @Override
-  public Maybe<UserEntity> changeNotifications(NotificationValues notificationValues) {
+  @Override public Maybe<UserEntity> changeNotifications(NotificationValues notificationValues) {
     throw new UnsupportedDataSourceOperationException();
   }
 

@@ -26,6 +26,8 @@ public interface ChatMapperFactory {
 
   Mapper<ChatDataEntity, ChatData> getChatDataMapper();
 
+  Mapper<List<ChatDataEntity>, List<ChatData>> getChatDataListMapper();
+
   Mapper<ChatTypeDataEntity, ChatTypeData> getChatTypeDataMapper();
 
   Mapper<ChatUserEntity, ChatUser> getChatUserMapper();
