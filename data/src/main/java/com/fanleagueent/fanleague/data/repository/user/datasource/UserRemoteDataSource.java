@@ -1,6 +1,7 @@
 package com.fanleagueent.fanleague.data.repository.user.datasource;
 
 import android.support.annotation.NonNull;
+
 import com.fanleagueent.fanleague.data.entity.BaseResponse;
 import com.fanleagueent.fanleague.data.entity.entities.locker_room.MyWallDataEntity;
 import com.fanleagueent.fanleague.data.entity.entities.locker_room.PrivacyEntity;
@@ -26,10 +27,12 @@ import com.fanleagueent.fanleague.data.utils.ConnectionUtil;
 import com.fanleagueent.fanleague.domain.models.user.DisplayNameIdent;
 import com.fanleagueent.fanleague.domain.models.user.NotificationValues;
 import com.fanleagueent.fanleague.domain.models.user.ProfileViewPermission;
-import io.reactivex.Maybe;
-import io.reactivex.MaybeTransformer;
+
 import java.io.File;
 import java.util.List;
+
+import io.reactivex.Maybe;
+import io.reactivex.MaybeTransformer;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;

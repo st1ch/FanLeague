@@ -75,7 +75,6 @@ android {
       resValue "string", "facebook_app_id", "525728847631290"
       resValue "string", "google_map_id", "AIzaSyAfoEET47Kl-n_kMoIdN4c1y78qQoaNfK8"
       resValue "string", "youtube_player_id", "AIzaSyBI_pP6-odT7oUk7vNGfXiOaJGMMhK3ssI"
-      signingConfig signingConfigs.config
     }
 
     prototype {
