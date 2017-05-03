@@ -38,6 +38,10 @@ public class ChatMapperFactoryImpl implements ChatMapperFactory {
     return new ChatDataMapper(this);
   }
 
+  @Override public Mapper<List<ChatDataEntity>, List<ChatData>> getChatDataListMapper() {
+    return new ChatDataListMapper(this);
+  }
+
   @Override public Mapper<ChatTypeDataEntity, ChatTypeData> getChatTypeDataMapper() {
     return new ChatTypeDataMapper(mapperFactory);
   }

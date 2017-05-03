@@ -1,6 +1,8 @@
 package com.fanleagueent.fanleague.data.repository.user;
 
 import com.fanleagueent.fanleague.data.entity.entities.user.SystemMessageEntity;
+import com.fanleagueent.fanleague.data.entity.mappers.MapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.locker_room.LockerRoomMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactory;
 import com.fanleagueent.fanleague.data.repository.user.datasource.UserDataSource;
 import com.fanleagueent.fanleague.domain.models.locker_room.MyWallData;
@@ -15,13 +17,11 @@ import com.fanleagueent.fanleague.domain.models.user.SystemMessage;
 import com.fanleagueent.fanleague.domain.models.user.User;
 import com.fanleagueent.fanleague.domain.models.user.UserGeneralData;
 import com.fanleagueent.fanleague.domain.repository.UserRepository;
-
-import java.io.File;
-import java.util.List;
-
 import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 import io.reactivex.annotations.NonNull;
+import java.io.File;
+import java.util.List;
 
 /**
  * Created by Artem Getman on 31.03.17.
@@ -33,12 +33,14 @@ public class UserRepositoryImpl implements UserRepository {
   private UserDataSource remote;
   private UserDataSource local;
   private UserMapperFactory userMapperFactory;
+  private LockerRoomMapperFactory lockerRoomMapperFactory;
 
   public UserRepositoryImpl(UserDataSource remote, UserDataSource local,
-      UserMapperFactory userMapperFactory) {
+      MapperFactory mapperFactory) {
     this.remote = remote;
     this.local = local;
-    this.userMapperFactory = userMapperFactory;
+    this.userMapperFactory = mapperFactory.userMapperFactory();
+    this.lockerRoomMapperFactory = mapperFactory.lockerRoomMapperFactory();
   }
 
   @Override public Flowable<UserGeneralData> getUserData(boolean refresh) {
@@ -277,14 +279,22 @@ public class UserRepositoryImpl implements UserRepository {
   }
 
   @Override public Flowable<MyWallData> getMyWallData(boolean refresh) {
-    return null;
-    //return remote.getMyWallData().toFlowable().map(myWallDataEntity -> userMapperFactory.getMyWa);
+    return remote.getMyWallData()
+        .toFlowable()
+        .filter(data -> data != null)
+        .map(myWallDataEntity -> lockerRoomMapperFactory.getMyWallDataMapper()
+            .transform(myWallDataEntity));
   }
 
   @Override
   public Flowable<MyWallData> updateMyWallPrivacy(boolean memberSince, boolean favouriteClub,
       boolean favouriteYouthClub, boolean profession, boolean averageWinningBets, boolean bestScore,
       boolean age, boolean sex, boolean nationality, boolean recruitTreeSize) {
-    return null;
+    return remote.updateMyWallPrivacy(memberSince, favouriteClub, favouriteYouthClub, profession,
+        averageWinningBets, bestScore, age, sex, nationality, recruitTreeSize)
+        .toFlowable()
+        .filter(data -> data != null)
+        .map(myWallDataEntity -> lockerRoomMapperFactory.getMyWallDataMapper()
+            .transform(myWallDataEntity));
   }
 }
