@@ -26,6 +26,11 @@ public interface CacheTitle {
     String UNREAD_MESSAGES = "unreadMessagesCache";
   }
 
+  interface Dashboard {
+    String DASHBOARD = "dashboardCache";
+    String INVITE_LINK = "inviteLinkCache";
+  }
+
   interface Chat {
     String THREADS = "chatThreadsCache";
   }
