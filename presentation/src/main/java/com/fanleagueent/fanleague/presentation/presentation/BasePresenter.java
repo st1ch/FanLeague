@@ -20,9 +20,12 @@ public abstract class BasePresenter<V extends View> implements Presenter<V> {
     }
 
     @Override
-    public void onDestroy() {
+    public void destroy() {
         unbind();
+        onDestroy();
     }
+
+    public abstract void onDestroy();
 
     @Nullable
     public V getView() {

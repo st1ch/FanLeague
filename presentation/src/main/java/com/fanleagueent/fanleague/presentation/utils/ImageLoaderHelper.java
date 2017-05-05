@@ -71,7 +71,7 @@ public class ImageLoaderHelper {
   //      Target target = new Target() {
   //        @Override public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
   //          subscriber.onNext(bitmap);
-  //          subscriber.onCompleted();
+  //          subscriber.onComplete();
   //        }
   //
   //        @Override public void onBitmapFailed(Drawable errorDrawable) {

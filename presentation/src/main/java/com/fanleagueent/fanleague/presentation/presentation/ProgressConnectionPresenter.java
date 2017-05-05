@@ -36,7 +36,7 @@ public class ProgressConnectionPresenter<V extends ConnectionView>
     }
   }
 
-  @Override public void onCompleted() {
+  @Override public void onComplete() {
     try {
       checkViewBound();
       getView().hideProgress();

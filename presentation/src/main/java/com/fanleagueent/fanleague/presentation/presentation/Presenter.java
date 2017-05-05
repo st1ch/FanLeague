@@ -9,5 +9,5 @@ import com.fanleagueent.fanleague.presentation.view.View;
 public interface Presenter<V extends View> {
     void bind(V view);
     void unbind();
-    void onDestroy();
+    void destroy();
 }

@@ -15,7 +15,7 @@ public class BaseUseCaseSubscriber<T> extends DefaultSubscriber<T> {
 
     @Override
     public void onError(Throwable e) {
-        //Log.e("Exception", String.valueOf(e));
+        System.out.println("Exception: " + String.valueOf(e));
     }
 
     @Override

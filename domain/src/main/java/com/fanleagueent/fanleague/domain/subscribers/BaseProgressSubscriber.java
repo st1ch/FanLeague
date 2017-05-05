@@ -24,7 +24,7 @@ public class BaseProgressSubscriber<T> extends BaseUseCaseSubscriber<T> {
   @Override
   public void onComplete() {
     if (progressSubscriberListener != null) {
-      progressSubscriberListener.onCompleted();
+      progressSubscriberListener.onComplete();
     }
     //        progressSubscriberListener = null;
   }
@@ -45,7 +45,7 @@ public class BaseProgressSubscriber<T> extends BaseUseCaseSubscriber<T> {
   public interface ProgressSubscriberListener {
     void onError(Throwable t);
 
-    void onCompleted();
+    void onComplete();
 
     void onStartLoading();
   }
