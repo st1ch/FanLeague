@@ -3,6 +3,7 @@ package com.fanleagueent.fanleague.data.entity.mappers;
 import com.fanleagueent.fanleague.data.entity.mappers.activity_history.ActivityHistoryMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.authorization.AuthorizationDataMapper;
 import com.fanleagueent.fanleague.data.entity.mappers.chat.ChatMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.dashboard.DashboardMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.leagues.LeaguesMapperFactory;
@@ -10,7 +11,6 @@ import com.fanleagueent.fanleague.data.entity.mappers.locker_room.LockerRoomMapp
 import com.fanleagueent.fanleague.data.entity.mappers.pundits.PunditsMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.recruiting.RecruitingMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.teams.TeamsMapperFactory;
-import com.fanleagueent.fanleague.data.entity.mappers.recruiting.RecruitingMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.user.UserMapperFactory;
 
 public interface MapperFactory {
@@ -18,6 +18,8 @@ public interface MapperFactory {
   UserMapperFactory userMapperFactory();
 
   AuthorizationDataMapper authorizationMapper();
+
+  DashboardMapperFactory dashboardMapperFactory();
 
   ActivityHistoryMapperFactory activityHistoryMapperFactory();
 

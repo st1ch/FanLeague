@@ -5,6 +5,8 @@ import com.fanleagueent.fanleague.data.entity.mappers.activity_history.ActivityH
 import com.fanleagueent.fanleague.data.entity.mappers.authorization.AuthorizationDataMapper;
 import com.fanleagueent.fanleague.data.entity.mappers.chat.ChatMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.chat.ChatMapperFactoryImpl;
+import com.fanleagueent.fanleague.data.entity.mappers.dashboard.DashboardMapperFactory;
+import com.fanleagueent.fanleague.data.entity.mappers.dashboard.DashboardMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactory;
 import com.fanleagueent.fanleague.data.entity.mappers.friends.FriendMapperFactoryImpl;
 import com.fanleagueent.fanleague.data.entity.mappers.games.GamesMapperFactory;
@@ -30,6 +32,10 @@ public class MapperFactoryImpl implements MapperFactory {
 
   @Override public AuthorizationDataMapper authorizationMapper() {
     return new AuthorizationDataMapper(this);
+  }
+
+  @Override public DashboardMapperFactory dashboardMapperFactory() {
+    return new DashboardMapperFactoryImpl(this);
   }
 
   @Override public ActivityHistoryMapperFactory activityHistoryMapperFactory() {
